@@ -1,0 +1,7 @@
+#!/bin/sh
+
+rm -f config.*
+rm -rf src/pb_build
+rm -rf src/protobuf-2.6.0
+rm -f src/Makevars
+rm -f src/*.o

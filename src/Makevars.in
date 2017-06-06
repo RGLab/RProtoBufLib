@@ -1,0 +1,13 @@
+#expose headers in installed package include folder
+USER_INCLUDE = ${R_PACKAGE_DIR}/include
+USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
+
+all: copying
+
+#copy hdf5 library headers to package include
+copying:
+	mkdir -p "${USER_INCLUDE}"
+	cp -r @PBBUILD@/include/google ${USER_INCLUDE}
+	mkdir -p "${USER_LIB_DIR}"
+	cp @PBBUILD@/lib/* ${USER_LIB_DIR}
+	
