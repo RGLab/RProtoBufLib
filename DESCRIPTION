@@ -1,7 +1,7 @@
 Package: RProtoBufLib
 Type: Package
 Title: Protocol buffers library as an R package
-Version: 0.98.0
+Version: 0.98.1
 Author: Mike Jiang
 Maintainer: Mike Jiang <wjiang2@fhcrc.org>
 Description: This package provides the headers and static library of Protocol buffers 2.6.0 for other R packages to compile and link against. 
