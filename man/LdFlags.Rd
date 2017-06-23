@@ -9,6 +9,9 @@ So that user package can use it in their Makevar file.}
 \usage{
 LdFlags()
 }
+\value{
+nothing.
+}
 \description{
 linker flags
 Generate linker flags
