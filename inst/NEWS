@@ -1,0 +1,4 @@
+First release
+-------------------------
+
+bundle the protobuf c++ library and expose its headers and static libraries

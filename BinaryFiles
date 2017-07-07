@@ -1,0 +1,3 @@
+src/win/lib/i386/libprotobuf.a
+src/win/lib/x64/libprotobuf.a
+src/protobuf-2.6.0.tgz
