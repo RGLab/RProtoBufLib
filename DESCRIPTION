@@ -1,12 +1,12 @@
 Package: RProtoBufLib
 Type: Package
 Title: C++ headers and static libraries of Protocol buffers
-Version: 0.99.5
+Version: 0.99.6
 Author: Mike Jiang
 Maintainer: Mike Jiang <wjiang2@fhcrc.org>
 Description: This package provides the headers and static library of Protocol buffers 2.6.0 for other R packages to compile and link against. 
 License: BSD_3_clause
 LazyLoad: true
-SystemRequirements: GNU make
+SystemRequirements: GNU make,libtool( >=2.4.2)
 biocViews: Infrastructure
 RoxygenNote: 6.0.1
