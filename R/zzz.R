@@ -6,7 +6,12 @@
 #' LdFlags()
 #' @export
 #' @return nothing.
-LdFlags <- function() {
-  libpath <- paste0("lib", Sys.getenv("R_ARCH"), "/libprotobuf.a")
-  cat(tools::file_path_as_absolute(base::system.file(libpath, package = "RProtoBufLib")))
+LdFlags <- function(all = TRUE) {
+  libs <-"libprotobuf.a"
+  if(all)
+    libs <- c("GatingSet.pb.o", libs)
+  libpaths <- paste0("lib", Sys.getenv("R_ARCH"), "/", libs)
+  
+    
+  cat(sapply(libpaths, function(libpath)tools::file_path_as_absolute(base::system.file(libpath, package = "RProtoBufLib"))))
 }
