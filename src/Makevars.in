@@ -1,13 +1,23 @@
+PKG_CPPFLAGS =-I../inst/include/ -I@PBBUILD@/include/
 #expose headers in installed package include folder
 USER_INCLUDE = ${R_PACKAGE_DIR}/include
 USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
 
-all: copying
 
+GS_LIB = ${USER_LIB_DIR}/GatingSet.pb.o
+
+ 
+all: $(GS_LIB) 
+
+#expose compiled object of GatingSet pb API for cytolib to link to
+$(GS_LIB): $(SHLIB) copying
+	cp GatingSet.pb.o $(GS_LIB)
+	
 #copy hdf5 library headers to package include
 copying:
 	mkdir -p "${USER_INCLUDE}"
 	cp -r @PBBUILD@/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
 	cp @PBBUILD@/lib/* ${USER_LIB_DIR}
-	
+
+
