@@ -5,3 +5,5 @@ rm -rf src/pb_build
 rm -rf src/protobuf-2.6.0
 rm -f src/Makevars
 rm -f src/*.o
+rm -f src/GatingSet_pb_lib/*.o
+rm -f src/*.so
