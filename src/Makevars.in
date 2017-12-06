@@ -3,21 +3,16 @@ PKG_CPPFLAGS =-I../inst/include/ -I@PBBUILD@/include/
 USER_INCLUDE = ${R_PACKAGE_DIR}/include
 USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
 
-
-GS_LIB = ${USER_LIB_DIR}/GatingSet.pb.o
-
- 
-all: $(GS_LIB) 
-
 #expose compiled object of GatingSet pb API for cytolib to link to
-$(GS_LIB): $(SHLIB) copying
-	cp GatingSet.pb.o $(GS_LIB)
+GS_LIB = GatingSet_pb_lib/GatingSet.pb.o
+
+all: copying  
 	
 #copy hdf5 library headers to package include
-copying:
+copying: $(GS_LIB)
 	mkdir -p "${USER_INCLUDE}"
 	cp -r @PBBUILD@/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
 	cp @PBBUILD@/lib/* ${USER_LIB_DIR}
-
+	cp $(GS_LIB) ${USER_LIB_DIR}/GatingSet.pb.o
 

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -f src/Makevars
+rm -f src/*.o
+rm -f src/GatingSet_pb_lib/*.o
