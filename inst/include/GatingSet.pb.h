@@ -22,7 +22,7 @@
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
-//#include <google/protobuf/extension_set.h>
+#include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
@@ -62,6 +62,8 @@ class PARAM;
 class GatingHierarchy;
 class TRANS_TBL;
 class GatingSet;
+class CytoSet;
+class CytoFrame;
 
 enum GATE_TYPE {
   POLYGON_GATE = 1,
@@ -3296,12 +3298,37 @@ class GatingSet : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::pb::trans_local >*
       mutable_gtrans();
 
+  // required string guid = 6;
+  inline bool has_guid() const;
+  inline void clear_guid();
+  static const int kGuidFieldNumber = 6;
+  inline const ::std::string& guid() const;
+  inline void set_guid(const ::std::string& value);
+  inline void set_guid(const char* value);
+  inline void set_guid(const char* value, size_t size);
+  inline ::std::string* mutable_guid();
+  inline ::std::string* release_guid();
+  inline void set_allocated_guid(::std::string* guid);
+
+  // required .pb.CytoSet cs = 7;
+  inline bool has_cs() const;
+  inline void clear_cs();
+  static const int kCsFieldNumber = 7;
+  inline const ::pb::CytoSet& cs() const;
+  inline ::pb::CytoSet* mutable_cs();
+  inline ::pb::CytoSet* release_cs();
+  inline void set_allocated_cs(::pb::CytoSet* cs);
+
   // @@protoc_insertion_point(class_scope:pb.GatingSet)
  private:
   inline void set_has_globalbiexptrans();
   inline void clear_has_globalbiexptrans();
   inline void set_has_globallintrans();
   inline void clear_has_globallintrans();
+  inline void set_has_guid();
+  inline void clear_has_guid();
+  inline void set_has_cs();
+  inline void clear_has_cs();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -3312,12 +3339,207 @@ class GatingSet : public ::google::protobuf::Message {
   ::google::protobuf::uint64 globalbiexptrans_;
   ::google::protobuf::uint64 globallintrans_;
   ::google::protobuf::RepeatedPtrField< ::pb::trans_local > gtrans_;
+  ::std::string* guid_;
+  ::pb::CytoSet* cs_;
   friend void  protobuf_AddDesc_GatingSet_2eproto();
   friend void protobuf_AssignDesc_GatingSet_2eproto();
   friend void protobuf_ShutdownFile_GatingSet_2eproto();
 
   void InitAsDefaultInstance();
   static GatingSet* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CytoSet : public ::google::protobuf::Message {
+ public:
+  CytoSet();
+  virtual ~CytoSet();
+
+  CytoSet(const CytoSet& from);
+
+  inline CytoSet& operator=(const CytoSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CytoSet& default_instance();
+
+  void Swap(CytoSet* other);
+
+  // implements Message ----------------------------------------------
+
+  CytoSet* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CytoSet& from);
+  void MergeFrom(const CytoSet& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string sampleName = 1;
+  inline int samplename_size() const;
+  inline void clear_samplename();
+  static const int kSampleNameFieldNumber = 1;
+  inline const ::std::string& samplename(int index) const;
+  inline ::std::string* mutable_samplename(int index);
+  inline void set_samplename(int index, const ::std::string& value);
+  inline void set_samplename(int index, const char* value);
+  inline void set_samplename(int index, const char* value, size_t size);
+  inline ::std::string* add_samplename();
+  inline void add_samplename(const ::std::string& value);
+  inline void add_samplename(const char* value);
+  inline void add_samplename(const char* value, size_t size);
+  inline const ::google::protobuf::RepeatedPtrField< ::std::string>& samplename() const;
+  inline ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_samplename();
+
+  // repeated .pb.CytoFrame frame = 2;
+  inline int frame_size() const;
+  inline void clear_frame();
+  static const int kFrameFieldNumber = 2;
+  inline const ::pb::CytoFrame& frame(int index) const;
+  inline ::pb::CytoFrame* mutable_frame(int index);
+  inline ::pb::CytoFrame* add_frame();
+  inline const ::google::protobuf::RepeatedPtrField< ::pb::CytoFrame >&
+      frame() const;
+  inline ::google::protobuf::RepeatedPtrField< ::pb::CytoFrame >*
+      mutable_frame();
+
+  // @@protoc_insertion_point(class_scope:pb.CytoSet)
+ private:
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> samplename_;
+  ::google::protobuf::RepeatedPtrField< ::pb::CytoFrame > frame_;
+  friend void  protobuf_AddDesc_GatingSet_2eproto();
+  friend void protobuf_AssignDesc_GatingSet_2eproto();
+  friend void protobuf_ShutdownFile_GatingSet_2eproto();
+
+  void InitAsDefaultInstance();
+  static CytoSet* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class CytoFrame : public ::google::protobuf::Message {
+ public:
+  CytoFrame();
+  virtual ~CytoFrame();
+
+  CytoFrame(const CytoFrame& from);
+
+  inline CytoFrame& operator=(const CytoFrame& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const CytoFrame& default_instance();
+
+  void Swap(CytoFrame* other);
+
+  // implements Message ----------------------------------------------
+
+  CytoFrame* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const CytoFrame& from);
+  void MergeFrom(const CytoFrame& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required bool is_h5 = 1;
+  inline bool has_is_h5() const;
+  inline void clear_is_h5();
+  static const int kIsH5FieldNumber = 1;
+  inline bool is_h5() const;
+  inline void set_is_h5(bool value);
+
+  // required string h5_filename = 2;
+  inline bool has_h5_filename() const;
+  inline void clear_h5_filename();
+  static const int kH5FilenameFieldNumber = 2;
+  inline const ::std::string& h5_filename() const;
+  inline void set_h5_filename(const ::std::string& value);
+  inline void set_h5_filename(const char* value);
+  inline void set_h5_filename(const char* value, size_t size);
+  inline ::std::string* mutable_h5_filename();
+  inline ::std::string* release_h5_filename();
+  inline void set_allocated_h5_filename(::std::string* h5_filename);
+
+  // @@protoc_insertion_point(class_scope:pb.CytoFrame)
+ private:
+  inline void set_has_is_h5();
+  inline void clear_has_is_h5();
+  inline void set_has_h5_filename();
+  inline void clear_has_h5_filename();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* h5_filename_;
+  bool is_h5_;
+  friend void  protobuf_AddDesc_GatingSet_2eproto();
+  friend void protobuf_AssignDesc_GatingSet_2eproto();
+  friend void protobuf_ShutdownFile_GatingSet_2eproto();
+
+  void InitAsDefaultInstance();
+  static CytoFrame* default_instance_;
 };
 // ===================================================================
 
@@ -7309,6 +7531,315 @@ inline ::google::protobuf::RepeatedPtrField< ::pb::trans_local >*
 GatingSet::mutable_gtrans() {
   // @@protoc_insertion_point(field_mutable_list:pb.GatingSet.gTrans)
   return &gtrans_;
+}
+
+// required string guid = 6;
+inline bool GatingSet::has_guid() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void GatingSet::set_has_guid() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void GatingSet::clear_has_guid() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void GatingSet::clear_guid() {
+  if (guid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    guid_->clear();
+  }
+  clear_has_guid();
+}
+inline const ::std::string& GatingSet::guid() const {
+  // @@protoc_insertion_point(field_get:pb.GatingSet.guid)
+  return *guid_;
+}
+inline void GatingSet::set_guid(const ::std::string& value) {
+  set_has_guid();
+  if (guid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    guid_ = new ::std::string;
+  }
+  guid_->assign(value);
+  // @@protoc_insertion_point(field_set:pb.GatingSet.guid)
+}
+inline void GatingSet::set_guid(const char* value) {
+  set_has_guid();
+  if (guid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    guid_ = new ::std::string;
+  }
+  guid_->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.GatingSet.guid)
+}
+inline void GatingSet::set_guid(const char* value, size_t size) {
+  set_has_guid();
+  if (guid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    guid_ = new ::std::string;
+  }
+  guid_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.GatingSet.guid)
+}
+inline ::std::string* GatingSet::mutable_guid() {
+  set_has_guid();
+  if (guid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    guid_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.GatingSet.guid)
+  return guid_;
+}
+inline ::std::string* GatingSet::release_guid() {
+  clear_has_guid();
+  if (guid_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = guid_;
+    guid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void GatingSet::set_allocated_guid(::std::string* guid) {
+  if (guid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete guid_;
+  }
+  if (guid) {
+    set_has_guid();
+    guid_ = guid;
+  } else {
+    clear_has_guid();
+    guid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.GatingSet.guid)
+}
+
+// required .pb.CytoSet cs = 7;
+inline bool GatingSet::has_cs() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void GatingSet::set_has_cs() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void GatingSet::clear_has_cs() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void GatingSet::clear_cs() {
+  if (cs_ != NULL) cs_->::pb::CytoSet::Clear();
+  clear_has_cs();
+}
+inline const ::pb::CytoSet& GatingSet::cs() const {
+  // @@protoc_insertion_point(field_get:pb.GatingSet.cs)
+  return cs_ != NULL ? *cs_ : *default_instance_->cs_;
+}
+inline ::pb::CytoSet* GatingSet::mutable_cs() {
+  set_has_cs();
+  if (cs_ == NULL) cs_ = new ::pb::CytoSet;
+  // @@protoc_insertion_point(field_mutable:pb.GatingSet.cs)
+  return cs_;
+}
+inline ::pb::CytoSet* GatingSet::release_cs() {
+  clear_has_cs();
+  ::pb::CytoSet* temp = cs_;
+  cs_ = NULL;
+  return temp;
+}
+inline void GatingSet::set_allocated_cs(::pb::CytoSet* cs) {
+  delete cs_;
+  cs_ = cs;
+  if (cs) {
+    set_has_cs();
+  } else {
+    clear_has_cs();
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.GatingSet.cs)
+}
+
+// -------------------------------------------------------------------
+
+// CytoSet
+
+// repeated string sampleName = 1;
+inline int CytoSet::samplename_size() const {
+  return samplename_.size();
+}
+inline void CytoSet::clear_samplename() {
+  samplename_.Clear();
+}
+inline const ::std::string& CytoSet::samplename(int index) const {
+  // @@protoc_insertion_point(field_get:pb.CytoSet.sampleName)
+  return samplename_.Get(index);
+}
+inline ::std::string* CytoSet::mutable_samplename(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.CytoSet.sampleName)
+  return samplename_.Mutable(index);
+}
+inline void CytoSet::set_samplename(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.CytoSet.sampleName)
+  samplename_.Mutable(index)->assign(value);
+}
+inline void CytoSet::set_samplename(int index, const char* value) {
+  samplename_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.CytoSet.sampleName)
+}
+inline void CytoSet::set_samplename(int index, const char* value, size_t size) {
+  samplename_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.CytoSet.sampleName)
+}
+inline ::std::string* CytoSet::add_samplename() {
+  return samplename_.Add();
+}
+inline void CytoSet::add_samplename(const ::std::string& value) {
+  samplename_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pb.CytoSet.sampleName)
+}
+inline void CytoSet::add_samplename(const char* value) {
+  samplename_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pb.CytoSet.sampleName)
+}
+inline void CytoSet::add_samplename(const char* value, size_t size) {
+  samplename_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pb.CytoSet.sampleName)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+CytoSet::samplename() const {
+  // @@protoc_insertion_point(field_list:pb.CytoSet.sampleName)
+  return samplename_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+CytoSet::mutable_samplename() {
+  // @@protoc_insertion_point(field_mutable_list:pb.CytoSet.sampleName)
+  return &samplename_;
+}
+
+// repeated .pb.CytoFrame frame = 2;
+inline int CytoSet::frame_size() const {
+  return frame_.size();
+}
+inline void CytoSet::clear_frame() {
+  frame_.Clear();
+}
+inline const ::pb::CytoFrame& CytoSet::frame(int index) const {
+  // @@protoc_insertion_point(field_get:pb.CytoSet.frame)
+  return frame_.Get(index);
+}
+inline ::pb::CytoFrame* CytoSet::mutable_frame(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.CytoSet.frame)
+  return frame_.Mutable(index);
+}
+inline ::pb::CytoFrame* CytoSet::add_frame() {
+  // @@protoc_insertion_point(field_add:pb.CytoSet.frame)
+  return frame_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::pb::CytoFrame >&
+CytoSet::frame() const {
+  // @@protoc_insertion_point(field_list:pb.CytoSet.frame)
+  return frame_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::pb::CytoFrame >*
+CytoSet::mutable_frame() {
+  // @@protoc_insertion_point(field_mutable_list:pb.CytoSet.frame)
+  return &frame_;
+}
+
+// -------------------------------------------------------------------
+
+// CytoFrame
+
+// required bool is_h5 = 1;
+inline bool CytoFrame::has_is_h5() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void CytoFrame::set_has_is_h5() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void CytoFrame::clear_has_is_h5() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void CytoFrame::clear_is_h5() {
+  is_h5_ = false;
+  clear_has_is_h5();
+}
+inline bool CytoFrame::is_h5() const {
+  // @@protoc_insertion_point(field_get:pb.CytoFrame.is_h5)
+  return is_h5_;
+}
+inline void CytoFrame::set_is_h5(bool value) {
+  set_has_is_h5();
+  is_h5_ = value;
+  // @@protoc_insertion_point(field_set:pb.CytoFrame.is_h5)
+}
+
+// required string h5_filename = 2;
+inline bool CytoFrame::has_h5_filename() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void CytoFrame::set_has_h5_filename() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void CytoFrame::clear_has_h5_filename() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void CytoFrame::clear_h5_filename() {
+  if (h5_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    h5_filename_->clear();
+  }
+  clear_has_h5_filename();
+}
+inline const ::std::string& CytoFrame::h5_filename() const {
+  // @@protoc_insertion_point(field_get:pb.CytoFrame.h5_filename)
+  return *h5_filename_;
+}
+inline void CytoFrame::set_h5_filename(const ::std::string& value) {
+  set_has_h5_filename();
+  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    h5_filename_ = new ::std::string;
+  }
+  h5_filename_->assign(value);
+  // @@protoc_insertion_point(field_set:pb.CytoFrame.h5_filename)
+}
+inline void CytoFrame::set_h5_filename(const char* value) {
+  set_has_h5_filename();
+  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    h5_filename_ = new ::std::string;
+  }
+  h5_filename_->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.CytoFrame.h5_filename)
+}
+inline void CytoFrame::set_h5_filename(const char* value, size_t size) {
+  set_has_h5_filename();
+  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    h5_filename_ = new ::std::string;
+  }
+  h5_filename_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.CytoFrame.h5_filename)
+}
+inline ::std::string* CytoFrame::mutable_h5_filename() {
+  set_has_h5_filename();
+  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    h5_filename_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.CytoFrame.h5_filename)
+  return h5_filename_;
+}
+inline ::std::string* CytoFrame::release_h5_filename() {
+  clear_has_h5_filename();
+  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = h5_filename_;
+    h5_filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void CytoFrame::set_allocated_h5_filename(::std::string* h5_filename) {
+  if (h5_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete h5_filename_;
+  }
+  if (h5_filename) {
+    set_has_h5_filename();
+    h5_filename_ = h5_filename;
+  } else {
+    clear_has_h5_filename();
+    h5_filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.CytoFrame.h5_filename)
 }
 
 

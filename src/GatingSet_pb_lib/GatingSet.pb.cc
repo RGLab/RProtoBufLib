@@ -2,7 +2,7 @@
 // source: GatingSet.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include <GatingSet.pb.h>
+#include "GatingSet.pb.h"
 
 #include <algorithm>
 
@@ -104,6 +104,12 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* GatingSet_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   GatingSet_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CytoSet_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CytoSet_reflection_ = NULL;
+const ::google::protobuf::Descriptor* CytoFrame_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  CytoFrame_reflection_ = NULL;
 const ::google::protobuf::EnumDescriptor* GATE_TYPE_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* ind_type_descriptor_ = NULL;
 const ::google::protobuf::EnumDescriptor* TRANS_TYPE_descriptor_ = NULL;
@@ -596,12 +602,14 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TRANS_TBL));
   GatingSet_descriptor_ = file->message_type(27);
-  static const int GatingSet_offsets_[5] = {
+  static const int GatingSet_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, trans_tbl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, samplename_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, globalbiexptrans_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, globallintrans_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, gtrans_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, guid_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, cs_),
   };
   GatingSet_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -614,6 +622,38 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GatingSet));
+  CytoSet_descriptor_ = file->message_type(28);
+  static const int CytoSet_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoSet, samplename_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoSet, frame_),
+  };
+  CytoSet_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CytoSet_descriptor_,
+      CytoSet::default_instance_,
+      CytoSet_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoSet, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoSet, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CytoSet));
+  CytoFrame_descriptor_ = file->message_type(29);
+  static const int CytoFrame_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoFrame, is_h5_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoFrame, h5_filename_),
+  };
+  CytoFrame_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      CytoFrame_descriptor_,
+      CytoFrame::default_instance_,
+      CytoFrame_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoFrame, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoFrame, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(CytoFrame));
   GATE_TYPE_descriptor_ = file->enum_type(0);
   ind_type_descriptor_ = file->enum_type(1);
   TRANS_TYPE_descriptor_ = file->enum_type(2);
@@ -685,6 +725,10 @@ void protobuf_RegisterTypes(const ::std::string&) {
     TRANS_TBL_descriptor_, &TRANS_TBL::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     GatingSet_descriptor_, &GatingSet::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CytoSet_descriptor_, &CytoSet::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    CytoFrame_descriptor_, &CytoFrame::default_instance());
 }
 
 }  // namespace
@@ -746,6 +790,10 @@ void protobuf_ShutdownFile_GatingSet_2eproto() {
   delete TRANS_TBL_reflection_;
   delete GatingSet::default_instance_;
   delete GatingSet_reflection_;
+  delete CytoSet::default_instance_;
+  delete CytoSet_reflection_;
+  delete CytoFrame::default_instance_;
+  delete CytoFrame_reflection_;
 }
 
 void protobuf_AddDesc_GatingSet_2eproto() {
@@ -817,17 +865,21 @@ void protobuf_AddDesc_GatingSet_2eproto() {
     "\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 "
     "\001(\0132\017.pb.trans_local\"E\n\tTRANS_TBL\022\025\n\rtra"
     "ns_address\030\001 \002(\004\022!\n\005trans\030\002 \001(\0132\022.pb.tra"
-    "nsformation\"\224\001\n\tGatingSet\022 \n\ttrans_tbl\030\002"
+    "nsformation\"\273\001\n\tGatingSet\022 \n\ttrans_tbl\030\002"
     " \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 \003(\t\022"
     "\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalLinTr"
     "ans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\0132\017.pb.trans_loc"
-    "al*\203\001\n\tGATE_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRA"
-    "NGE_GATE\020\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GAT"
-    "E\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016"
-    "ELLIPSOID_GATE\020\007*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007"
-    "\n\003INT\020\001\022\010\n\004ROOT\020\002*^\n\nTRANS_TYPE\022\r\n\tPB_CA"
-    "LTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLI"
-    "N\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005", 2913);
+    "al\022\014\n\004guid\030\006 \002(\t\022\027\n\002cs\030\007 \002(\0132\013.pb.CytoSe"
+    "t\";\n\007CytoSet\022\022\n\nsampleName\030\001 \003(\t\022\034\n\005fram"
+    "e\030\002 \003(\0132\r.pb.CytoFrame\"/\n\tCytoFrame\022\r\n\005i"
+    "s_h5\030\001 \002(\010\022\023\n\013h5_filename\030\002 \002(\t*\203\001\n\tGATE"
+    "_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022"
+    "\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT"
+    "_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016ELLIPSOID_G"
+    "ATE\020\007*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007\n\003INT\020\001\022\010\n\004"
+    "ROOT\020\002*^\n\nTRANS_TYPE\022\r\n\tPB_CALTBL\020\000\022\n\n\006P"
+    "B_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLIN\020\003\022\016\n\nPB_F"
+    "ASIGNH\020\004\022\014\n\010PB_BIEXP\020\005", 3062);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GatingSet.proto", &protobuf_RegisterTypes);
   paramRange::default_instance_ = new paramRange();
@@ -858,6 +910,8 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   GatingHierarchy::default_instance_ = new GatingHierarchy();
   TRANS_TBL::default_instance_ = new TRANS_TBL();
   GatingSet::default_instance_ = new GatingSet();
+  CytoSet::default_instance_ = new CytoSet();
+  CytoFrame::default_instance_ = new CytoFrame();
   paramRange::default_instance_->InitAsDefaultInstance();
   rangeGate::default_instance_->InitAsDefaultInstance();
   paramPoly::default_instance_->InitAsDefaultInstance();
@@ -886,6 +940,8 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   GatingHierarchy::default_instance_->InitAsDefaultInstance();
   TRANS_TBL::default_instance_->InitAsDefaultInstance();
   GatingSet::default_instance_->InitAsDefaultInstance();
+  CytoSet::default_instance_->InitAsDefaultInstance();
+  CytoFrame::default_instance_->InitAsDefaultInstance();
   ::google::protobuf::internal::OnShutdown(&protobuf_ShutdownFile_GatingSet_2eproto);
 }
 
@@ -10576,6 +10632,8 @@ const int GatingSet::kSampleNameFieldNumber;
 const int GatingSet::kGlobalBiExpTransFieldNumber;
 const int GatingSet::kGlobalLinTransFieldNumber;
 const int GatingSet::kGTransFieldNumber;
+const int GatingSet::kGuidFieldNumber;
+const int GatingSet::kCsFieldNumber;
 #endif  // !_MSC_VER
 
 GatingSet::GatingSet()
@@ -10585,6 +10643,7 @@ GatingSet::GatingSet()
 }
 
 void GatingSet::InitAsDefaultInstance() {
+  cs_ = const_cast< ::pb::CytoSet*>(&::pb::CytoSet::default_instance());
 }
 
 GatingSet::GatingSet(const GatingSet& from)
@@ -10599,6 +10658,8 @@ void GatingSet::SharedCtor() {
   _cached_size_ = 0;
   globalbiexptrans_ = GOOGLE_ULONGLONG(0);
   globallintrans_ = GOOGLE_ULONGLONG(0);
+  guid_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  cs_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -10608,7 +10669,11 @@ GatingSet::~GatingSet() {
 }
 
 void GatingSet::SharedDtor() {
+  if (guid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete guid_;
+  }
   if (this != default_instance_) {
+    delete cs_;
   }
 }
 
@@ -10644,7 +10709,17 @@ void GatingSet::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  ZR_(globalbiexptrans_, globallintrans_);
+  if (_has_bits_[0 / 32] & 108) {
+    ZR_(globalbiexptrans_, globallintrans_);
+    if (has_guid()) {
+      if (guid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        guid_->clear();
+      }
+    }
+    if (has_cs()) {
+      if (cs_ != NULL) cs_->::pb::CytoSet::Clear();
+    }
+  }
 
 #undef OFFSET_OF_FIELD_
 #undef ZR_
@@ -10739,6 +10814,36 @@ bool GatingSet::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(42)) goto parse_gTrans;
+        if (input->ExpectTag(50)) goto parse_guid;
+        break;
+      }
+
+      // required string guid = 6;
+      case 6: {
+        if (tag == 50) {
+         parse_guid:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_guid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->guid().data(), this->guid().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "guid");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(58)) goto parse_cs;
+        break;
+      }
+
+      // required .pb.CytoSet cs = 7;
+      case 7: {
+        if (tag == 58) {
+         parse_cs:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_cs()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -10800,6 +10905,22 @@ void GatingSet::SerializeWithCachedSizes(
       5, this->gtrans(i), output);
   }
 
+  // required string guid = 6;
+  if (has_guid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->guid().data(), this->guid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "guid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->guid(), output);
+  }
+
+  // required .pb.CytoSet cs = 7;
+  if (has_cs()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      7, this->cs(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -10844,6 +10965,24 @@ void GatingSet::SerializeWithCachedSizes(
         5, this->gtrans(i), target);
   }
 
+  // required string guid = 6;
+  if (has_guid()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->guid().data(), this->guid().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "guid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->guid(), target);
+  }
+
+  // required .pb.CytoSet cs = 7;
+  if (has_cs()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        7, this->cs(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -10868,6 +11007,20 @@ int GatingSet::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt64Size(
           this->globallintrans());
+    }
+
+    // required string guid = 6;
+    if (has_guid()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->guid());
+    }
+
+    // required .pb.CytoSet cs = 7;
+    if (has_cs()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->cs());
     }
 
   }
@@ -10929,6 +11082,12 @@ void GatingSet::MergeFrom(const GatingSet& from) {
     if (from.has_globallintrans()) {
       set_globallintrans(from.globallintrans());
     }
+    if (from.has_guid()) {
+      set_guid(from.guid());
+    }
+    if (from.has_cs()) {
+      mutable_cs()->::pb::CytoSet::MergeFrom(from.cs());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -10946,9 +11105,13 @@ void GatingSet::CopyFrom(const GatingSet& from) {
 }
 
 bool GatingSet::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000060) != 0x00000060) return false;
 
   if (!::google::protobuf::internal::AllAreInitialized(this->trans_tbl())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->gtrans())) return false;
+  if (has_cs()) {
+    if (!this->cs().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -10959,6 +11122,8 @@ void GatingSet::Swap(GatingSet* other) {
     std::swap(globalbiexptrans_, other->globalbiexptrans_);
     std::swap(globallintrans_, other->globallintrans_);
     gtrans_.Swap(&other->gtrans_);
+    std::swap(guid_, other->guid_);
+    std::swap(cs_, other->cs_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
@@ -10970,6 +11135,560 @@ void GatingSet::Swap(GatingSet* other) {
   ::google::protobuf::Metadata metadata;
   metadata.descriptor = GatingSet_descriptor_;
   metadata.reflection = GatingSet_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CytoSet::kSampleNameFieldNumber;
+const int CytoSet::kFrameFieldNumber;
+#endif  // !_MSC_VER
+
+CytoSet::CytoSet()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.CytoSet)
+}
+
+void CytoSet::InitAsDefaultInstance() {
+}
+
+CytoSet::CytoSet(const CytoSet& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:pb.CytoSet)
+}
+
+void CytoSet::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CytoSet::~CytoSet() {
+  // @@protoc_insertion_point(destructor:pb.CytoSet)
+  SharedDtor();
+}
+
+void CytoSet::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void CytoSet::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CytoSet::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CytoSet_descriptor_;
+}
+
+const CytoSet& CytoSet::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_GatingSet_2eproto();
+  return *default_instance_;
+}
+
+CytoSet* CytoSet::default_instance_ = NULL;
+
+CytoSet* CytoSet::New() const {
+  return new CytoSet;
+}
+
+void CytoSet::Clear() {
+  samplename_.Clear();
+  frame_.Clear();
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CytoSet::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.CytoSet)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated string sampleName = 1;
+      case 1: {
+        if (tag == 10) {
+         parse_sampleName:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_samplename()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->samplename(this->samplename_size() - 1).data(),
+            this->samplename(this->samplename_size() - 1).length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "samplename");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(10)) goto parse_sampleName;
+        if (input->ExpectTag(18)) goto parse_frame;
+        break;
+      }
+
+      // repeated .pb.CytoFrame frame = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_frame:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_frame()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_frame;
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.CytoSet)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.CytoSet)
+  return false;
+#undef DO_
+}
+
+void CytoSet::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.CytoSet)
+  // repeated string sampleName = 1;
+  for (int i = 0; i < this->samplename_size(); i++) {
+  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+    this->samplename(i).data(), this->samplename(i).length(),
+    ::google::protobuf::internal::WireFormat::SERIALIZE,
+    "samplename");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      1, this->samplename(i), output);
+  }
+
+  // repeated .pb.CytoFrame frame = 2;
+  for (int i = 0; i < this->frame_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->frame(i), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.CytoSet)
+}
+
+::google::protobuf::uint8* CytoSet::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.CytoSet)
+  // repeated string sampleName = 1;
+  for (int i = 0; i < this->samplename_size(); i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->samplename(i).data(), this->samplename(i).length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "samplename");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(1, this->samplename(i), target);
+  }
+
+  // repeated .pb.CytoFrame frame = 2;
+  for (int i = 0; i < this->frame_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->frame(i), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.CytoSet)
+  return target;
+}
+
+int CytoSet::ByteSize() const {
+  int total_size = 0;
+
+  // repeated string sampleName = 1;
+  total_size += 1 * this->samplename_size();
+  for (int i = 0; i < this->samplename_size(); i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->samplename(i));
+  }
+
+  // repeated .pb.CytoFrame frame = 2;
+  total_size += 1 * this->frame_size();
+  for (int i = 0; i < this->frame_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->frame(i));
+  }
+
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CytoSet::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CytoSet* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CytoSet*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CytoSet::MergeFrom(const CytoSet& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  samplename_.MergeFrom(from.samplename_);
+  frame_.MergeFrom(from.frame_);
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CytoSet::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CytoSet::CopyFrom(const CytoSet& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CytoSet::IsInitialized() const {
+
+  if (!::google::protobuf::internal::AllAreInitialized(this->frame())) return false;
+  return true;
+}
+
+void CytoSet::Swap(CytoSet* other) {
+  if (other != this) {
+    samplename_.Swap(&other->samplename_);
+    frame_.Swap(&other->frame_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CytoSet::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CytoSet_descriptor_;
+  metadata.reflection = CytoSet_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int CytoFrame::kIsH5FieldNumber;
+const int CytoFrame::kH5FilenameFieldNumber;
+#endif  // !_MSC_VER
+
+CytoFrame::CytoFrame()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.CytoFrame)
+}
+
+void CytoFrame::InitAsDefaultInstance() {
+}
+
+CytoFrame::CytoFrame(const CytoFrame& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:pb.CytoFrame)
+}
+
+void CytoFrame::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  is_h5_ = false;
+  h5_filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+CytoFrame::~CytoFrame() {
+  // @@protoc_insertion_point(destructor:pb.CytoFrame)
+  SharedDtor();
+}
+
+void CytoFrame::SharedDtor() {
+  if (h5_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete h5_filename_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void CytoFrame::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* CytoFrame::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return CytoFrame_descriptor_;
+}
+
+const CytoFrame& CytoFrame::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_GatingSet_2eproto();
+  return *default_instance_;
+}
+
+CytoFrame* CytoFrame::default_instance_ = NULL;
+
+CytoFrame* CytoFrame::New() const {
+  return new CytoFrame;
+}
+
+void CytoFrame::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    is_h5_ = false;
+    if (has_h5_filename()) {
+      if (h5_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+        h5_filename_->clear();
+      }
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool CytoFrame::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.CytoFrame)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required bool is_h5 = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_h5_)));
+          set_has_is_h5();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_h5_filename;
+        break;
+      }
+
+      // required string h5_filename = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_h5_filename:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_h5_filename()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->h5_filename().data(), this->h5_filename().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "h5_filename");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.CytoFrame)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.CytoFrame)
+  return false;
+#undef DO_
+}
+
+void CytoFrame::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.CytoFrame)
+  // required bool is_h5 = 1;
+  if (has_is_h5()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->is_h5(), output);
+  }
+
+  // required string h5_filename = 2;
+  if (has_h5_filename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->h5_filename().data(), this->h5_filename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "h5_filename");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->h5_filename(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.CytoFrame)
+}
+
+::google::protobuf::uint8* CytoFrame::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.CytoFrame)
+  // required bool is_h5 = 1;
+  if (has_is_h5()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->is_h5(), target);
+  }
+
+  // required string h5_filename = 2;
+  if (has_h5_filename()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->h5_filename().data(), this->h5_filename().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "h5_filename");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->h5_filename(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.CytoFrame)
+  return target;
+}
+
+int CytoFrame::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required bool is_h5 = 1;
+    if (has_is_h5()) {
+      total_size += 1 + 1;
+    }
+
+    // required string h5_filename = 2;
+    if (has_h5_filename()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->h5_filename());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void CytoFrame::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const CytoFrame* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const CytoFrame*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void CytoFrame::MergeFrom(const CytoFrame& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_is_h5()) {
+      set_is_h5(from.is_h5());
+    }
+    if (from.has_h5_filename()) {
+      set_h5_filename(from.h5_filename());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void CytoFrame::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void CytoFrame::CopyFrom(const CytoFrame& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CytoFrame::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+
+  return true;
+}
+
+void CytoFrame::Swap(CytoFrame* other) {
+  if (other != this) {
+    std::swap(is_h5_, other->is_h5_);
+    std::swap(h5_filename_, other->h5_filename_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata CytoFrame::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = CytoFrame_descriptor_;
+  metadata.reflection = CytoFrame_reflection_;
   return metadata;
 }
 
