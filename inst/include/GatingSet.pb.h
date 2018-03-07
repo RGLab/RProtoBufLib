@@ -3509,30 +3509,15 @@ class CytoFrame : public ::google::protobuf::Message {
   inline bool is_h5() const;
   inline void set_is_h5(bool value);
 
-  // required string h5_filename = 2;
-  inline bool has_h5_filename() const;
-  inline void clear_h5_filename();
-  static const int kH5FilenameFieldNumber = 2;
-  inline const ::std::string& h5_filename() const;
-  inline void set_h5_filename(const ::std::string& value);
-  inline void set_h5_filename(const char* value);
-  inline void set_h5_filename(const char* value, size_t size);
-  inline ::std::string* mutable_h5_filename();
-  inline ::std::string* release_h5_filename();
-  inline void set_allocated_h5_filename(::std::string* h5_filename);
-
   // @@protoc_insertion_point(class_scope:pb.CytoFrame)
  private:
   inline void set_has_is_h5();
   inline void clear_has_is_h5();
-  inline void set_has_h5_filename();
-  inline void clear_has_h5_filename();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::std::string* h5_filename_;
   bool is_h5_;
   friend void  protobuf_AddDesc_GatingSet_2eproto();
   friend void protobuf_AssignDesc_GatingSet_2eproto();
@@ -7764,82 +7749,6 @@ inline void CytoFrame::set_is_h5(bool value) {
   set_has_is_h5();
   is_h5_ = value;
   // @@protoc_insertion_point(field_set:pb.CytoFrame.is_h5)
-}
-
-// required string h5_filename = 2;
-inline bool CytoFrame::has_h5_filename() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void CytoFrame::set_has_h5_filename() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void CytoFrame::clear_has_h5_filename() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void CytoFrame::clear_h5_filename() {
-  if (h5_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    h5_filename_->clear();
-  }
-  clear_has_h5_filename();
-}
-inline const ::std::string& CytoFrame::h5_filename() const {
-  // @@protoc_insertion_point(field_get:pb.CytoFrame.h5_filename)
-  return *h5_filename_;
-}
-inline void CytoFrame::set_h5_filename(const ::std::string& value) {
-  set_has_h5_filename();
-  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    h5_filename_ = new ::std::string;
-  }
-  h5_filename_->assign(value);
-  // @@protoc_insertion_point(field_set:pb.CytoFrame.h5_filename)
-}
-inline void CytoFrame::set_h5_filename(const char* value) {
-  set_has_h5_filename();
-  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    h5_filename_ = new ::std::string;
-  }
-  h5_filename_->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.CytoFrame.h5_filename)
-}
-inline void CytoFrame::set_h5_filename(const char* value, size_t size) {
-  set_has_h5_filename();
-  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    h5_filename_ = new ::std::string;
-  }
-  h5_filename_->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.CytoFrame.h5_filename)
-}
-inline ::std::string* CytoFrame::mutable_h5_filename() {
-  set_has_h5_filename();
-  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    h5_filename_ = new ::std::string;
-  }
-  // @@protoc_insertion_point(field_mutable:pb.CytoFrame.h5_filename)
-  return h5_filename_;
-}
-inline ::std::string* CytoFrame::release_h5_filename() {
-  clear_has_h5_filename();
-  if (h5_filename_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    return NULL;
-  } else {
-    ::std::string* temp = h5_filename_;
-    h5_filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-    return temp;
-  }
-}
-inline void CytoFrame::set_allocated_h5_filename(::std::string* h5_filename) {
-  if (h5_filename_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
-    delete h5_filename_;
-  }
-  if (h5_filename) {
-    set_has_h5_filename();
-    h5_filename_ = h5_filename;
-  } else {
-    clear_has_h5_filename();
-    h5_filename_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.CytoFrame.h5_filename)
 }
 
 

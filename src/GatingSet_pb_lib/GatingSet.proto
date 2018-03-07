@@ -213,5 +213,4 @@ message CytoSet {
 
 message CytoFrame {
     required bool is_h5 = 1;
-    required string h5_filename = 2;
 }
