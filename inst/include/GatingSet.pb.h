@@ -60,7 +60,6 @@ class populationTree;
 class COMP;
 class PARAM;
 class GatingHierarchy;
-class TRANS_TBL;
 class GatingSet;
 class CytoSet;
 class CytoFrame;
@@ -2099,26 +2098,28 @@ class trans_pair : public ::google::protobuf::Message {
   inline ::std::string* release_name();
   inline void set_allocated_name(::std::string* name);
 
-  // required uint64 trans_address = 2;
-  inline bool has_trans_address() const;
-  inline void clear_trans_address();
-  static const int kTransAddressFieldNumber = 2;
-  inline ::google::protobuf::uint64 trans_address() const;
-  inline void set_trans_address(::google::protobuf::uint64 value);
+  // required .pb.transformation trans = 2;
+  inline bool has_trans() const;
+  inline void clear_trans();
+  static const int kTransFieldNumber = 2;
+  inline const ::pb::transformation& trans() const;
+  inline ::pb::transformation* mutable_trans();
+  inline ::pb::transformation* release_trans();
+  inline void set_allocated_trans(::pb::transformation* trans);
 
   // @@protoc_insertion_point(class_scope:pb.trans_pair)
  private:
   inline void set_has_name();
   inline void clear_has_name();
-  inline void set_has_trans_address();
-  inline void clear_has_trans_address();
+  inline void set_has_trans();
+  inline void clear_has_trans();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::std::string* name_;
-  ::google::protobuf::uint64 trans_address_;
+  ::pb::transformation* trans_;
   friend void  protobuf_AddDesc_GatingSet_2eproto();
   friend void protobuf_AssignDesc_GatingSet_2eproto();
   friend void protobuf_ShutdownFile_GatingSet_2eproto();
@@ -3100,97 +3101,6 @@ class GatingHierarchy : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
-class TRANS_TBL : public ::google::protobuf::Message {
- public:
-  TRANS_TBL();
-  virtual ~TRANS_TBL();
-
-  TRANS_TBL(const TRANS_TBL& from);
-
-  inline TRANS_TBL& operator=(const TRANS_TBL& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const TRANS_TBL& default_instance();
-
-  void Swap(TRANS_TBL* other);
-
-  // implements Message ----------------------------------------------
-
-  TRANS_TBL* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const TRANS_TBL& from);
-  void MergeFrom(const TRANS_TBL& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required uint64 trans_address = 1;
-  inline bool has_trans_address() const;
-  inline void clear_trans_address();
-  static const int kTransAddressFieldNumber = 1;
-  inline ::google::protobuf::uint64 trans_address() const;
-  inline void set_trans_address(::google::protobuf::uint64 value);
-
-  // optional .pb.transformation trans = 2;
-  inline bool has_trans() const;
-  inline void clear_trans();
-  static const int kTransFieldNumber = 2;
-  inline const ::pb::transformation& trans() const;
-  inline ::pb::transformation* mutable_trans();
-  inline ::pb::transformation* release_trans();
-  inline void set_allocated_trans(::pb::transformation* trans);
-
-  // @@protoc_insertion_point(class_scope:pb.TRANS_TBL)
- private:
-  inline void set_has_trans_address();
-  inline void clear_has_trans_address();
-  inline void set_has_trans();
-  inline void clear_has_trans();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::google::protobuf::uint64 trans_address_;
-  ::pb::transformation* trans_;
-  friend void  protobuf_AddDesc_GatingSet_2eproto();
-  friend void protobuf_AssignDesc_GatingSet_2eproto();
-  friend void protobuf_ShutdownFile_GatingSet_2eproto();
-
-  void InitAsDefaultInstance();
-  static TRANS_TBL* default_instance_;
-};
-// -------------------------------------------------------------------
-
 class GatingSet : public ::google::protobuf::Message {
  public:
   GatingSet();
@@ -3243,18 +3153,6 @@ class GatingSet : public ::google::protobuf::Message {
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
-
-  // repeated .pb.TRANS_TBL trans_tbl = 2;
-  inline int trans_tbl_size() const;
-  inline void clear_trans_tbl();
-  static const int kTransTblFieldNumber = 2;
-  inline const ::pb::TRANS_TBL& trans_tbl(int index) const;
-  inline ::pb::TRANS_TBL* mutable_trans_tbl(int index);
-  inline ::pb::TRANS_TBL* add_trans_tbl();
-  inline const ::google::protobuf::RepeatedPtrField< ::pb::TRANS_TBL >&
-      trans_tbl() const;
-  inline ::google::protobuf::RepeatedPtrField< ::pb::TRANS_TBL >*
-      mutable_trans_tbl();
 
   // repeated string sampleName = 1;
   inline int samplename_size() const;
@@ -3334,7 +3232,6 @@ class GatingSet : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::pb::TRANS_TBL > trans_tbl_;
   ::google::protobuf::RepeatedPtrField< ::std::string> samplename_;
   ::google::protobuf::uint64 globalbiexptrans_;
   ::google::protobuf::uint64 globallintrans_;
@@ -5786,28 +5683,45 @@ inline void trans_pair::set_allocated_name(::std::string* name) {
   // @@protoc_insertion_point(field_set_allocated:pb.trans_pair.name)
 }
 
-// required uint64 trans_address = 2;
-inline bool trans_pair::has_trans_address() const {
+// required .pb.transformation trans = 2;
+inline bool trans_pair::has_trans() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void trans_pair::set_has_trans_address() {
+inline void trans_pair::set_has_trans() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void trans_pair::clear_has_trans_address() {
+inline void trans_pair::clear_has_trans() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void trans_pair::clear_trans_address() {
-  trans_address_ = GOOGLE_ULONGLONG(0);
-  clear_has_trans_address();
+inline void trans_pair::clear_trans() {
+  if (trans_ != NULL) trans_->::pb::transformation::Clear();
+  clear_has_trans();
 }
-inline ::google::protobuf::uint64 trans_pair::trans_address() const {
-  // @@protoc_insertion_point(field_get:pb.trans_pair.trans_address)
-  return trans_address_;
+inline const ::pb::transformation& trans_pair::trans() const {
+  // @@protoc_insertion_point(field_get:pb.trans_pair.trans)
+  return trans_ != NULL ? *trans_ : *default_instance_->trans_;
 }
-inline void trans_pair::set_trans_address(::google::protobuf::uint64 value) {
-  set_has_trans_address();
-  trans_address_ = value;
-  // @@protoc_insertion_point(field_set:pb.trans_pair.trans_address)
+inline ::pb::transformation* trans_pair::mutable_trans() {
+  set_has_trans();
+  if (trans_ == NULL) trans_ = new ::pb::transformation;
+  // @@protoc_insertion_point(field_mutable:pb.trans_pair.trans)
+  return trans_;
+}
+inline ::pb::transformation* trans_pair::release_trans() {
+  clear_has_trans();
+  ::pb::transformation* temp = trans_;
+  trans_ = NULL;
+  return temp;
+}
+inline void trans_pair::set_allocated_trans(::pb::transformation* trans) {
+  delete trans_;
+  trans_ = trans;
+  if (trans) {
+    set_has_trans();
+  } else {
+    clear_has_trans();
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.trans_pair.trans)
 }
 
 // -------------------------------------------------------------------
@@ -7285,106 +7199,7 @@ inline void GatingHierarchy::set_allocated_trans(::pb::trans_local* trans) {
 
 // -------------------------------------------------------------------
 
-// TRANS_TBL
-
-// required uint64 trans_address = 1;
-inline bool TRANS_TBL::has_trans_address() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void TRANS_TBL::set_has_trans_address() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void TRANS_TBL::clear_has_trans_address() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void TRANS_TBL::clear_trans_address() {
-  trans_address_ = GOOGLE_ULONGLONG(0);
-  clear_has_trans_address();
-}
-inline ::google::protobuf::uint64 TRANS_TBL::trans_address() const {
-  // @@protoc_insertion_point(field_get:pb.TRANS_TBL.trans_address)
-  return trans_address_;
-}
-inline void TRANS_TBL::set_trans_address(::google::protobuf::uint64 value) {
-  set_has_trans_address();
-  trans_address_ = value;
-  // @@protoc_insertion_point(field_set:pb.TRANS_TBL.trans_address)
-}
-
-// optional .pb.transformation trans = 2;
-inline bool TRANS_TBL::has_trans() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void TRANS_TBL::set_has_trans() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void TRANS_TBL::clear_has_trans() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void TRANS_TBL::clear_trans() {
-  if (trans_ != NULL) trans_->::pb::transformation::Clear();
-  clear_has_trans();
-}
-inline const ::pb::transformation& TRANS_TBL::trans() const {
-  // @@protoc_insertion_point(field_get:pb.TRANS_TBL.trans)
-  return trans_ != NULL ? *trans_ : *default_instance_->trans_;
-}
-inline ::pb::transformation* TRANS_TBL::mutable_trans() {
-  set_has_trans();
-  if (trans_ == NULL) trans_ = new ::pb::transformation;
-  // @@protoc_insertion_point(field_mutable:pb.TRANS_TBL.trans)
-  return trans_;
-}
-inline ::pb::transformation* TRANS_TBL::release_trans() {
-  clear_has_trans();
-  ::pb::transformation* temp = trans_;
-  trans_ = NULL;
-  return temp;
-}
-inline void TRANS_TBL::set_allocated_trans(::pb::transformation* trans) {
-  delete trans_;
-  trans_ = trans;
-  if (trans) {
-    set_has_trans();
-  } else {
-    clear_has_trans();
-  }
-  // @@protoc_insertion_point(field_set_allocated:pb.TRANS_TBL.trans)
-}
-
-// -------------------------------------------------------------------
-
 // GatingSet
-
-// repeated .pb.TRANS_TBL trans_tbl = 2;
-inline int GatingSet::trans_tbl_size() const {
-  return trans_tbl_.size();
-}
-inline void GatingSet::clear_trans_tbl() {
-  trans_tbl_.Clear();
-}
-inline const ::pb::TRANS_TBL& GatingSet::trans_tbl(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GatingSet.trans_tbl)
-  return trans_tbl_.Get(index);
-}
-inline ::pb::TRANS_TBL* GatingSet::mutable_trans_tbl(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GatingSet.trans_tbl)
-  return trans_tbl_.Mutable(index);
-}
-inline ::pb::TRANS_TBL* GatingSet::add_trans_tbl() {
-  // @@protoc_insertion_point(field_add:pb.GatingSet.trans_tbl)
-  return trans_tbl_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::pb::TRANS_TBL >&
-GatingSet::trans_tbl() const {
-  // @@protoc_insertion_point(field_list:pb.GatingSet.trans_tbl)
-  return trans_tbl_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::pb::TRANS_TBL >*
-GatingSet::mutable_trans_tbl() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GatingSet.trans_tbl)
-  return &trans_tbl_;
-}
 
 // repeated string sampleName = 1;
 inline int GatingSet::samplename_size() const {
@@ -7442,13 +7257,13 @@ GatingSet::mutable_samplename() {
 
 // optional uint64 globalBiExpTrans = 3;
 inline bool GatingSet::has_globalbiexptrans() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
 inline void GatingSet::set_has_globalbiexptrans() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000002u;
 }
 inline void GatingSet::clear_has_globalbiexptrans() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline void GatingSet::clear_globalbiexptrans() {
   globalbiexptrans_ = GOOGLE_ULONGLONG(0);
@@ -7466,13 +7281,13 @@ inline void GatingSet::set_globalbiexptrans(::google::protobuf::uint64 value) {
 
 // optional uint64 globalLinTrans = 4;
 inline bool GatingSet::has_globallintrans() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
 inline void GatingSet::set_has_globallintrans() {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000004u;
 }
 inline void GatingSet::clear_has_globallintrans() {
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void GatingSet::clear_globallintrans() {
   globallintrans_ = GOOGLE_ULONGLONG(0);
@@ -7520,13 +7335,13 @@ GatingSet::mutable_gtrans() {
 
 // required string guid = 6;
 inline bool GatingSet::has_guid() const {
-  return (_has_bits_[0] & 0x00000020u) != 0;
+  return (_has_bits_[0] & 0x00000010u) != 0;
 }
 inline void GatingSet::set_has_guid() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
 }
 inline void GatingSet::clear_has_guid() {
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void GatingSet::clear_guid() {
   if (guid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -7596,13 +7411,13 @@ inline void GatingSet::set_allocated_guid(::std::string* guid) {
 
 // required .pb.CytoSet cs = 7;
 inline bool GatingSet::has_cs() const {
-  return (_has_bits_[0] & 0x00000040u) != 0;
+  return (_has_bits_[0] & 0x00000020u) != 0;
 }
 inline void GatingSet::set_has_cs() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
 }
 inline void GatingSet::clear_has_cs() {
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline void GatingSet::clear_cs() {
   if (cs_ != NULL) cs_->::pb::CytoSet::Clear();
