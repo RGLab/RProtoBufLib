@@ -15,7 +15,7 @@ fi
 CC=`"${R_HOME}/bin/R" CMD config CC`
 CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS`
 MAKE=`${R_HOME}/bin/R CMD config MAKE`
-CXX="${CXX}"
+CXX=`"${R_HOME}/bin/R" CMD config CXX`
 CXXFLAGS=`"${R_HOME}/bin/R" CMD config CXXFLAGS`
 F77=`"${R_HOME}/bin/R" CMD config F77`
 AC_LANG(C++)
