@@ -6,6 +6,7 @@
 #' LdFlags()
 #' @export
 #' @return nothing.
+#' @param all flag to specify whether include GatingSet.pb.o file in the linker flag
 LdFlags <- function(all = TRUE) {
   libs <-"libprotobuf.a"
   if(all)

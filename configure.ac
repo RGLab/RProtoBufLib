@@ -37,9 +37,9 @@ fi;
 
 #run this bootstrap script to update all the gnu auto build files (e.g.  automake symlinked fils (e.g. ./compile), alocal.m4,etc... )		
 cd ${BASEPBNAME}
-./autogen.sh
-automake --add-missing #do this because the old Autoconf (e.g. 2.13) may not handle this in autoreconf
-mv m4/lt~obsolete.m4 m4/lt-obsolete.m4 # R CMD check gives warning about ~ character in filename 
+#./autogen.sh
+#automake --add-missing #do this because the old Autoconf (e.g. 2.13) may not handle this in autoreconf
+#mv m4/lt~obsolete.m4 m4/lt-obsolete.m4 # R CMD check gives warning about ~ character in filename 
 cd ..
 
 echo "building protobuf...";
