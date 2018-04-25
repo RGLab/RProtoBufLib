@@ -9,6 +9,6 @@ Description: This package provides the headers and static library of
         against.
 License: BSD_3_clause
 LazyLoad: true
-SystemRequirements: GNU make,libtool( >=2.4.2)
+SystemRequirements: GNU make
 biocViews: Infrastructure
 RoxygenNote: 6.0.1
