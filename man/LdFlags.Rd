@@ -7,7 +7,10 @@ Generate linker flags
 This function prints the absolute path to the protobuf library file that is shipped with the package.
 So that user package can use it in their Makevar file.}
 \usage{
-LdFlags()
+LdFlags(all = TRUE)
+}
+\arguments{
+\item{all}{flag to specify whether include GatingSet.pb.o file in the linker flag}
 }
 \value{
 nothing.
