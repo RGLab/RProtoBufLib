@@ -2,7 +2,7 @@
 // source: GatingSet.proto
 
 #define INTERNAL_SUPPRESS_PROTOBUF_FIELD_DEPRECATION
-#include <GatingSet.pb.h>
+#include "GatingSet.pb.h"
 
 #include <algorithm>
 
@@ -44,6 +44,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* boolGate_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   boolGate_reflection_ = NULL;
+const ::google::protobuf::Descriptor* clusterGate_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  clusterGate_reflection_ = NULL;
 const ::google::protobuf::Descriptor* gate_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   gate_reflection_ = NULL;
@@ -246,8 +249,23 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(boolGate));
-  gate_descriptor_ = file->message_type(8);
-  static const int gate_offsets_[8] = {
+  clusterGate_descriptor_ = file->message_type(8);
+  static const int clusterGate_offsets_[1] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(clusterGate, cluster_method_),
+  };
+  clusterGate_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      clusterGate_descriptor_,
+      clusterGate::default_instance_,
+      clusterGate_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(clusterGate, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(clusterGate, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(clusterGate));
+  gate_descriptor_ = file->message_type(9);
+  static const int gate_offsets_[9] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, neg_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, istransformed_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, isgained_),
@@ -256,6 +274,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, pg_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, eg_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, bg_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(gate, cg_),
   };
   gate_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -268,7 +287,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(gate));
-  POPSTATS_descriptor_ = file->message_type(9);
+  POPSTATS_descriptor_ = file->message_type(10);
   static const int POPSTATS_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(POPSTATS, stattype_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(POPSTATS, statval_),
@@ -284,7 +303,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(POPSTATS));
-  calibrationTable_descriptor_ = file->message_type(10);
+  calibrationTable_descriptor_ = file->message_type(11);
   static const int calibrationTable_offsets_[8] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(calibrationTable, x_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(calibrationTable, y_),
@@ -306,7 +325,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(calibrationTable));
-  biexpTrans_descriptor_ = file->message_type(11);
+  biexpTrans_descriptor_ = file->message_type(12);
   static const int biexpTrans_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(biexpTrans, channelrange_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(biexpTrans, pos_),
@@ -325,7 +344,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(biexpTrans));
-  fasinhTrans_descriptor_ = file->message_type(12);
+  fasinhTrans_descriptor_ = file->message_type(13);
   static const int fasinhTrans_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(fasinhTrans, length_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(fasinhTrans, maxrange_),
@@ -344,7 +363,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(fasinhTrans));
-  scaleTrans_descriptor_ = file->message_type(13);
+  scaleTrans_descriptor_ = file->message_type(14);
   static const int scaleTrans_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(scaleTrans, scale_factor_),
   };
@@ -359,7 +378,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(scaleTrans));
-  flinTrans_descriptor_ = file->message_type(14);
+  flinTrans_descriptor_ = file->message_type(15);
   static const int flinTrans_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(flinTrans, min_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(flinTrans, max_),
@@ -375,7 +394,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(flinTrans));
-  logTrans_descriptor_ = file->message_type(15);
+  logTrans_descriptor_ = file->message_type(16);
   static const int logTrans_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logTrans, offset_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logTrans, decade_),
@@ -392,7 +411,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(logTrans));
-  transformation_descriptor_ = file->message_type(16);
+  transformation_descriptor_ = file->message_type(17);
   static const int transformation_offsets_[12] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, caltbl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, isgateonly_),
@@ -418,7 +437,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(transformation));
-  trans_pair_descriptor_ = file->message_type(17);
+  trans_pair_descriptor_ = file->message_type(18);
   static const int trans_pair_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, trans_address_),
@@ -434,7 +453,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(trans_pair));
-  trans_local_descriptor_ = file->message_type(18);
+  trans_local_descriptor_ = file->message_type(19);
   static const int trans_local_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_local, tp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_local, groupname_),
@@ -451,7 +470,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(trans_local));
-  POPINDICES_descriptor_ = file->message_type(19);
+  POPINDICES_descriptor_ = file->message_type(20);
   static const int POPINDICES_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(POPINDICES, nevents_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(POPINDICES, indtype_),
@@ -469,7 +488,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(POPINDICES));
-  nodeProperties_descriptor_ = file->message_type(20);
+  nodeProperties_descriptor_ = file->message_type(21);
   static const int nodeProperties_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(nodeProperties, thisname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(nodeProperties, fjstats_),
@@ -489,7 +508,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(nodeProperties));
-  treeNodes_descriptor_ = file->message_type(21);
+  treeNodes_descriptor_ = file->message_type(22);
   static const int treeNodes_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(treeNodes, node_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(treeNodes, parent_),
@@ -505,7 +524,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(treeNodes));
-  populationTree_descriptor_ = file->message_type(22);
+  populationTree_descriptor_ = file->message_type(23);
   static const int populationTree_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(populationTree, node_),
   };
@@ -520,7 +539,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(populationTree));
-  COMP_descriptor_ = file->message_type(23);
+  COMP_descriptor_ = file->message_type(24);
   static const int COMP_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COMP, cid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COMP, prefix_),
@@ -541,7 +560,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(COMP));
-  PARAM_descriptor_ = file->message_type(24);
+  PARAM_descriptor_ = file->message_type(25);
   static const int PARAM_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PARAM, param_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PARAM, log_),
@@ -560,7 +579,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PARAM));
-  GatingHierarchy_descriptor_ = file->message_type(25);
+  GatingHierarchy_descriptor_ = file->message_type(26);
   static const int GatingHierarchy_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingHierarchy, tree_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingHierarchy, comp_),
@@ -579,7 +598,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GatingHierarchy));
-  TRANS_TBL_descriptor_ = file->message_type(26);
+  TRANS_TBL_descriptor_ = file->message_type(27);
   static const int TRANS_TBL_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, trans_address_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, trans_),
@@ -595,7 +614,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TRANS_TBL));
-  GatingSet_descriptor_ = file->message_type(27);
+  GatingSet_descriptor_ = file->message_type(28);
   static const int GatingSet_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, trans_tbl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, samplename_),
@@ -645,6 +664,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
     BOOL_GATE_OP_descriptor_, &BOOL_GATE_OP::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     boolGate_descriptor_, &boolGate::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    clusterGate_descriptor_, &clusterGate::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     gate_descriptor_, &gate::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
@@ -706,6 +727,8 @@ void protobuf_ShutdownFile_GatingSet_2eproto() {
   delete BOOL_GATE_OP_reflection_;
   delete boolGate::default_instance_;
   delete boolGate_reflection_;
+  delete clusterGate::default_instance_;
+  delete clusterGate_reflection_;
   delete gate::default_instance_;
   delete gate_reflection_;
   delete POPSTATS::default_instance_;
@@ -767,67 +790,69 @@ void protobuf_AddDesc_GatingSet_2eproto() {
     " \003(\0132\016.pb.coordinate\022\014\n\004dist\030\004 \001(\002\"7\n\014BO"
     "OL_GATE_OP\022\014\n\004path\030\001 \003(\t\022\n\n\002op\030\002 \002(\r\022\r\n\005"
     "isNot\030\003 \002(\010\"0\n\010boolGate\022$\n\nboolOpSpec\030\001 "
-    "\003(\0132\020.pb.BOOL_GATE_OP\"\310\001\n\004gate\022\013\n\003neg\030\001 "
-    "\002(\010\022\025\n\risTransformed\030\002 \002(\010\022\020\n\010isGained\030\003"
-    " \002(\010\022\033\n\004type\030\004 \002(\0162\r.pb.GATE_TYPE\022\031\n\002rg\030"
-    "\005 \001(\0132\r.pb.rangeGate\022\033\n\002pg\030\006 \001(\0132\017.pb.po"
-    "lygonGate\022\033\n\002eg\030\007 \001(\0132\017.pb.ellipseGate\022\030"
-    "\n\002bg\030\010 \001(\0132\014.pb.boolGate\"-\n\010POPSTATS\022\020\n\010"
-    "statType\030\001 \002(\t\022\017\n\007statVal\030\002 \002(\002\"\223\001\n\020cali"
-    "brationTable\022\r\n\001x\030\001 \003(\002B\002\020\001\022\r\n\001y\030\002 \003(\002B\002"
-    "\020\001\022\r\n\001b\030\003 \003(\002B\002\020\001\022\r\n\001c\030\004 \003(\002B\002\020\001\022\r\n\001d\030\005 "
-    "\003(\002B\002\020\001\022\025\n\rspline_method\030\006 \001(\r\022\017\n\007caltyp"
-    "e\030\007 \001(\t\022\014\n\004flag\030\010 \001(\010\"b\n\nbiexpTrans\022\024\n\014c"
-    "hannelRange\030\001 \001(\r\022\013\n\003pos\030\002 \001(\002\022\013\n\003neg\030\003 "
-    "\001(\002\022\022\n\nwidthBasis\030\004 \001(\002\022\020\n\010maxValue\030\005 \001("
-    "\002\"P\n\013fasinhTrans\022\016\n\006length\030\001 \001(\002\022\020\n\010maxR"
-    "ange\030\002 \001(\002\022\t\n\001T\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\t\n\001M\030\005 "
-    "\001(\002\"\"\n\nscaleTrans\022\024\n\014scale_factor\030\001 \001(\002\""
-    "%\n\tflinTrans\022\013\n\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"5"
-    "\n\010logTrans\022\016\n\006offset\030\001 \001(\002\022\016\n\006decade\030\002 \001"
-    "(\002\022\t\n\001T\030\003 \001(\002\"\272\002\n\016transformation\022$\n\006calT"
-    "bl\030\001 \001(\0132\024.pb.calibrationTable\022\022\n\nisGate"
-    "Only\030\002 \001(\010\022\014\n\004name\030\004 \001(\t\022\017\n\007channel\030\005 \001("
-    "\t\022\022\n\nisComputed\030\006 \001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\nt"
-    "rans_type\030\003 \001(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007 "
-    "\001(\0132\016.pb.biexpTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.log"
-    "Trans\022\032\n\003flt\030\t \001(\0132\r.pb.flinTrans\022\032\n\002st\030"
-    "\n \001(\0132\016.pb.scaleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.f"
-    "asinhTrans\"1\n\ntrans_pair\022\014\n\004name\030\001 \002(\t\022\025"
-    "\n\rtrans_address\030\002 \002(\004\"S\n\013trans_local\022\032\n\002"
-    "tp\030\001 \003(\0132\016.pb.trans_pair\022\021\n\tgroupName\030\002 "
-    "\001(\t\022\025\n\tsampleIDs\030\003 \003(\rB\002\020\001\"\\\n\nPOPINDICES"
-    "\022\017\n\007nEvents\030\001 \002(\r\022\035\n\007indtype\030\002 \002(\0162\014.pb."
-    "ind_type\022\020\n\004iInd\030\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014"
-    "\"\255\001\n\016nodeProperties\022\020\n\010thisName\030\001 \002(\t\022\035\n"
-    "\007fjStats\030\002 \003(\0132\014.pb.POPSTATS\022\035\n\007fcStats\030"
-    "\003 \003(\0132\014.pb.POPSTATS\022\016\n\006hidden\030\004 \002(\010\022\037\n\007i"
-    "ndices\030\005 \001(\0132\016.pb.POPINDICES\022\032\n\010thisGate"
-    "\030\006 \001(\0132\010.pb.gate\"=\n\ttreeNodes\022 \n\004node\030\001 "
-    "\002(\0132\022.pb.nodeProperties\022\016\n\006parent\030\002 \001(\r\""
-    "-\n\016populationTree\022\033\n\004node\030\001 \003(\0132\r.pb.tre"
-    "eNodes\"u\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006prefix\030\002 "
-    "\001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007com"
-    "ment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tspillOver\030"
-    "\007 \003(\002\"_\n\005PARAM\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001"
-    "(\010\022\r\n\005range\030\003 \001(\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020"
-    "calibrationIndex\030\005 \001(\r\"\233\001\n\017GatingHierarc"
-    "hy\022 \n\004tree\030\002 \002(\0132\022.pb.populationTree\022\026\n\004"
-    "comp\030\001 \001(\0132\010.pb.COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034"
-    "\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 "
-    "\001(\0132\017.pb.trans_local\"E\n\tTRANS_TBL\022\025\n\rtra"
-    "ns_address\030\001 \002(\004\022!\n\005trans\030\002 \001(\0132\022.pb.tra"
-    "nsformation\"\224\001\n\tGatingSet\022 \n\ttrans_tbl\030\002"
-    " \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 \003(\t\022"
-    "\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalLinTr"
-    "ans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\0132\017.pb.trans_loc"
-    "al*\203\001\n\tGATE_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRA"
-    "NGE_GATE\020\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GAT"
-    "E\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016"
-    "ELLIPSOID_GATE\020\007*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007"
-    "\n\003INT\020\001\022\010\n\004ROOT\020\002*^\n\nTRANS_TYPE\022\r\n\tPB_CA"
-    "LTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLI"
-    "N\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005", 2913);
+    "\003(\0132\020.pb.BOOL_GATE_OP\"%\n\013clusterGate\022\026\n\016"
+    "cluster_method\030\001 \002(\t\"\345\001\n\004gate\022\013\n\003neg\030\001 \002"
+    "(\010\022\025\n\risTransformed\030\002 \002(\010\022\020\n\010isGained\030\003 "
+    "\002(\010\022\033\n\004type\030\004 \002(\0162\r.pb.GATE_TYPE\022\031\n\002rg\030\005"
+    " \001(\0132\r.pb.rangeGate\022\033\n\002pg\030\006 \001(\0132\017.pb.pol"
+    "ygonGate\022\033\n\002eg\030\007 \001(\0132\017.pb.ellipseGate\022\030\n"
+    "\002bg\030\010 \001(\0132\014.pb.boolGate\022\033\n\002cg\030\t \001(\0132\017.pb"
+    ".clusterGate\"-\n\010POPSTATS\022\020\n\010statType\030\001 \002"
+    "(\t\022\017\n\007statVal\030\002 \002(\002\"\223\001\n\020calibrationTable"
+    "\022\r\n\001x\030\001 \003(\002B\002\020\001\022\r\n\001y\030\002 \003(\002B\002\020\001\022\r\n\001b\030\003 \003("
+    "\002B\002\020\001\022\r\n\001c\030\004 \003(\002B\002\020\001\022\r\n\001d\030\005 \003(\002B\002\020\001\022\025\n\rs"
+    "pline_method\030\006 \001(\r\022\017\n\007caltype\030\007 \001(\t\022\014\n\004f"
+    "lag\030\010 \001(\010\"b\n\nbiexpTrans\022\024\n\014channelRange\030"
+    "\001 \001(\r\022\013\n\003pos\030\002 \001(\002\022\013\n\003neg\030\003 \001(\002\022\022\n\nwidth"
+    "Basis\030\004 \001(\002\022\020\n\010maxValue\030\005 \001(\002\"P\n\013fasinhT"
+    "rans\022\016\n\006length\030\001 \001(\002\022\020\n\010maxRange\030\002 \001(\002\022\t"
+    "\n\001T\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\t\n\001M\030\005 \001(\002\"\"\n\nscale"
+    "Trans\022\024\n\014scale_factor\030\001 \001(\002\"%\n\tflinTrans"
+    "\022\013\n\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"5\n\010logTrans\022\016"
+    "\n\006offset\030\001 \001(\002\022\016\n\006decade\030\002 \001(\002\022\t\n\001T\030\003 \001("
+    "\002\"\272\002\n\016transformation\022$\n\006calTbl\030\001 \001(\0132\024.p"
+    "b.calibrationTable\022\022\n\nisGateOnly\030\002 \001(\010\022\014"
+    "\n\004name\030\004 \001(\t\022\017\n\007channel\030\005 \001(\t\022\022\n\nisCompu"
+    "ted\030\006 \001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\ntrans_type\030\003 "
+    "\001(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007 \001(\0132\016.pb.bie"
+    "xpTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.logTrans\022\032\n\003flt"
+    "\030\t \001(\0132\r.pb.flinTrans\022\032\n\002st\030\n \001(\0132\016.pb.s"
+    "caleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\"1"
+    "\n\ntrans_pair\022\014\n\004name\030\001 \002(\t\022\025\n\rtrans_addr"
+    "ess\030\002 \002(\004\"S\n\013trans_local\022\032\n\002tp\030\001 \003(\0132\016.p"
+    "b.trans_pair\022\021\n\tgroupName\030\002 \001(\t\022\025\n\tsampl"
+    "eIDs\030\003 \003(\rB\002\020\001\"\\\n\nPOPINDICES\022\017\n\007nEvents\030"
+    "\001 \002(\r\022\035\n\007indtype\030\002 \002(\0162\014.pb.ind_type\022\020\n\004"
+    "iInd\030\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014\"\255\001\n\016nodePro"
+    "perties\022\020\n\010thisName\030\001 \002(\t\022\035\n\007fjStats\030\002 \003"
+    "(\0132\014.pb.POPSTATS\022\035\n\007fcStats\030\003 \003(\0132\014.pb.P"
+    "OPSTATS\022\016\n\006hidden\030\004 \002(\010\022\037\n\007indices\030\005 \001(\013"
+    "2\016.pb.POPINDICES\022\032\n\010thisGate\030\006 \001(\0132\010.pb."
+    "gate\"=\n\ttreeNodes\022 \n\004node\030\001 \002(\0132\022.pb.nod"
+    "eProperties\022\016\n\006parent\030\002 \001(\r\"-\n\016populatio"
+    "nTree\022\033\n\004node\030\001 \003(\0132\r.pb.treeNodes\"u\n\004CO"
+    "MP\022\013\n\003cid\030\001 \001(\t\022\016\n\006prefix\030\002 \001(\t\022\016\n\006suffi"
+    "x\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\016"
+    "\n\006marker\030\006 \003(\t\022\021\n\tspillOver\030\007 \003(\002\"_\n\005PAR"
+    "AM\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001(\010\022\r\n\005range\030"
+    "\003 \001(\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020calibrationI"
+    "ndex\030\005 \001(\r\"\233\001\n\017GatingHierarchy\022 \n\004tree\030\002"
+    " \002(\0132\022.pb.populationTree\022\026\n\004comp\030\001 \001(\0132\010"
+    ".pb.COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034\n\ttransFlag\030"
+    "\004 \003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.tra"
+    "ns_local\"E\n\tTRANS_TBL\022\025\n\rtrans_address\030\001"
+    " \002(\004\022!\n\005trans\030\002 \001(\0132\022.pb.transformation\""
+    "\224\001\n\tGatingSet\022 \n\ttrans_tbl\030\002 \003(\0132\r.pb.TR"
+    "ANS_TBL\022\022\n\nsampleName\030\001 \003(\t\022\030\n\020globalBiE"
+    "xpTrans\030\003 \001(\004\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n"
+    "\006gTrans\030\005 \003(\0132\017.pb.trans_local*\225\001\n\tGATE_"
+    "TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022\r"
+    "\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT_"
+    "GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016ELLIPSOID_GA"
+    "TE\020\007\022\020\n\014CLUSTER_GATE\020\010*\'\n\010ind_type\022\010\n\004BO"
+    "OL\020\000\022\007\n\003INT\020\001\022\010\n\004ROOT\020\002*^\n\nTRANS_TYPE\022\r\n"
+    "\tPB_CALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007"
+    "PB_FLIN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005", 2999);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GatingSet.proto", &protobuf_RegisterTypes);
   paramRange::default_instance_ = new paramRange();
@@ -838,6 +863,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   ellipseGate::default_instance_ = new ellipseGate();
   BOOL_GATE_OP::default_instance_ = new BOOL_GATE_OP();
   boolGate::default_instance_ = new boolGate();
+  clusterGate::default_instance_ = new clusterGate();
   gate::default_instance_ = new gate();
   POPSTATS::default_instance_ = new POPSTATS();
   calibrationTable::default_instance_ = new calibrationTable();
@@ -866,6 +892,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   ellipseGate::default_instance_->InitAsDefaultInstance();
   BOOL_GATE_OP::default_instance_->InitAsDefaultInstance();
   boolGate::default_instance_->InitAsDefaultInstance();
+  clusterGate::default_instance_->InitAsDefaultInstance();
   gate::default_instance_->InitAsDefaultInstance();
   POPSTATS::default_instance_->InitAsDefaultInstance();
   calibrationTable::default_instance_->InitAsDefaultInstance();
@@ -908,6 +935,7 @@ bool GATE_TYPE_IsValid(int value) {
     case 5:
     case 6:
     case 7:
+    case 8:
       return true;
     default:
       return false;
@@ -3183,6 +3211,250 @@ void boolGate::Swap(boolGate* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int clusterGate::kClusterMethodFieldNumber;
+#endif  // !_MSC_VER
+
+clusterGate::clusterGate()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.clusterGate)
+}
+
+void clusterGate::InitAsDefaultInstance() {
+}
+
+clusterGate::clusterGate(const clusterGate& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:pb.clusterGate)
+}
+
+void clusterGate::SharedCtor() {
+  ::google::protobuf::internal::GetEmptyString();
+  _cached_size_ = 0;
+  cluster_method_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+clusterGate::~clusterGate() {
+  // @@protoc_insertion_point(destructor:pb.clusterGate)
+  SharedDtor();
+}
+
+void clusterGate::SharedDtor() {
+  if (cluster_method_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete cluster_method_;
+  }
+  if (this != default_instance_) {
+  }
+}
+
+void clusterGate::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* clusterGate::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return clusterGate_descriptor_;
+}
+
+const clusterGate& clusterGate::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_GatingSet_2eproto();
+  return *default_instance_;
+}
+
+clusterGate* clusterGate::default_instance_ = NULL;
+
+clusterGate* clusterGate::New() const {
+  return new clusterGate;
+}
+
+void clusterGate::Clear() {
+  if (has_cluster_method()) {
+    if (cluster_method_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+      cluster_method_->clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool clusterGate::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.clusterGate)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string cluster_method = 1;
+      case 1: {
+        if (tag == 10) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_cluster_method()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->cluster_method().data(), this->cluster_method().length(),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "cluster_method");
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.clusterGate)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.clusterGate)
+  return false;
+#undef DO_
+}
+
+void clusterGate::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.clusterGate)
+  // required string cluster_method = 1;
+  if (has_cluster_method()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->cluster_method().data(), this->cluster_method().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "cluster_method");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->cluster_method(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.clusterGate)
+}
+
+::google::protobuf::uint8* clusterGate::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.clusterGate)
+  // required string cluster_method = 1;
+  if (has_cluster_method()) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->cluster_method().data(), this->cluster_method().length(),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "cluster_method");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->cluster_method(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.clusterGate)
+  return target;
+}
+
+int clusterGate::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required string cluster_method = 1;
+    if (has_cluster_method()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::StringSize(
+          this->cluster_method());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void clusterGate::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const clusterGate* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const clusterGate*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void clusterGate::MergeFrom(const clusterGate& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_cluster_method()) {
+      set_cluster_method(from.cluster_method());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void clusterGate::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void clusterGate::CopyFrom(const clusterGate& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool clusterGate::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void clusterGate::Swap(clusterGate* other) {
+  if (other != this) {
+    std::swap(cluster_method_, other->cluster_method_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata clusterGate::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = clusterGate_descriptor_;
+  metadata.reflection = clusterGate_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
 const int gate::kNegFieldNumber;
 const int gate::kIsTransformedFieldNumber;
 const int gate::kIsGainedFieldNumber;
@@ -3191,6 +3463,7 @@ const int gate::kRgFieldNumber;
 const int gate::kPgFieldNumber;
 const int gate::kEgFieldNumber;
 const int gate::kBgFieldNumber;
+const int gate::kCgFieldNumber;
 #endif  // !_MSC_VER
 
 gate::gate()
@@ -3204,6 +3477,7 @@ void gate::InitAsDefaultInstance() {
   pg_ = const_cast< ::pb::polygonGate*>(&::pb::polygonGate::default_instance());
   eg_ = const_cast< ::pb::ellipseGate*>(&::pb::ellipseGate::default_instance());
   bg_ = const_cast< ::pb::boolGate*>(&::pb::boolGate::default_instance());
+  cg_ = const_cast< ::pb::clusterGate*>(&::pb::clusterGate::default_instance());
 }
 
 gate::gate(const gate& from)
@@ -3223,6 +3497,7 @@ void gate::SharedCtor() {
   pg_ = NULL;
   eg_ = NULL;
   bg_ = NULL;
+  cg_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -3237,6 +3512,7 @@ void gate::SharedDtor() {
     delete pg_;
     delete eg_;
     delete bg_;
+    delete cg_;
   }
 }
 
@@ -3287,6 +3563,9 @@ void gate::Clear() {
     if (has_bg()) {
       if (bg_ != NULL) bg_->::pb::boolGate::Clear();
     }
+  }
+  if (has_cg()) {
+    if (cg_ != NULL) cg_->::pb::clusterGate::Clear();
   }
 
 #undef OFFSET_OF_FIELD_
@@ -3418,6 +3697,19 @@ bool gate::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(74)) goto parse_cg;
+        break;
+      }
+
+      // optional .pb.clusterGate cg = 9;
+      case 9: {
+        if (tag == 74) {
+         parse_cg:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_cg()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -3492,6 +3784,12 @@ void gate::SerializeWithCachedSizes(
       8, this->bg(), output);
   }
 
+  // optional .pb.clusterGate cg = 9;
+  if (has_cg()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      9, this->cg(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -3549,6 +3847,13 @@ void gate::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         8, this->bg(), target);
+  }
+
+  // optional .pb.clusterGate cg = 9;
+  if (has_cg()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        9, this->cg(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -3613,6 +3918,15 @@ int gate::ByteSize() const {
     }
 
   }
+  if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    // optional .pb.clusterGate cg = 9;
+    if (has_cg()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->cg());
+    }
+
+  }
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -3664,6 +3978,11 @@ void gate::MergeFrom(const gate& from) {
       mutable_bg()->::pb::boolGate::MergeFrom(from.bg());
     }
   }
+  if (from._has_bits_[8 / 32] & (0xffu << (8 % 32))) {
+    if (from.has_cg()) {
+      mutable_cg()->::pb::clusterGate::MergeFrom(from.cg());
+    }
+  }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
 
@@ -3694,6 +4013,9 @@ bool gate::IsInitialized() const {
   if (has_bg()) {
     if (!this->bg().IsInitialized()) return false;
   }
+  if (has_cg()) {
+    if (!this->cg().IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -3707,6 +4029,7 @@ void gate::Swap(gate* other) {
     std::swap(pg_, other->pg_);
     std::swap(eg_, other->eg_);
     std::swap(bg_, other->bg_);
+    std::swap(cg_, other->cg_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
