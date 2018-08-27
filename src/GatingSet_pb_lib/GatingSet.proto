@@ -34,6 +34,10 @@ message BOOL_GATE_OP{
 message boolGate{
 	repeated BOOL_GATE_OP boolOpSpec = 1;//the gatePaths with the their logical operators
 }
+
+message clusterGate{
+    required string cluster_method = 1;
+}
 enum GATE_TYPE{
 	 POLYGON_GATE = 1;
 	 RANGE_GATE = 2;
@@ -42,6 +46,7 @@ enum GATE_TYPE{
 	 RECT_GATE = 5;
 	 LOGICAL_GATE = 6;
 	 ELLIPSOID_GATE = 7;
+	 CLUSTER_GATE = 8;
 
 	}
 message gate{
@@ -54,7 +59,7 @@ message gate{
 	optional polygonGate pg = 6;
 	optional ellipseGate eg = 7;
 	optional boolGate bg = 8;
-
+    optional clusterGate cg = 9;
 
 
 }

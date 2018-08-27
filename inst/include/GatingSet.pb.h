@@ -22,7 +22,7 @@
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
-#include <google/protobuf/extension_set.h>
+//#include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
@@ -42,6 +42,7 @@ class coordinate;
 class ellipseGate;
 class BOOL_GATE_OP;
 class boolGate;
+class clusterGate;
 class gate;
 class POPSTATS;
 class calibrationTable;
@@ -71,11 +72,12 @@ enum GATE_TYPE {
   ELLIPSE_GATE = 4,
   RECT_GATE = 5,
   LOGICAL_GATE = 6,
-  ELLIPSOID_GATE = 7
+  ELLIPSOID_GATE = 7,
+  CLUSTER_GATE = 8
 };
 bool GATE_TYPE_IsValid(int value);
 const GATE_TYPE GATE_TYPE_MIN = POLYGON_GATE;
-const GATE_TYPE GATE_TYPE_MAX = ELLIPSOID_GATE;
+const GATE_TYPE GATE_TYPE_MAX = CLUSTER_GATE;
 const int GATE_TYPE_ARRAYSIZE = GATE_TYPE_MAX + 1;
 
 const ::google::protobuf::EnumDescriptor* GATE_TYPE_descriptor();
@@ -892,6 +894,90 @@ class boolGate : public ::google::protobuf::Message {
 };
 // -------------------------------------------------------------------
 
+class clusterGate : public ::google::protobuf::Message {
+ public:
+  clusterGate();
+  virtual ~clusterGate();
+
+  clusterGate(const clusterGate& from);
+
+  inline clusterGate& operator=(const clusterGate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const clusterGate& default_instance();
+
+  void Swap(clusterGate* other);
+
+  // implements Message ----------------------------------------------
+
+  clusterGate* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const clusterGate& from);
+  void MergeFrom(const clusterGate& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string cluster_method = 1;
+  inline bool has_cluster_method() const;
+  inline void clear_cluster_method();
+  static const int kClusterMethodFieldNumber = 1;
+  inline const ::std::string& cluster_method() const;
+  inline void set_cluster_method(const ::std::string& value);
+  inline void set_cluster_method(const char* value);
+  inline void set_cluster_method(const char* value, size_t size);
+  inline ::std::string* mutable_cluster_method();
+  inline ::std::string* release_cluster_method();
+  inline void set_allocated_cluster_method(::std::string* cluster_method);
+
+  // @@protoc_insertion_point(class_scope:pb.clusterGate)
+ private:
+  inline void set_has_cluster_method();
+  inline void clear_has_cluster_method();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* cluster_method_;
+  friend void  protobuf_AddDesc_GatingSet_2eproto();
+  friend void protobuf_AssignDesc_GatingSet_2eproto();
+  friend void protobuf_ShutdownFile_GatingSet_2eproto();
+
+  void InitAsDefaultInstance();
+  static clusterGate* default_instance_;
+};
+// -------------------------------------------------------------------
+
 class gate : public ::google::protobuf::Message {
  public:
   gate();
@@ -1009,6 +1095,15 @@ class gate : public ::google::protobuf::Message {
   inline ::pb::boolGate* release_bg();
   inline void set_allocated_bg(::pb::boolGate* bg);
 
+  // optional .pb.clusterGate cg = 9;
+  inline bool has_cg() const;
+  inline void clear_cg();
+  static const int kCgFieldNumber = 9;
+  inline const ::pb::clusterGate& cg() const;
+  inline ::pb::clusterGate* mutable_cg();
+  inline ::pb::clusterGate* release_cg();
+  inline void set_allocated_cg(::pb::clusterGate* cg);
+
   // @@protoc_insertion_point(class_scope:pb.gate)
  private:
   inline void set_has_neg();
@@ -1027,6 +1122,8 @@ class gate : public ::google::protobuf::Message {
   inline void clear_has_eg();
   inline void set_has_bg();
   inline void clear_has_bg();
+  inline void set_has_cg();
+  inline void clear_has_cg();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -1040,6 +1137,7 @@ class gate : public ::google::protobuf::Message {
   ::pb::polygonGate* pg_;
   ::pb::ellipseGate* eg_;
   ::pb::boolGate* bg_;
+  ::pb::clusterGate* cg_;
   friend void  protobuf_AddDesc_GatingSet_2eproto();
   friend void protobuf_AssignDesc_GatingSet_2eproto();
   friend void protobuf_ShutdownFile_GatingSet_2eproto();
@@ -4055,6 +4153,86 @@ boolGate::mutable_boolopspec() {
 
 // -------------------------------------------------------------------
 
+// clusterGate
+
+// required string cluster_method = 1;
+inline bool clusterGate::has_cluster_method() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void clusterGate::set_has_cluster_method() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void clusterGate::clear_has_cluster_method() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void clusterGate::clear_cluster_method() {
+  if (cluster_method_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    cluster_method_->clear();
+  }
+  clear_has_cluster_method();
+}
+inline const ::std::string& clusterGate::cluster_method() const {
+  // @@protoc_insertion_point(field_get:pb.clusterGate.cluster_method)
+  return *cluster_method_;
+}
+inline void clusterGate::set_cluster_method(const ::std::string& value) {
+  set_has_cluster_method();
+  if (cluster_method_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    cluster_method_ = new ::std::string;
+  }
+  cluster_method_->assign(value);
+  // @@protoc_insertion_point(field_set:pb.clusterGate.cluster_method)
+}
+inline void clusterGate::set_cluster_method(const char* value) {
+  set_has_cluster_method();
+  if (cluster_method_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    cluster_method_ = new ::std::string;
+  }
+  cluster_method_->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.clusterGate.cluster_method)
+}
+inline void clusterGate::set_cluster_method(const char* value, size_t size) {
+  set_has_cluster_method();
+  if (cluster_method_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    cluster_method_ = new ::std::string;
+  }
+  cluster_method_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:pb.clusterGate.cluster_method)
+}
+inline ::std::string* clusterGate::mutable_cluster_method() {
+  set_has_cluster_method();
+  if (cluster_method_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    cluster_method_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.clusterGate.cluster_method)
+  return cluster_method_;
+}
+inline ::std::string* clusterGate::release_cluster_method() {
+  clear_has_cluster_method();
+  if (cluster_method_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = cluster_method_;
+    cluster_method_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void clusterGate::set_allocated_cluster_method(::std::string* cluster_method) {
+  if (cluster_method_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete cluster_method_;
+  }
+  if (cluster_method) {
+    set_has_cluster_method();
+    cluster_method_ = cluster_method;
+  } else {
+    clear_has_cluster_method();
+    cluster_method_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.clusterGate.cluster_method)
+}
+
+// -------------------------------------------------------------------
+
 // gate
 
 // required bool neg = 1;
@@ -4316,6 +4494,47 @@ inline void gate::set_allocated_bg(::pb::boolGate* bg) {
     clear_has_bg();
   }
   // @@protoc_insertion_point(field_set_allocated:pb.gate.bg)
+}
+
+// optional .pb.clusterGate cg = 9;
+inline bool gate::has_cg() const {
+  return (_has_bits_[0] & 0x00000100u) != 0;
+}
+inline void gate::set_has_cg() {
+  _has_bits_[0] |= 0x00000100u;
+}
+inline void gate::clear_has_cg() {
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline void gate::clear_cg() {
+  if (cg_ != NULL) cg_->::pb::clusterGate::Clear();
+  clear_has_cg();
+}
+inline const ::pb::clusterGate& gate::cg() const {
+  // @@protoc_insertion_point(field_get:pb.gate.cg)
+  return cg_ != NULL ? *cg_ : *default_instance_->cg_;
+}
+inline ::pb::clusterGate* gate::mutable_cg() {
+  set_has_cg();
+  if (cg_ == NULL) cg_ = new ::pb::clusterGate;
+  // @@protoc_insertion_point(field_mutable:pb.gate.cg)
+  return cg_;
+}
+inline ::pb::clusterGate* gate::release_cg() {
+  clear_has_cg();
+  ::pb::clusterGate* temp = cg_;
+  cg_ = NULL;
+  return temp;
+}
+inline void gate::set_allocated_cg(::pb::clusterGate* cg) {
+  delete cg_;
+  cg_ = cg;
+  if (cg) {
+    set_has_cg();
+  } else {
+    clear_has_cg();
+  }
+  // @@protoc_insertion_point(field_set_allocated:pb.gate.cg)
 }
 
 // -------------------------------------------------------------------
