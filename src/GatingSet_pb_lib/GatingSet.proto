@@ -136,7 +136,8 @@ message transformation{
 
 message trans_pair{
 	required string name = 1;
-    required transformation trans = 2;
+	optional uint64 trans_address = 2;//legacy
+    optional transformation trans = 3;
 }
 
 message trans_local{
@@ -198,13 +199,20 @@ message GatingHierarchy {
 	optional trans_local trans = 5;
 }
 
+//legacy
+message TRANS_TBL{
+   required uint64 trans_address = 1;
+   optional transformation trans = 2;
+}
+
 message GatingSet {
+    repeated TRANS_TBL trans_tbl = 2;//legacy
 	repeated string sampleName = 1;
 	optional uint64 globalBiExpTrans = 3;//address of globalBiExpTrans, the actual object stored in trans_tbl
 	optional uint64 globalLinTrans = 4;//address of globalLinTrans, the actual object stored in trans_tbl
 	repeated trans_local gTrans = 5;
-	required string guid = 6;
-	required CytoSet cs = 7;
+	optional string guid = 6;
+	optional CytoSet cs = 7;
 }
 message CytoSet {
     repeated string sampleName = 1;

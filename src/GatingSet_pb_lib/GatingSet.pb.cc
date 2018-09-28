@@ -101,6 +101,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* GatingHierarchy_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   GatingHierarchy_reflection_ = NULL;
+const ::google::protobuf::Descriptor* TRANS_TBL_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  TRANS_TBL_reflection_ = NULL;
 const ::google::protobuf::Descriptor* GatingSet_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   GatingSet_reflection_ = NULL;
@@ -441,8 +444,9 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(transformation));
   trans_pair_descriptor_ = file->message_type(18);
-  static const int trans_pair_offsets_[2] = {
+  static const int trans_pair_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, name_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, trans_address_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, trans_),
   };
   trans_pair_reflection_ =
@@ -601,8 +605,25 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GatingHierarchy));
-  GatingSet_descriptor_ = file->message_type(27);
-  static const int GatingSet_offsets_[6] = {
+  TRANS_TBL_descriptor_ = file->message_type(27);
+  static const int TRANS_TBL_offsets_[2] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, trans_address_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, trans_),
+  };
+  TRANS_TBL_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      TRANS_TBL_descriptor_,
+      TRANS_TBL::default_instance_,
+      TRANS_TBL_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(TRANS_TBL));
+  GatingSet_descriptor_ = file->message_type(28);
+  static const int GatingSet_offsets_[7] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, trans_tbl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, samplename_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, globalbiexptrans_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, globallintrans_),
@@ -621,7 +642,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GatingSet));
-  CytoSet_descriptor_ = file->message_type(28);
+  CytoSet_descriptor_ = file->message_type(29);
   static const int CytoSet_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoSet, samplename_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoSet, frame_),
@@ -637,7 +658,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CytoSet));
-  CytoFrame_descriptor_ = file->message_type(29);
+  CytoFrame_descriptor_ = file->message_type(30);
   static const int CytoFrame_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoFrame, is_h5_),
   };
@@ -722,6 +743,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     GatingHierarchy_descriptor_, &GatingHierarchy::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    TRANS_TBL_descriptor_, &TRANS_TBL::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     GatingSet_descriptor_, &GatingSet::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     CytoSet_descriptor_, &CytoSet::default_instance());
@@ -786,6 +809,8 @@ void protobuf_ShutdownFile_GatingSet_2eproto() {
   delete PARAM_reflection_;
   delete GatingHierarchy::default_instance_;
   delete GatingHierarchy_reflection_;
+  delete TRANS_TBL::default_instance_;
+  delete TRANS_TBL_reflection_;
   delete GatingSet::default_instance_;
   delete GatingSet_reflection_;
   delete CytoSet::default_instance_;
@@ -840,43 +865,47 @@ void protobuf_AddDesc_GatingSet_2eproto() {
     "\001(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007 \001(\0132\016.pb.bie"
     "xpTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.logTrans\022\032\n\003flt"
     "\030\t \001(\0132\r.pb.flinTrans\022\032\n\002st\030\n \001(\0132\016.pb.s"
-    "caleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\"="
-    "\n\ntrans_pair\022\014\n\004name\030\001 \002(\t\022!\n\005trans\030\002 \002("
-    "\0132\022.pb.transformation\"S\n\013trans_local\022\032\n\002"
-    "tp\030\001 \003(\0132\016.pb.trans_pair\022\021\n\tgroupName\030\002 "
-    "\001(\t\022\025\n\tsampleIDs\030\003 \003(\rB\002\020\001\"\\\n\nPOPINDICES"
-    "\022\017\n\007nEvents\030\001 \002(\r\022\035\n\007indtype\030\002 \002(\0162\014.pb."
-    "ind_type\022\020\n\004iInd\030\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014"
-    "\"\255\001\n\016nodeProperties\022\020\n\010thisName\030\001 \002(\t\022\035\n"
-    "\007fjStats\030\002 \003(\0132\014.pb.POPSTATS\022\035\n\007fcStats\030"
-    "\003 \003(\0132\014.pb.POPSTATS\022\016\n\006hidden\030\004 \002(\010\022\037\n\007i"
-    "ndices\030\005 \001(\0132\016.pb.POPINDICES\022\032\n\010thisGate"
-    "\030\006 \001(\0132\010.pb.gate\"=\n\ttreeNodes\022 \n\004node\030\001 "
-    "\002(\0132\022.pb.nodeProperties\022\016\n\006parent\030\002 \001(\r\""
-    "-\n\016populationTree\022\033\n\004node\030\001 \003(\0132\r.pb.tre"
-    "eNodes\"u\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006prefix\030\002 "
-    "\001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007com"
-    "ment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tspillOver\030"
-    "\007 \003(\002\"_\n\005PARAM\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001"
-    "(\010\022\r\n\005range\030\003 \001(\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020"
-    "calibrationIndex\030\005 \001(\r\"\233\001\n\017GatingHierarc"
-    "hy\022 \n\004tree\030\002 \002(\0132\022.pb.populationTree\022\026\n\004"
-    "comp\030\001 \001(\0132\010.pb.COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034"
-    "\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 "
-    "\001(\0132\017.pb.trans_local\"\231\001\n\tGatingSet\022\022\n\nsa"
-    "mpleName\030\001 \003(\t\022\030\n\020globalBiExpTrans\030\003 \001(\004"
-    "\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\013"
-    "2\017.pb.trans_local\022\014\n\004guid\030\006 \002(\t\022\027\n\002cs\030\007 "
-    "\002(\0132\013.pb.CytoSet\";\n\007CytoSet\022\022\n\nsampleNam"
-    "e\030\001 \003(\t\022\034\n\005frame\030\002 \003(\0132\r.pb.CytoFrame\"\032\n"
-    "\tCytoFrame\022\r\n\005is_h5\030\001 \002(\010*\225\001\n\tGATE_TYPE\022"
-    "\020\n\014POLYGON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022\r\n\tBOO"
-    "L_GATE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT_GATE\020"
-    "\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016ELLIPSOID_GATE\020\007\022"
-    "\020\n\014CLUSTER_GATE\020\010*\'\n\010ind_type\022\010\n\004BOOL\020\000\022"
-    "\007\n\003INT\020\001\022\010\n\004ROOT\020\002*^\n\nTRANS_TYPE\022\r\n\tPB_C"
-    "ALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FL"
-    "IN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005", 3034);
+    "caleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\"T"
+    "\n\ntrans_pair\022\014\n\004name\030\001 \002(\t\022\025\n\rtrans_addr"
+    "ess\030\002 \001(\004\022!\n\005trans\030\003 \001(\0132\022.pb.transforma"
+    "tion\"S\n\013trans_local\022\032\n\002tp\030\001 \003(\0132\016.pb.tra"
+    "ns_pair\022\021\n\tgroupName\030\002 \001(\t\022\025\n\tsampleIDs\030"
+    "\003 \003(\rB\002\020\001\"\\\n\nPOPINDICES\022\017\n\007nEvents\030\001 \002(\r"
+    "\022\035\n\007indtype\030\002 \002(\0162\014.pb.ind_type\022\020\n\004iInd\030"
+    "\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014\"\255\001\n\016nodeProperti"
+    "es\022\020\n\010thisName\030\001 \002(\t\022\035\n\007fjStats\030\002 \003(\0132\014."
+    "pb.POPSTATS\022\035\n\007fcStats\030\003 \003(\0132\014.pb.POPSTA"
+    "TS\022\016\n\006hidden\030\004 \002(\010\022\037\n\007indices\030\005 \001(\0132\016.pb"
+    ".POPINDICES\022\032\n\010thisGate\030\006 \001(\0132\010.pb.gate\""
+    "=\n\ttreeNodes\022 \n\004node\030\001 \002(\0132\022.pb.nodeProp"
+    "erties\022\016\n\006parent\030\002 \001(\r\"-\n\016populationTree"
+    "\022\033\n\004node\030\001 \003(\0132\r.pb.treeNodes\"u\n\004COMP\022\013\n"
+    "\003cid\030\001 \001(\t\022\016\n\006prefix\030\002 \001(\t\022\016\n\006suffix\030\003 \001"
+    "(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006mar"
+    "ker\030\006 \003(\t\022\021\n\tspillOver\030\007 \003(\002\"_\n\005PARAM\022\r\n"
+    "\005param\030\001 \001(\t\022\013\n\003log\030\002 \001(\010\022\r\n\005range\030\003 \001(\r"
+    "\022\021\n\thighValue\030\004 \001(\r\022\030\n\020calibrationIndex\030"
+    "\005 \001(\r\"\233\001\n\017GatingHierarchy\022 \n\004tree\030\002 \002(\0132"
+    "\022.pb.populationTree\022\026\n\004comp\030\001 \001(\0132\010.pb.C"
+    "OMP\022\020\n\010isLoaded\030\003 \001(\010\022\034\n\ttransFlag\030\004 \003(\013"
+    "2\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.trans_lo"
+    "cal\"E\n\tTRANS_TBL\022\025\n\rtrans_address\030\001 \002(\004\022"
+    "!\n\005trans\030\002 \001(\0132\022.pb.transformation\"\273\001\n\tG"
+    "atingSet\022 \n\ttrans_tbl\030\002 \003(\0132\r.pb.TRANS_T"
+    "BL\022\022\n\nsampleName\030\001 \003(\t\022\030\n\020globalBiExpTra"
+    "ns\030\003 \001(\004\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n\006gTra"
+    "ns\030\005 \003(\0132\017.pb.trans_local\022\014\n\004guid\030\006 \001(\t\022"
+    "\027\n\002cs\030\007 \001(\0132\013.pb.CytoSet\";\n\007CytoSet\022\022\n\ns"
+    "ampleName\030\001 \003(\t\022\034\n\005frame\030\002 \003(\0132\r.pb.Cyto"
+    "Frame\"\032\n\tCytoFrame\022\r\n\005is_h5\030\001 \002(\010*\225\001\n\tGA"
+    "TE_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRANGE_GATE\020"
+    "\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRE"
+    "CT_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016ELLIPSOID"
+    "_GATE\020\007\022\020\n\014CLUSTER_GATE\020\010*\'\n\010ind_type\022\010\n"
+    "\004BOOL\020\000\022\007\n\003INT\020\001\022\010\n\004ROOT\020\002*^\n\nTRANS_TYPE"
+    "\022\r\n\tPB_CALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022"
+    "\013\n\007PB_FLIN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP"
+    "\020\005", 3162);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GatingSet.proto", &protobuf_RegisterTypes);
   paramRange::default_instance_ = new paramRange();
@@ -906,6 +935,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   COMP::default_instance_ = new COMP();
   PARAM::default_instance_ = new PARAM();
   GatingHierarchy::default_instance_ = new GatingHierarchy();
+  TRANS_TBL::default_instance_ = new TRANS_TBL();
   GatingSet::default_instance_ = new GatingSet();
   CytoSet::default_instance_ = new CytoSet();
   CytoFrame::default_instance_ = new CytoFrame();
@@ -936,6 +966,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   COMP::default_instance_->InitAsDefaultInstance();
   PARAM::default_instance_->InitAsDefaultInstance();
   GatingHierarchy::default_instance_->InitAsDefaultInstance();
+  TRANS_TBL::default_instance_->InitAsDefaultInstance();
   GatingSet::default_instance_->InitAsDefaultInstance();
   CytoSet::default_instance_->InitAsDefaultInstance();
   CytoFrame::default_instance_->InitAsDefaultInstance();
@@ -7294,6 +7325,7 @@ void transformation::Swap(transformation* other) {
 
 #ifndef _MSC_VER
 const int trans_pair::kNameFieldNumber;
+const int trans_pair::kTransAddressFieldNumber;
 const int trans_pair::kTransFieldNumber;
 #endif  // !_MSC_VER
 
@@ -7318,6 +7350,7 @@ void trans_pair::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   name_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  trans_address_ = GOOGLE_ULONGLONG(0);
   trans_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -7358,12 +7391,13 @@ trans_pair* trans_pair::New() const {
 }
 
 void trans_pair::Clear() {
-  if (_has_bits_[0 / 32] & 3) {
+  if (_has_bits_[0 / 32] & 7) {
     if (has_name()) {
       if (name_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         name_->clear();
       }
     }
+    trans_address_ = GOOGLE_ULONGLONG(0);
     if (has_trans()) {
       if (trans_ != NULL) trans_->::pb::transformation::Clear();
     }
@@ -7394,13 +7428,28 @@ bool trans_pair::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_trans;
+        if (input->ExpectTag(16)) goto parse_trans_address;
         break;
       }
 
-      // required .pb.transformation trans = 2;
+      // optional uint64 trans_address = 2;
       case 2: {
-        if (tag == 18) {
+        if (tag == 16) {
+         parse_trans_address:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &trans_address_)));
+          set_has_trans_address();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_trans;
+        break;
+      }
+
+      // optional .pb.transformation trans = 3;
+      case 3: {
+        if (tag == 26) {
          parse_trans:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
                input, mutable_trans()));
@@ -7446,10 +7495,15 @@ void trans_pair::SerializeWithCachedSizes(
       1, this->name(), output);
   }
 
-  // required .pb.transformation trans = 2;
+  // optional uint64 trans_address = 2;
+  if (has_trans_address()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(2, this->trans_address(), output);
+  }
+
+  // optional .pb.transformation trans = 3;
   if (has_trans()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->trans(), output);
+      3, this->trans(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -7473,11 +7527,16 @@ void trans_pair::SerializeWithCachedSizes(
         1, this->name(), target);
   }
 
-  // required .pb.transformation trans = 2;
+  // optional uint64 trans_address = 2;
+  if (has_trans_address()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(2, this->trans_address(), target);
+  }
+
+  // optional .pb.transformation trans = 3;
   if (has_trans()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        2, this->trans(), target);
+        3, this->trans(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -7499,7 +7558,14 @@ int trans_pair::ByteSize() const {
           this->name());
     }
 
-    // required .pb.transformation trans = 2;
+    // optional uint64 trans_address = 2;
+    if (has_trans_address()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->trans_address());
+    }
+
+    // optional .pb.transformation trans = 3;
     if (has_trans()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -7536,6 +7602,9 @@ void trans_pair::MergeFrom(const trans_pair& from) {
     if (from.has_name()) {
       set_name(from.name());
     }
+    if (from.has_trans_address()) {
+      set_trans_address(from.trans_address());
+    }
     if (from.has_trans()) {
       mutable_trans()->::pb::transformation::MergeFrom(from.trans());
     }
@@ -7556,7 +7625,7 @@ void trans_pair::CopyFrom(const trans_pair& from) {
 }
 
 bool trans_pair::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
   return true;
 }
@@ -7564,6 +7633,7 @@ bool trans_pair::IsInitialized() const {
 void trans_pair::Swap(trans_pair* other) {
   if (other != this) {
     std::swap(name_, other->name_);
+    std::swap(trans_address_, other->trans_address_);
     std::swap(trans_, other->trans_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
@@ -10656,6 +10726,276 @@ void GatingHierarchy::Swap(GatingHierarchy* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int TRANS_TBL::kTransAddressFieldNumber;
+const int TRANS_TBL::kTransFieldNumber;
+#endif  // !_MSC_VER
+
+TRANS_TBL::TRANS_TBL()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.TRANS_TBL)
+}
+
+void TRANS_TBL::InitAsDefaultInstance() {
+  trans_ = const_cast< ::pb::transformation*>(&::pb::transformation::default_instance());
+}
+
+TRANS_TBL::TRANS_TBL(const TRANS_TBL& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:pb.TRANS_TBL)
+}
+
+void TRANS_TBL::SharedCtor() {
+  _cached_size_ = 0;
+  trans_address_ = GOOGLE_ULONGLONG(0);
+  trans_ = NULL;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+TRANS_TBL::~TRANS_TBL() {
+  // @@protoc_insertion_point(destructor:pb.TRANS_TBL)
+  SharedDtor();
+}
+
+void TRANS_TBL::SharedDtor() {
+  if (this != default_instance_) {
+    delete trans_;
+  }
+}
+
+void TRANS_TBL::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* TRANS_TBL::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return TRANS_TBL_descriptor_;
+}
+
+const TRANS_TBL& TRANS_TBL::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_GatingSet_2eproto();
+  return *default_instance_;
+}
+
+TRANS_TBL* TRANS_TBL::default_instance_ = NULL;
+
+TRANS_TBL* TRANS_TBL::New() const {
+  return new TRANS_TBL;
+}
+
+void TRANS_TBL::Clear() {
+  if (_has_bits_[0 / 32] & 3) {
+    trans_address_ = GOOGLE_ULONGLONG(0);
+    if (has_trans()) {
+      if (trans_ != NULL) trans_->::pb::transformation::Clear();
+    }
+  }
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool TRANS_TBL::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.TRANS_TBL)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required uint64 trans_address = 1;
+      case 1: {
+        if (tag == 8) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
+                 input, &trans_address_)));
+          set_has_trans_address();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_trans;
+        break;
+      }
+
+      // optional .pb.transformation trans = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_trans:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_trans()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.TRANS_TBL)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.TRANS_TBL)
+  return false;
+#undef DO_
+}
+
+void TRANS_TBL::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.TRANS_TBL)
+  // required uint64 trans_address = 1;
+  if (has_trans_address()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->trans_address(), output);
+  }
+
+  // optional .pb.transformation trans = 2;
+  if (has_trans()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->trans(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.TRANS_TBL)
+}
+
+::google::protobuf::uint8* TRANS_TBL::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.TRANS_TBL)
+  // required uint64 trans_address = 1;
+  if (has_trans_address()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->trans_address(), target);
+  }
+
+  // optional .pb.transformation trans = 2;
+  if (has_trans()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->trans(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.TRANS_TBL)
+  return target;
+}
+
+int TRANS_TBL::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // required uint64 trans_address = 1;
+    if (has_trans_address()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt64Size(
+          this->trans_address());
+    }
+
+    // optional .pb.transformation trans = 2;
+    if (has_trans()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->trans());
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void TRANS_TBL::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const TRANS_TBL* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const TRANS_TBL*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void TRANS_TBL::MergeFrom(const TRANS_TBL& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_trans_address()) {
+      set_trans_address(from.trans_address());
+    }
+    if (from.has_trans()) {
+      mutable_trans()->::pb::transformation::MergeFrom(from.trans());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void TRANS_TBL::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void TRANS_TBL::CopyFrom(const TRANS_TBL& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool TRANS_TBL::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+
+  return true;
+}
+
+void TRANS_TBL::Swap(TRANS_TBL* other) {
+  if (other != this) {
+    std::swap(trans_address_, other->trans_address_);
+    std::swap(trans_, other->trans_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata TRANS_TBL::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = TRANS_TBL_descriptor_;
+  metadata.reflection = TRANS_TBL_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
+const int GatingSet::kTransTblFieldNumber;
 const int GatingSet::kSampleNameFieldNumber;
 const int GatingSet::kGlobalBiExpTransFieldNumber;
 const int GatingSet::kGlobalLinTransFieldNumber;
@@ -10737,7 +11077,7 @@ void GatingSet::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 54) {
+  if (_has_bits_[0 / 32] & 108) {
     ZR_(globalbiexptrans_, globallintrans_);
     if (has_guid()) {
       if (guid_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -10752,6 +11092,7 @@ void GatingSet::Clear() {
 #undef OFFSET_OF_FIELD_
 #undef ZR_
 
+  trans_tbl_.Clear();
   samplename_.Clear();
   gtrans_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -10783,6 +11124,20 @@ bool GatingSet::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(10)) goto parse_sampleName;
+        if (input->ExpectTag(18)) goto parse_trans_tbl;
+        break;
+      }
+
+      // repeated .pb.TRANS_TBL trans_tbl = 2;
+      case 2: {
+        if (tag == 18) {
+         parse_trans_tbl:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_trans_tbl()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(18)) goto parse_trans_tbl;
         if (input->ExpectTag(24)) goto parse_globalBiExpTrans;
         break;
       }
@@ -10831,7 +11186,7 @@ bool GatingSet::MergePartialFromCodedStream(
         break;
       }
 
-      // required string guid = 6;
+      // optional string guid = 6;
       case 6: {
         if (tag == 50) {
          parse_guid:
@@ -10848,7 +11203,7 @@ bool GatingSet::MergePartialFromCodedStream(
         break;
       }
 
-      // required .pb.CytoSet cs = 7;
+      // optional .pb.CytoSet cs = 7;
       case 7: {
         if (tag == 58) {
          parse_cs:
@@ -10896,6 +11251,12 @@ void GatingSet::SerializeWithCachedSizes(
       1, this->samplename(i), output);
   }
 
+  // repeated .pb.TRANS_TBL trans_tbl = 2;
+  for (int i = 0; i < this->trans_tbl_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->trans_tbl(i), output);
+  }
+
   // optional uint64 globalBiExpTrans = 3;
   if (has_globalbiexptrans()) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(3, this->globalbiexptrans(), output);
@@ -10912,7 +11273,7 @@ void GatingSet::SerializeWithCachedSizes(
       5, this->gtrans(i), output);
   }
 
-  // required string guid = 6;
+  // optional string guid = 6;
   if (has_guid()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->guid().data(), this->guid().length(),
@@ -10922,7 +11283,7 @@ void GatingSet::SerializeWithCachedSizes(
       6, this->guid(), output);
   }
 
-  // required .pb.CytoSet cs = 7;
+  // optional .pb.CytoSet cs = 7;
   if (has_cs()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7, this->cs(), output);
@@ -10948,6 +11309,13 @@ void GatingSet::SerializeWithCachedSizes(
       WriteStringToArray(1, this->samplename(i), target);
   }
 
+  // repeated .pb.TRANS_TBL trans_tbl = 2;
+  for (int i = 0; i < this->trans_tbl_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        2, this->trans_tbl(i), target);
+  }
+
   // optional uint64 globalBiExpTrans = 3;
   if (has_globalbiexptrans()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(3, this->globalbiexptrans(), target);
@@ -10965,7 +11333,7 @@ void GatingSet::SerializeWithCachedSizes(
         5, this->gtrans(i), target);
   }
 
-  // required string guid = 6;
+  // optional string guid = 6;
   if (has_guid()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->guid().data(), this->guid().length(),
@@ -10976,7 +11344,7 @@ void GatingSet::SerializeWithCachedSizes(
         6, this->guid(), target);
   }
 
-  // required .pb.CytoSet cs = 7;
+  // optional .pb.CytoSet cs = 7;
   if (has_cs()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
@@ -10994,7 +11362,7 @@ void GatingSet::SerializeWithCachedSizes(
 int GatingSet::ByteSize() const {
   int total_size = 0;
 
-  if (_has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+  if (_has_bits_[2 / 32] & (0xffu << (2 % 32))) {
     // optional uint64 globalBiExpTrans = 3;
     if (has_globalbiexptrans()) {
       total_size += 1 +
@@ -11009,14 +11377,14 @@ int GatingSet::ByteSize() const {
           this->globallintrans());
     }
 
-    // required string guid = 6;
+    // optional string guid = 6;
     if (has_guid()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->guid());
     }
 
-    // required .pb.CytoSet cs = 7;
+    // optional .pb.CytoSet cs = 7;
     if (has_cs()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
@@ -11024,6 +11392,14 @@ int GatingSet::ByteSize() const {
     }
 
   }
+  // repeated .pb.TRANS_TBL trans_tbl = 2;
+  total_size += 1 * this->trans_tbl_size();
+  for (int i = 0; i < this->trans_tbl_size(); i++) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        this->trans_tbl(i));
+  }
+
   // repeated string sampleName = 1;
   total_size += 1 * this->samplename_size();
   for (int i = 0; i < this->samplename_size(); i++) {
@@ -11064,9 +11440,10 @@ void GatingSet::MergeFrom(const ::google::protobuf::Message& from) {
 
 void GatingSet::MergeFrom(const GatingSet& from) {
   GOOGLE_CHECK_NE(&from, this);
+  trans_tbl_.MergeFrom(from.trans_tbl_);
   samplename_.MergeFrom(from.samplename_);
   gtrans_.MergeFrom(from.gtrans_);
-  if (from._has_bits_[1 / 32] & (0xffu << (1 % 32))) {
+  if (from._has_bits_[2 / 32] & (0xffu << (2 % 32))) {
     if (from.has_globalbiexptrans()) {
       set_globalbiexptrans(from.globalbiexptrans());
     }
@@ -11096,8 +11473,8 @@ void GatingSet::CopyFrom(const GatingSet& from) {
 }
 
 bool GatingSet::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000030) != 0x00000030) return false;
 
+  if (!::google::protobuf::internal::AllAreInitialized(this->trans_tbl())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->gtrans())) return false;
   if (has_cs()) {
     if (!this->cs().IsInitialized()) return false;
@@ -11107,6 +11484,7 @@ bool GatingSet::IsInitialized() const {
 
 void GatingSet::Swap(GatingSet* other) {
   if (other != this) {
+    trans_tbl_.Swap(&other->trans_tbl_);
     samplename_.Swap(&other->samplename_);
     std::swap(globalbiexptrans_, other->globalbiexptrans_);
     std::swap(globallintrans_, other->globallintrans_);
