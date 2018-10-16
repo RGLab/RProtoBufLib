@@ -868,7 +868,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
     "2\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.trans_lo"
     "cal\022\034\n\005frame\030\006 \001(\0132\r.pb.CytoFrame\"\032\n\tCyt"
     "oFrame\022\r\n\005is_h5\030\001 \002(\010\"E\n\tTRANS_TBL\022\025\n\rtr"
-    "ans_address\030\001 \002(\004\022!\n\005trans\030\002 \001(\0132\022.pb.tr"
+    "ans_address\030\001 \001(\004\022!\n\005trans\030\002 \001(\0132\022.pb.tr"
     "ansformation\"\242\001\n\tGatingSet\022 \n\ttrans_tbl\030"
     "\002 \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 \003(\t"
     "\022\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalLinT"
@@ -11048,7 +11048,7 @@ bool TRANS_TBL::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required uint64 trans_address = 1;
+      // optional uint64 trans_address = 1;
       case 1: {
         if (tag == 8) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
@@ -11100,7 +11100,7 @@ failure:
 void TRANS_TBL::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
   // @@protoc_insertion_point(serialize_start:pb.TRANS_TBL)
-  // required uint64 trans_address = 1;
+  // optional uint64 trans_address = 1;
   if (has_trans_address()) {
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->trans_address(), output);
   }
@@ -11121,7 +11121,7 @@ void TRANS_TBL::SerializeWithCachedSizes(
 ::google::protobuf::uint8* TRANS_TBL::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
   // @@protoc_insertion_point(serialize_to_array_start:pb.TRANS_TBL)
-  // required uint64 trans_address = 1;
+  // optional uint64 trans_address = 1;
   if (has_trans_address()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->trans_address(), target);
   }
@@ -11145,7 +11145,7 @@ int TRANS_TBL::ByteSize() const {
   int total_size = 0;
 
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required uint64 trans_address = 1;
+    // optional uint64 trans_address = 1;
     if (has_trans_address()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt64Size(
@@ -11209,7 +11209,6 @@ void TRANS_TBL::CopyFrom(const TRANS_TBL& from) {
 }
 
 bool TRANS_TBL::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
 
   return true;
 }
@@ -11672,7 +11671,6 @@ void GatingSet::CopyFrom(const GatingSet& from) {
 
 bool GatingSet::IsInitialized() const {
 
-  if (!::google::protobuf::internal::AllAreInitialized(this->trans_tbl())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->gtrans())) return false;
   return true;
 }

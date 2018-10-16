@@ -3353,7 +3353,7 @@ class TRANS_TBL : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // required uint64 trans_address = 1;
+  // optional uint64 trans_address = 1;
   inline bool has_trans_address() const;
   inline void clear_trans_address();
   static const int kTransAddressFieldNumber = 1;
@@ -7528,7 +7528,7 @@ inline void CytoFrame::set_is_h5(bool value) {
 
 // TRANS_TBL
 
-// required uint64 trans_address = 1;
+// optional uint64 trans_address = 1;
 inline bool TRANS_TBL::has_trans_address() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
