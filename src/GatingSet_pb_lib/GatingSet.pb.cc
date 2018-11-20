@@ -71,6 +71,9 @@ const ::google::protobuf::internal::GeneratedMessageReflection*
 const ::google::protobuf::Descriptor* logTrans_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   logTrans_reflection_ = NULL;
+const ::google::protobuf::Descriptor* logicleTrans_descriptor_ = NULL;
+const ::google::protobuf::internal::GeneratedMessageReflection*
+  logicleTrans_reflection_ = NULL;
 const ::google::protobuf::Descriptor* transformation_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   transformation_reflection_ = NULL;
@@ -414,8 +417,27 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(logTrans));
-  transformation_descriptor_ = file->message_type(17);
-  static const int transformation_offsets_[12] = {
+  logicleTrans_descriptor_ = file->message_type(17);
+  static const int logicleTrans_offsets_[5] = {
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, t_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, w_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, m_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, a_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, bins_),
+  };
+  logicleTrans_reflection_ =
+    new ::google::protobuf::internal::GeneratedMessageReflection(
+      logicleTrans_descriptor_,
+      logicleTrans::default_instance_,
+      logicleTrans_offsets_,
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, _has_bits_[0]),
+      GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, _unknown_fields_),
+      -1,
+      ::google::protobuf::DescriptorPool::generated_pool(),
+      ::google::protobuf::MessageFactory::generated_factory(),
+      sizeof(logicleTrans));
+  transformation_descriptor_ = file->message_type(18);
+  static const int transformation_offsets_[13] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, caltbl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, isgateonly_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, name_),
@@ -428,6 +450,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, flt_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, st_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, ft_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(transformation, lgt_),
   };
   transformation_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -440,7 +463,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(transformation));
-  trans_pair_descriptor_ = file->message_type(18);
+  trans_pair_descriptor_ = file->message_type(19);
   static const int trans_pair_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, name_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_pair, trans_address_),
@@ -457,7 +480,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(trans_pair));
-  trans_local_descriptor_ = file->message_type(19);
+  trans_local_descriptor_ = file->message_type(20);
   static const int trans_local_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_local, tp_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(trans_local, groupname_),
@@ -474,7 +497,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(trans_local));
-  POPINDICES_descriptor_ = file->message_type(20);
+  POPINDICES_descriptor_ = file->message_type(21);
   static const int POPINDICES_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(POPINDICES, nevents_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(POPINDICES, indtype_),
@@ -492,7 +515,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(POPINDICES));
-  nodeProperties_descriptor_ = file->message_type(21);
+  nodeProperties_descriptor_ = file->message_type(22);
   static const int nodeProperties_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(nodeProperties, thisname_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(nodeProperties, fjstats_),
@@ -512,7 +535,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(nodeProperties));
-  treeNodes_descriptor_ = file->message_type(22);
+  treeNodes_descriptor_ = file->message_type(23);
   static const int treeNodes_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(treeNodes, node_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(treeNodes, parent_),
@@ -528,7 +551,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(treeNodes));
-  populationTree_descriptor_ = file->message_type(23);
+  populationTree_descriptor_ = file->message_type(24);
   static const int populationTree_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(populationTree, node_),
   };
@@ -543,7 +566,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(populationTree));
-  COMP_descriptor_ = file->message_type(24);
+  COMP_descriptor_ = file->message_type(25);
   static const int COMP_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COMP, cid_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(COMP, prefix_),
@@ -564,7 +587,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(COMP));
-  PARAM_descriptor_ = file->message_type(25);
+  PARAM_descriptor_ = file->message_type(26);
   static const int PARAM_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PARAM, param_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PARAM, log_),
@@ -583,7 +606,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PARAM));
-  GatingHierarchy_descriptor_ = file->message_type(26);
+  GatingHierarchy_descriptor_ = file->message_type(27);
   static const int GatingHierarchy_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingHierarchy, tree_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingHierarchy, comp_),
@@ -603,7 +626,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(GatingHierarchy));
-  CytoFrame_descriptor_ = file->message_type(27);
+  CytoFrame_descriptor_ = file->message_type(28);
   static const int CytoFrame_offsets_[1] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(CytoFrame, is_h5_),
   };
@@ -618,7 +641,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(CytoFrame));
-  TRANS_TBL_descriptor_ = file->message_type(28);
+  TRANS_TBL_descriptor_ = file->message_type(29);
   static const int TRANS_TBL_offsets_[2] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, trans_address_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(TRANS_TBL, trans_),
@@ -634,7 +657,7 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(TRANS_TBL));
-  GatingSet_descriptor_ = file->message_type(29);
+  GatingSet_descriptor_ = file->message_type(30);
   static const int GatingSet_offsets_[6] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, trans_tbl_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(GatingSet, samplename_),
@@ -704,6 +727,8 @@ void protobuf_RegisterTypes(const ::std::string&) {
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     logTrans_descriptor_, &logTrans::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
+    logicleTrans_descriptor_, &logicleTrans::default_instance());
+  ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     transformation_descriptor_, &transformation::default_instance());
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedMessage(
     trans_pair_descriptor_, &trans_pair::default_instance());
@@ -768,6 +793,8 @@ void protobuf_ShutdownFile_GatingSet_2eproto() {
   delete flinTrans_reflection_;
   delete logTrans::default_instance_;
   delete logTrans_reflection_;
+  delete logicleTrans::default_instance_;
+  delete logicleTrans_reflection_;
   delete transformation::default_instance_;
   delete transformation_reflection_;
   delete trans_pair::default_instance_;
@@ -835,52 +862,55 @@ void protobuf_AddDesc_GatingSet_2eproto() {
     "Trans\022\024\n\014scale_factor\030\001 \001(\002\"%\n\tflinTrans"
     "\022\013\n\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"5\n\010logTrans\022\016"
     "\n\006offset\030\001 \001(\002\022\016\n\006decade\030\002 \001(\002\022\t\n\001T\030\003 \001("
-    "\002\"\272\002\n\016transformation\022$\n\006calTbl\030\001 \001(\0132\024.p"
-    "b.calibrationTable\022\022\n\nisGateOnly\030\002 \001(\010\022\014"
-    "\n\004name\030\004 \001(\t\022\017\n\007channel\030\005 \001(\t\022\022\n\nisCompu"
-    "ted\030\006 \001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\ntrans_type\030\003 "
-    "\001(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007 \001(\0132\016.pb.bie"
-    "xpTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.logTrans\022\032\n\003flt"
-    "\030\t \001(\0132\r.pb.flinTrans\022\032\n\002st\030\n \001(\0132\016.pb.s"
-    "caleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\"T"
-    "\n\ntrans_pair\022\014\n\004name\030\001 \002(\t\022\025\n\rtrans_addr"
-    "ess\030\002 \001(\004\022!\n\005trans\030\003 \001(\0132\022.pb.transforma"
-    "tion\"S\n\013trans_local\022\032\n\002tp\030\001 \003(\0132\016.pb.tra"
-    "ns_pair\022\021\n\tgroupName\030\002 \001(\t\022\025\n\tsampleIDs\030"
-    "\003 \003(\rB\002\020\001\"\\\n\nPOPINDICES\022\017\n\007nEvents\030\001 \002(\r"
-    "\022\035\n\007indtype\030\002 \002(\0162\014.pb.ind_type\022\020\n\004iInd\030"
-    "\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014\"\255\001\n\016nodeProperti"
-    "es\022\020\n\010thisName\030\001 \002(\t\022\035\n\007fjStats\030\002 \003(\0132\014."
-    "pb.POPSTATS\022\035\n\007fcStats\030\003 \003(\0132\014.pb.POPSTA"
-    "TS\022\016\n\006hidden\030\004 \002(\010\022\037\n\007indices\030\005 \001(\0132\016.pb"
-    ".POPINDICES\022\032\n\010thisGate\030\006 \001(\0132\010.pb.gate\""
-    "=\n\ttreeNodes\022 \n\004node\030\001 \002(\0132\022.pb.nodeProp"
-    "erties\022\016\n\006parent\030\002 \001(\r\"-\n\016populationTree"
-    "\022\033\n\004node\030\001 \003(\0132\r.pb.treeNodes\"u\n\004COMP\022\013\n"
-    "\003cid\030\001 \001(\t\022\016\n\006prefix\030\002 \001(\t\022\016\n\006suffix\030\003 \001"
-    "(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006mar"
-    "ker\030\006 \003(\t\022\021\n\tspillOver\030\007 \003(\002\"_\n\005PARAM\022\r\n"
-    "\005param\030\001 \001(\t\022\013\n\003log\030\002 \001(\010\022\r\n\005range\030\003 \001(\r"
-    "\022\021\n\thighValue\030\004 \001(\r\022\030\n\020calibrationIndex\030"
-    "\005 \001(\r\"\271\001\n\017GatingHierarchy\022 \n\004tree\030\002 \002(\0132"
-    "\022.pb.populationTree\022\026\n\004comp\030\001 \001(\0132\010.pb.C"
-    "OMP\022\020\n\010isLoaded\030\003 \001(\010\022\034\n\ttransFlag\030\004 \003(\013"
-    "2\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.trans_lo"
-    "cal\022\034\n\005frame\030\006 \001(\0132\r.pb.CytoFrame\"\032\n\tCyt"
-    "oFrame\022\r\n\005is_h5\030\001 \002(\010\"E\n\tTRANS_TBL\022\025\n\rtr"
-    "ans_address\030\001 \001(\004\022!\n\005trans\030\002 \001(\0132\022.pb.tr"
-    "ansformation\"\242\001\n\tGatingSet\022 \n\ttrans_tbl\030"
-    "\002 \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 \003(\t"
-    "\022\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalLinT"
-    "rans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\0132\017.pb.trans_lo"
-    "cal\022\014\n\004guid\030\006 \001(\t*\225\001\n\tGATE_TYPE\022\020\n\014POLYG"
-    "ON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022\r\n\tBOOL_GATE\020\003"
-    "\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LOG"
-    "ICAL_GATE\020\006\022\022\n\016ELLIPSOID_GATE\020\007\022\020\n\014CLUST"
-    "ER_GATE\020\010*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007\n\003INT\020\001"
-    "\022\010\n\004ROOT\020\002*^\n\nTRANS_TYPE\022\r\n\tPB_CALTBL\020\000\022"
-    "\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLIN\020\003\022\016\n\n"
-    "PB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005", 3106);
+    "\002\"H\n\014logicleTrans\022\t\n\001T\030\001 \001(\002\022\t\n\001W\030\002 \001(\002\022"
+    "\t\n\001M\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\014\n\004bins\030\005 \001(\002\"\331\002\n\016"
+    "transformation\022$\n\006calTbl\030\001 \001(\0132\024.pb.cali"
+    "brationTable\022\022\n\nisGateOnly\030\002 \001(\010\022\014\n\004name"
+    "\030\004 \001(\t\022\017\n\007channel\030\005 \001(\t\022\022\n\nisComputed\030\006 "
+    "\001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\ntrans_type\030\003 \001(\0162\016."
+    "pb.TRANS_TYPE\022\032\n\002bt\030\007 \001(\0132\016.pb.biexpTran"
+    "s\022\030\n\002lt\030\010 \001(\0132\014.pb.logTrans\022\032\n\003flt\030\t \001(\013"
+    "2\r.pb.flinTrans\022\032\n\002st\030\n \001(\0132\016.pb.scaleTr"
+    "ans\022\033\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\022\035\n\003lgt\030"
+    "\r \001(\0132\020.pb.logicleTrans\"T\n\ntrans_pair\022\014\n"
+    "\004name\030\001 \002(\t\022\025\n\rtrans_address\030\002 \001(\004\022!\n\005tr"
+    "ans\030\003 \001(\0132\022.pb.transformation\"S\n\013trans_l"
+    "ocal\022\032\n\002tp\030\001 \003(\0132\016.pb.trans_pair\022\021\n\tgrou"
+    "pName\030\002 \001(\t\022\025\n\tsampleIDs\030\003 \003(\rB\002\020\001\"\\\n\nPO"
+    "PINDICES\022\017\n\007nEvents\030\001 \002(\r\022\035\n\007indtype\030\002 \002"
+    "(\0162\014.pb.ind_type\022\020\n\004iInd\030\003 \003(\rB\002\020\001\022\014\n\004bI"
+    "nd\030\004 \001(\014\"\255\001\n\016nodeProperties\022\020\n\010thisName\030"
+    "\001 \002(\t\022\035\n\007fjStats\030\002 \003(\0132\014.pb.POPSTATS\022\035\n\007"
+    "fcStats\030\003 \003(\0132\014.pb.POPSTATS\022\016\n\006hidden\030\004 "
+    "\002(\010\022\037\n\007indices\030\005 \001(\0132\016.pb.POPINDICES\022\032\n\010"
+    "thisGate\030\006 \001(\0132\010.pb.gate\"=\n\ttreeNodes\022 \n"
+    "\004node\030\001 \002(\0132\022.pb.nodeProperties\022\016\n\006paren"
+    "t\030\002 \001(\r\"-\n\016populationTree\022\033\n\004node\030\001 \003(\0132"
+    "\r.pb.treeNodes\"u\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006p"
+    "refix\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001("
+    "\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tsp"
+    "illOver\030\007 \003(\002\"_\n\005PARAM\022\r\n\005param\030\001 \001(\t\022\013\n"
+    "\003log\030\002 \001(\010\022\r\n\005range\030\003 \001(\r\022\021\n\thighValue\030\004"
+    " \001(\r\022\030\n\020calibrationIndex\030\005 \001(\r\"\271\001\n\017Gatin"
+    "gHierarchy\022 \n\004tree\030\002 \002(\0132\022.pb.population"
+    "Tree\022\026\n\004comp\030\001 \001(\0132\010.pb.COMP\022\020\n\010isLoaded"
+    "\030\003 \001(\010\022\034\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005"
+    "trans\030\005 \001(\0132\017.pb.trans_local\022\034\n\005frame\030\006 "
+    "\001(\0132\r.pb.CytoFrame\"\032\n\tCytoFrame\022\r\n\005is_h5"
+    "\030\001 \002(\010\"E\n\tTRANS_TBL\022\025\n\rtrans_address\030\001 \001"
+    "(\004\022!\n\005trans\030\002 \001(\0132\022.pb.transformation\"\242\001"
+    "\n\tGatingSet\022 \n\ttrans_tbl\030\002 \003(\0132\r.pb.TRAN"
+    "S_TBL\022\022\n\nsampleName\030\001 \003(\t\022\030\n\020globalBiExp"
+    "Trans\030\003 \001(\004\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n\006g"
+    "Trans\030\005 \003(\0132\017.pb.trans_local\022\014\n\004guid\030\006 \001"
+    "(\t*\225\001\n\tGATE_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRA"
+    "NGE_GATE\020\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GAT"
+    "E\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016"
+    "ELLIPSOID_GATE\020\007\022\020\n\014CLUSTER_GATE\020\010*\'\n\010in"
+    "d_type\022\010\n\004BOOL\020\000\022\007\n\003INT\020\001\022\010\n\004ROOT\020\002*n\n\nT"
+    "RANS_TYPE\022\r\n\tPB_CALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006"
+    "PB_LIN\020\002\022\013\n\007PB_FLIN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n"
+    "\010PB_BIEXP\020\005\022\016\n\nPB_LOGICLE\020\006", 3227);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GatingSet.proto", &protobuf_RegisterTypes);
   paramRange::default_instance_ = new paramRange();
@@ -900,6 +930,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   scaleTrans::default_instance_ = new scaleTrans();
   flinTrans::default_instance_ = new flinTrans();
   logTrans::default_instance_ = new logTrans();
+  logicleTrans::default_instance_ = new logicleTrans();
   transformation::default_instance_ = new transformation();
   trans_pair::default_instance_ = new trans_pair();
   trans_local::default_instance_ = new trans_local();
@@ -930,6 +961,7 @@ void protobuf_AddDesc_GatingSet_2eproto() {
   scaleTrans::default_instance_->InitAsDefaultInstance();
   flinTrans::default_instance_->InitAsDefaultInstance();
   logTrans::default_instance_->InitAsDefaultInstance();
+  logicleTrans::default_instance_->InitAsDefaultInstance();
   transformation::default_instance_->InitAsDefaultInstance();
   trans_pair::default_instance_->InitAsDefaultInstance();
   trans_local::default_instance_->InitAsDefaultInstance();
@@ -999,6 +1031,7 @@ bool TRANS_TYPE_IsValid(int value) {
     case 3:
     case 4:
     case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -6553,6 +6586,386 @@ void logTrans::Swap(logTrans* other) {
 // ===================================================================
 
 #ifndef _MSC_VER
+const int logicleTrans::kTFieldNumber;
+const int logicleTrans::kWFieldNumber;
+const int logicleTrans::kMFieldNumber;
+const int logicleTrans::kAFieldNumber;
+const int logicleTrans::kBinsFieldNumber;
+#endif  // !_MSC_VER
+
+logicleTrans::logicleTrans()
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.logicleTrans)
+}
+
+void logicleTrans::InitAsDefaultInstance() {
+}
+
+logicleTrans::logicleTrans(const logicleTrans& from)
+  : ::google::protobuf::Message() {
+  SharedCtor();
+  MergeFrom(from);
+  // @@protoc_insertion_point(copy_constructor:pb.logicleTrans)
+}
+
+void logicleTrans::SharedCtor() {
+  _cached_size_ = 0;
+  t_ = 0;
+  w_ = 0;
+  m_ = 0;
+  a_ = 0;
+  bins_ = 0;
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+}
+
+logicleTrans::~logicleTrans() {
+  // @@protoc_insertion_point(destructor:pb.logicleTrans)
+  SharedDtor();
+}
+
+void logicleTrans::SharedDtor() {
+  if (this != default_instance_) {
+  }
+}
+
+void logicleTrans::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* logicleTrans::descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return logicleTrans_descriptor_;
+}
+
+const logicleTrans& logicleTrans::default_instance() {
+  if (default_instance_ == NULL) protobuf_AddDesc_GatingSet_2eproto();
+  return *default_instance_;
+}
+
+logicleTrans* logicleTrans::default_instance_ = NULL;
+
+logicleTrans* logicleTrans::New() const {
+  return new logicleTrans;
+}
+
+void logicleTrans::Clear() {
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<logicleTrans*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 31) {
+    ZR_(t_, bins_);
+  }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
+  ::memset(_has_bits_, 0, sizeof(_has_bits_));
+  mutable_unknown_fields()->Clear();
+}
+
+bool logicleTrans::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.logicleTrans)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoff(127);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional float T = 1;
+      case 1: {
+        if (tag == 13) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &t_)));
+          set_has_t();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(21)) goto parse_W;
+        break;
+      }
+
+      // optional float W = 2;
+      case 2: {
+        if (tag == 21) {
+         parse_W:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &w_)));
+          set_has_w();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(29)) goto parse_M;
+        break;
+      }
+
+      // optional float M = 3;
+      case 3: {
+        if (tag == 29) {
+         parse_M:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &m_)));
+          set_has_m();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(37)) goto parse_A;
+        break;
+      }
+
+      // optional float A = 4;
+      case 4: {
+        if (tag == 37) {
+         parse_A:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &a_)));
+          set_has_a();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(45)) goto parse_bins;
+        break;
+      }
+
+      // optional float bins = 5;
+      case 5: {
+        if (tag == 45) {
+         parse_bins:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &bins_)));
+          set_has_bins();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectAtEnd()) goto success;
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0 ||
+            ::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_END_GROUP) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.logicleTrans)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.logicleTrans)
+  return false;
+#undef DO_
+}
+
+void logicleTrans::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.logicleTrans)
+  // optional float T = 1;
+  if (has_t()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->t(), output);
+  }
+
+  // optional float W = 2;
+  if (has_w()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->w(), output);
+  }
+
+  // optional float M = 3;
+  if (has_m()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->m(), output);
+  }
+
+  // optional float A = 4;
+  if (has_a()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->a(), output);
+  }
+
+  // optional float bins = 5;
+  if (has_bins()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->bins(), output);
+  }
+
+  if (!unknown_fields().empty()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.logicleTrans)
+}
+
+::google::protobuf::uint8* logicleTrans::SerializeWithCachedSizesToArray(
+    ::google::protobuf::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.logicleTrans)
+  // optional float T = 1;
+  if (has_t()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->t(), target);
+  }
+
+  // optional float W = 2;
+  if (has_w()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->w(), target);
+  }
+
+  // optional float M = 3;
+  if (has_m()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->m(), target);
+  }
+
+  // optional float A = 4;
+  if (has_a()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->a(), target);
+  }
+
+  // optional float bins = 5;
+  if (has_bins()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->bins(), target);
+  }
+
+  if (!unknown_fields().empty()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.logicleTrans)
+  return target;
+}
+
+int logicleTrans::ByteSize() const {
+  int total_size = 0;
+
+  if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    // optional float T = 1;
+    if (has_t()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float W = 2;
+    if (has_w()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float M = 3;
+    if (has_m()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float A = 4;
+    if (has_a()) {
+      total_size += 1 + 4;
+    }
+
+    // optional float bins = 5;
+    if (has_bins()) {
+      total_size += 1 + 4;
+    }
+
+  }
+  if (!unknown_fields().empty()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        unknown_fields());
+  }
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = total_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void logicleTrans::MergeFrom(const ::google::protobuf::Message& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  const logicleTrans* source =
+    ::google::protobuf::internal::dynamic_cast_if_available<const logicleTrans*>(
+      &from);
+  if (source == NULL) {
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+    MergeFrom(*source);
+  }
+}
+
+void logicleTrans::MergeFrom(const logicleTrans& from) {
+  GOOGLE_CHECK_NE(&from, this);
+  if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
+    if (from.has_t()) {
+      set_t(from.t());
+    }
+    if (from.has_w()) {
+      set_w(from.w());
+    }
+    if (from.has_m()) {
+      set_m(from.m());
+    }
+    if (from.has_a()) {
+      set_a(from.a());
+    }
+    if (from.has_bins()) {
+      set_bins(from.bins());
+    }
+  }
+  mutable_unknown_fields()->MergeFrom(from.unknown_fields());
+}
+
+void logicleTrans::CopyFrom(const ::google::protobuf::Message& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void logicleTrans::CopyFrom(const logicleTrans& from) {
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool logicleTrans::IsInitialized() const {
+
+  return true;
+}
+
+void logicleTrans::Swap(logicleTrans* other) {
+  if (other != this) {
+    std::swap(t_, other->t_);
+    std::swap(w_, other->w_);
+    std::swap(m_, other->m_);
+    std::swap(a_, other->a_);
+    std::swap(bins_, other->bins_);
+    std::swap(_has_bits_[0], other->_has_bits_[0]);
+    _unknown_fields_.Swap(&other->_unknown_fields_);
+    std::swap(_cached_size_, other->_cached_size_);
+  }
+}
+
+::google::protobuf::Metadata logicleTrans::GetMetadata() const {
+  protobuf_AssignDescriptorsOnce();
+  ::google::protobuf::Metadata metadata;
+  metadata.descriptor = logicleTrans_descriptor_;
+  metadata.reflection = logicleTrans_reflection_;
+  return metadata;
+}
+
+
+// ===================================================================
+
+#ifndef _MSC_VER
 const int transformation::kCalTblFieldNumber;
 const int transformation::kIsGateOnlyFieldNumber;
 const int transformation::kNameFieldNumber;
@@ -6565,6 +6978,7 @@ const int transformation::kLtFieldNumber;
 const int transformation::kFltFieldNumber;
 const int transformation::kStFieldNumber;
 const int transformation::kFtFieldNumber;
+const int transformation::kLgtFieldNumber;
 #endif  // !_MSC_VER
 
 transformation::transformation()
@@ -6580,6 +6994,7 @@ void transformation::InitAsDefaultInstance() {
   flt_ = const_cast< ::pb::flinTrans*>(&::pb::flinTrans::default_instance());
   st_ = const_cast< ::pb::scaleTrans*>(&::pb::scaleTrans::default_instance());
   ft_ = const_cast< ::pb::fasinhTrans*>(&::pb::fasinhTrans::default_instance());
+  lgt_ = const_cast< ::pb::logicleTrans*>(&::pb::logicleTrans::default_instance());
 }
 
 transformation::transformation(const transformation& from)
@@ -6604,6 +7019,7 @@ void transformation::SharedCtor() {
   flt_ = NULL;
   st_ = NULL;
   ft_ = NULL;
+  lgt_ = NULL;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6626,6 +7042,7 @@ void transformation::SharedDtor() {
     delete flt_;
     delete st_;
     delete ft_;
+    delete lgt_;
   }
 }
 
@@ -6681,7 +7098,7 @@ void transformation::Clear() {
       if (bt_ != NULL) bt_->::pb::biexpTrans::Clear();
     }
   }
-  if (_has_bits_[8 / 32] & 3840) {
+  if (_has_bits_[8 / 32] & 7936) {
     if (has_lt()) {
       if (lt_ != NULL) lt_->::pb::logTrans::Clear();
     }
@@ -6693,6 +7110,9 @@ void transformation::Clear() {
     }
     if (has_ft()) {
       if (ft_ != NULL) ft_->::pb::fasinhTrans::Clear();
+    }
+    if (has_lgt()) {
+      if (lgt_ != NULL) lgt_->::pb::logicleTrans::Clear();
     }
   }
 
@@ -6885,6 +7305,19 @@ bool transformation::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(106)) goto parse_lgt;
+        break;
+      }
+
+      // optional .pb.logicleTrans lgt = 13;
+      case 13: {
+        if (tag == 106) {
+         parse_lgt:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_lgt()));
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -6991,6 +7424,12 @@ void transformation::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(12, this->type(), output);
   }
 
+  // optional .pb.logicleTrans lgt = 13;
+  if (has_lgt()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      13, this->lgt(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -7086,6 +7525,13 @@ void transformation::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(12, this->type(), target);
   }
 
+  // optional .pb.logicleTrans lgt = 13;
+  if (has_lgt()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteMessageNoVirtualToArray(
+        13, this->lgt(), target);
+  }
+
   if (!unknown_fields().empty()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         unknown_fields(), target);
@@ -7179,6 +7625,13 @@ int transformation::ByteSize() const {
           this->ft());
     }
 
+    // optional .pb.logicleTrans lgt = 13;
+    if (has_lgt()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->lgt());
+    }
+
   }
   if (!unknown_fields().empty()) {
     total_size +=
@@ -7244,6 +7697,9 @@ void transformation::MergeFrom(const transformation& from) {
     if (from.has_ft()) {
       mutable_ft()->::pb::fasinhTrans::MergeFrom(from.ft());
     }
+    if (from.has_lgt()) {
+      mutable_lgt()->::pb::logicleTrans::MergeFrom(from.lgt());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -7279,6 +7735,7 @@ void transformation::Swap(transformation* other) {
     std::swap(flt_, other->flt_);
     std::swap(st_, other->st_);
     std::swap(ft_, other->ft_);
+    std::swap(lgt_, other->lgt_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

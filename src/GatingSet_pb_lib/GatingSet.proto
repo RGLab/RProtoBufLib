@@ -92,6 +92,7 @@ enum TRANS_TYPE {
 		PB_FLIN = 3;
 		PB_FASIGNH = 4;
 		PB_BIEXP = 5;
+		PB_LOGICLE = 6;
 	}
 message biexpTrans{
 	optional uint32 channelRange = 1;
@@ -119,6 +120,13 @@ message logTrans{
 	optional float decade = 2;
 	optional float T = 3;
 }
+message logicleTrans{
+	optional float T = 1;
+	optional float W= 2;
+	optional float M = 3;
+	optional float A = 4;
+	optional float bins = 5;;
+}
 message transformation{
 	optional calibrationTable calTbl = 1;
 	optional bool isGateOnly = 2;
@@ -132,6 +140,7 @@ message transformation{
 	optional flinTrans flt = 9;
 	optional scaleTrans st = 10;
 	optional fasinhTrans ft = 11;
+	optional logicleTrans lgt = 13;
 }
 
 message trans_pair{
