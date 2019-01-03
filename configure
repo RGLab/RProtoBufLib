@@ -2883,7 +2883,7 @@ else
 fi;
 
 cd ${BASEPBNAME};
-./configure --enable-static=yes --with-pic=yes --enable-shared=no --prefix="${PBBUILD}" --libdir="${PBBUILD}/lib" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}" CFLAGS="${CFLAGS}"
+./configure --enable-static=no --with-pic=yes --enable-shared=yes --prefix="${PBBUILD}" --libdir="${PBBUILD}/lib" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}" CFLAGS="${CFLAGS}"
 $MAKE install
 
 cd ../../
