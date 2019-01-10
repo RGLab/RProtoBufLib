@@ -2010,6 +2010,13 @@ class logicleTrans : public ::google::protobuf::Message {
   inline float bins() const;
   inline void set_bins(float value);
 
+  // optional bool isGml2 = 6;
+  inline bool has_isgml2() const;
+  inline void clear_isgml2();
+  static const int kIsGml2FieldNumber = 6;
+  inline bool isgml2() const;
+  inline void set_isgml2(bool value);
+
   // @@protoc_insertion_point(class_scope:pb.logicleTrans)
  private:
   inline void set_has_t();
@@ -2022,6 +2029,8 @@ class logicleTrans : public ::google::protobuf::Message {
   inline void clear_has_a();
   inline void set_has_bins();
   inline void clear_has_bins();
+  inline void set_has_isgml2();
+  inline void clear_has_isgml2();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -2032,6 +2041,7 @@ class logicleTrans : public ::google::protobuf::Message {
   float m_;
   float a_;
   float bins_;
+  bool isgml2_;
   friend void  protobuf_AddDesc_GatingSet_2eproto();
   friend void protobuf_AssignDesc_GatingSet_2eproto();
   friend void protobuf_ShutdownFile_GatingSet_2eproto();
@@ -5593,6 +5603,30 @@ inline void logicleTrans::set_bins(float value) {
   set_has_bins();
   bins_ = value;
   // @@protoc_insertion_point(field_set:pb.logicleTrans.bins)
+}
+
+// optional bool isGml2 = 6;
+inline bool logicleTrans::has_isgml2() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void logicleTrans::set_has_isgml2() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void logicleTrans::clear_has_isgml2() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void logicleTrans::clear_isgml2() {
+  isgml2_ = false;
+  clear_has_isgml2();
+}
+inline bool logicleTrans::isgml2() const {
+  // @@protoc_insertion_point(field_get:pb.logicleTrans.isGml2)
+  return isgml2_;
+}
+inline void logicleTrans::set_isgml2(bool value) {
+  set_has_isgml2();
+  isgml2_ = value;
+  // @@protoc_insertion_point(field_set:pb.logicleTrans.isGml2)
 }
 
 // -------------------------------------------------------------------

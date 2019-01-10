@@ -125,7 +125,8 @@ message logicleTrans{
 	optional float W= 2;
 	optional float M = 3;
 	optional float A = 4;
-	optional float bins = 5;;
+	optional float bins = 5;
+	optional bool isGml2 = 6;
 }
 message transformation{
 	optional calibrationTable calTbl = 1;
