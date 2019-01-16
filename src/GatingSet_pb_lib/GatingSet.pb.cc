@@ -418,13 +418,14 @@ void protobuf_AssignDesc_GatingSet_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(logTrans));
   logicleTrans_descriptor_ = file->message_type(17);
-  static const int logicleTrans_offsets_[6] = {
+  static const int logicleTrans_offsets_[7] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, t_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, w_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, m_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, a_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, bins_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, isgml2_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(logicleTrans, isinverse_),
   };
   logicleTrans_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -863,56 +864,56 @@ void protobuf_AddDesc_GatingSet_2eproto() {
     "Trans\022\024\n\014scale_factor\030\001 \001(\002\"%\n\tflinTrans"
     "\022\013\n\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"5\n\010logTrans\022\016"
     "\n\006offset\030\001 \001(\002\022\016\n\006decade\030\002 \001(\002\022\t\n\001T\030\003 \001("
-    "\002\"X\n\014logicleTrans\022\t\n\001T\030\001 \001(\002\022\t\n\001W\030\002 \001(\002\022"
+    "\002\"k\n\014logicleTrans\022\t\n\001T\030\001 \001(\002\022\t\n\001W\030\002 \001(\002\022"
     "\t\n\001M\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\014\n\004bins\030\005 \001(\002\022\016\n\006i"
-    "sGml2\030\006 \001(\010\"\331\002\n\016transformation\022$\n\006calTbl"
-    "\030\001 \001(\0132\024.pb.calibrationTable\022\022\n\nisGateOn"
-    "ly\030\002 \001(\010\022\014\n\004name\030\004 \001(\t\022\017\n\007channel\030\005 \001(\t\022"
-    "\022\n\nisComputed\030\006 \001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\ntra"
-    "ns_type\030\003 \001(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007 \001("
-    "\0132\016.pb.biexpTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.logTr"
-    "ans\022\032\n\003flt\030\t \001(\0132\r.pb.flinTrans\022\032\n\002st\030\n "
-    "\001(\0132\016.pb.scaleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.fas"
-    "inhTrans\022\035\n\003lgt\030\r \001(\0132\020.pb.logicleTrans\""
-    "T\n\ntrans_pair\022\014\n\004name\030\001 \002(\t\022\025\n\rtrans_add"
-    "ress\030\002 \001(\004\022!\n\005trans\030\003 \001(\0132\022.pb.transform"
-    "ation\"S\n\013trans_local\022\032\n\002tp\030\001 \003(\0132\016.pb.tr"
-    "ans_pair\022\021\n\tgroupName\030\002 \001(\t\022\025\n\tsampleIDs"
-    "\030\003 \003(\rB\002\020\001\"\\\n\nPOPINDICES\022\017\n\007nEvents\030\001 \002("
-    "\r\022\035\n\007indtype\030\002 \002(\0162\014.pb.ind_type\022\020\n\004iInd"
-    "\030\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014\"\255\001\n\016nodePropert"
-    "ies\022\020\n\010thisName\030\001 \002(\t\022\035\n\007fjStats\030\002 \003(\0132\014"
-    ".pb.POPSTATS\022\035\n\007fcStats\030\003 \003(\0132\014.pb.POPST"
-    "ATS\022\016\n\006hidden\030\004 \002(\010\022\037\n\007indices\030\005 \001(\0132\016.p"
-    "b.POPINDICES\022\032\n\010thisGate\030\006 \001(\0132\010.pb.gate"
-    "\"=\n\ttreeNodes\022 \n\004node\030\001 \002(\0132\022.pb.nodePro"
-    "perties\022\016\n\006parent\030\002 \001(\r\"-\n\016populationTre"
-    "e\022\033\n\004node\030\001 \003(\0132\r.pb.treeNodes\"u\n\004COMP\022\013"
-    "\n\003cid\030\001 \001(\t\022\016\n\006prefix\030\002 \001(\t\022\016\n\006suffix\030\003 "
-    "\001(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006ma"
-    "rker\030\006 \003(\t\022\021\n\tspillOver\030\007 \003(\002\"_\n\005PARAM\022\r"
-    "\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001(\010\022\r\n\005range\030\003 \001("
-    "\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020calibrationIndex"
-    "\030\005 \001(\r\"\271\001\n\017GatingHierarchy\022 \n\004tree\030\002 \002(\013"
-    "2\022.pb.populationTree\022\026\n\004comp\030\001 \001(\0132\010.pb."
-    "COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034\n\ttransFlag\030\004 \003("
-    "\0132\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.trans_l"
-    "ocal\022\034\n\005frame\030\006 \001(\0132\r.pb.CytoFrame\"\032\n\tCy"
-    "toFrame\022\r\n\005is_h5\030\001 \002(\010\"E\n\tTRANS_TBL\022\025\n\rt"
-    "rans_address\030\001 \001(\004\022!\n\005trans\030\002 \001(\0132\022.pb.t"
-    "ransformation\"\242\001\n\tGatingSet\022 \n\ttrans_tbl"
-    "\030\002 \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 \003("
-    "\t\022\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalLin"
-    "Trans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\0132\017.pb.trans_l"
-    "ocal\022\014\n\004guid\030\006 \001(\t*\225\001\n\tGATE_TYPE\022\020\n\014POLY"
-    "GON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022\r\n\tBOOL_GATE\020"
-    "\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LO"
-    "GICAL_GATE\020\006\022\022\n\016ELLIPSOID_GATE\020\007\022\020\n\014CLUS"
-    "TER_GATE\020\010*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007\n\003INT\020"
-    "\001\022\010\n\004ROOT\020\002*n\n\nTRANS_TYPE\022\r\n\tPB_CALTBL\020\000"
-    "\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLIN\020\003\022\016\n"
-    "\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005\022\016\n\nPB_LOGICL"
-    "E\020\006", 3243);
+    "sGml2\030\006 \001(\010\022\021\n\tisInverse\030\007 \001(\010\"\331\002\n\016trans"
+    "formation\022$\n\006calTbl\030\001 \001(\0132\024.pb.calibrati"
+    "onTable\022\022\n\nisGateOnly\030\002 \001(\010\022\014\n\004name\030\004 \001("
+    "\t\022\017\n\007channel\030\005 \001(\t\022\022\n\nisComputed\030\006 \001(\010\022\014"
+    "\n\004type\030\014 \001(\r\022\"\n\ntrans_type\030\003 \001(\0162\016.pb.TR"
+    "ANS_TYPE\022\032\n\002bt\030\007 \001(\0132\016.pb.biexpTrans\022\030\n\002"
+    "lt\030\010 \001(\0132\014.pb.logTrans\022\032\n\003flt\030\t \001(\0132\r.pb"
+    ".flinTrans\022\032\n\002st\030\n \001(\0132\016.pb.scaleTrans\022\033"
+    "\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\022\035\n\003lgt\030\r \001(\013"
+    "2\020.pb.logicleTrans\"T\n\ntrans_pair\022\014\n\004name"
+    "\030\001 \002(\t\022\025\n\rtrans_address\030\002 \001(\004\022!\n\005trans\030\003"
+    " \001(\0132\022.pb.transformation\"S\n\013trans_local\022"
+    "\032\n\002tp\030\001 \003(\0132\016.pb.trans_pair\022\021\n\tgroupName"
+    "\030\002 \001(\t\022\025\n\tsampleIDs\030\003 \003(\rB\002\020\001\"\\\n\nPOPINDI"
+    "CES\022\017\n\007nEvents\030\001 \002(\r\022\035\n\007indtype\030\002 \002(\0162\014."
+    "pb.ind_type\022\020\n\004iInd\030\003 \003(\rB\002\020\001\022\014\n\004bInd\030\004 "
+    "\001(\014\"\255\001\n\016nodeProperties\022\020\n\010thisName\030\001 \002(\t"
+    "\022\035\n\007fjStats\030\002 \003(\0132\014.pb.POPSTATS\022\035\n\007fcSta"
+    "ts\030\003 \003(\0132\014.pb.POPSTATS\022\016\n\006hidden\030\004 \002(\010\022\037"
+    "\n\007indices\030\005 \001(\0132\016.pb.POPINDICES\022\032\n\010thisG"
+    "ate\030\006 \001(\0132\010.pb.gate\"=\n\ttreeNodes\022 \n\004node"
+    "\030\001 \002(\0132\022.pb.nodeProperties\022\016\n\006parent\030\002 \001"
+    "(\r\"-\n\016populationTree\022\033\n\004node\030\001 \003(\0132\r.pb."
+    "treeNodes\"u\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006prefix"
+    "\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\017\n\007"
+    "comment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tspillOv"
+    "er\030\007 \003(\002\"_\n\005PARAM\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030"
+    "\002 \001(\010\022\r\n\005range\030\003 \001(\r\022\021\n\thighValue\030\004 \001(\r\022"
+    "\030\n\020calibrationIndex\030\005 \001(\r\"\271\001\n\017GatingHier"
+    "archy\022 \n\004tree\030\002 \002(\0132\022.pb.populationTree\022"
+    "\026\n\004comp\030\001 \001(\0132\010.pb.COMP\022\020\n\010isLoaded\030\003 \001("
+    "\010\022\034\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005trans"
+    "\030\005 \001(\0132\017.pb.trans_local\022\034\n\005frame\030\006 \001(\0132\r"
+    ".pb.CytoFrame\"\032\n\tCytoFrame\022\r\n\005is_h5\030\001 \002("
+    "\010\"E\n\tTRANS_TBL\022\025\n\rtrans_address\030\001 \001(\004\022!\n"
+    "\005trans\030\002 \001(\0132\022.pb.transformation\"\242\001\n\tGat"
+    "ingSet\022 \n\ttrans_tbl\030\002 \003(\0132\r.pb.TRANS_TBL"
+    "\022\022\n\nsampleName\030\001 \003(\t\022\030\n\020globalBiExpTrans"
+    "\030\003 \001(\004\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n\006gTrans"
+    "\030\005 \003(\0132\017.pb.trans_local\022\014\n\004guid\030\006 \001(\t*\225\001"
+    "\n\tGATE_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRANGE_G"
+    "ATE\020\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r"
+    "\n\tRECT_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016ELLIP"
+    "SOID_GATE\020\007\022\020\n\014CLUSTER_GATE\020\010*\'\n\010ind_typ"
+    "e\022\010\n\004BOOL\020\000\022\007\n\003INT\020\001\022\010\n\004ROOT\020\002*n\n\nTRANS_"
+    "TYPE\022\r\n\tPB_CALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LI"
+    "N\020\002\022\013\n\007PB_FLIN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_B"
+    "IEXP\020\005\022\016\n\nPB_LOGICLE\020\006", 3262);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "GatingSet.proto", &protobuf_RegisterTypes);
   paramRange::default_instance_ = new paramRange();
@@ -6594,6 +6595,7 @@ const int logicleTrans::kMFieldNumber;
 const int logicleTrans::kAFieldNumber;
 const int logicleTrans::kBinsFieldNumber;
 const int logicleTrans::kIsGml2FieldNumber;
+const int logicleTrans::kIsInverseFieldNumber;
 #endif  // !_MSC_VER
 
 logicleTrans::logicleTrans()
@@ -6620,6 +6622,7 @@ void logicleTrans::SharedCtor() {
   a_ = 0;
   bins_ = 0;
   isgml2_ = false;
+  isinverse_ = false;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -6665,8 +6668,8 @@ void logicleTrans::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 63) {
-    ZR_(t_, isgml2_);
+  if (_has_bits_[0 / 32] & 127) {
+    ZR_(t_, isinverse_);
   }
 
 #undef OFFSET_OF_FIELD_
@@ -6771,6 +6774,21 @@ bool logicleTrans::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
+        if (input->ExpectTag(56)) goto parse_isInverse;
+        break;
+      }
+
+      // optional bool isInverse = 7;
+      case 7: {
+        if (tag == 56) {
+         parse_isInverse:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &isinverse_)));
+          set_has_isinverse();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectAtEnd()) goto success;
         break;
       }
@@ -6830,6 +6848,11 @@ void logicleTrans::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(6, this->isgml2(), output);
   }
 
+  // optional bool isInverse = 7;
+  if (has_isinverse()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(7, this->isinverse(), output);
+  }
+
   if (!unknown_fields().empty()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         unknown_fields(), output);
@@ -6868,6 +6891,11 @@ void logicleTrans::SerializeWithCachedSizes(
   // optional bool isGml2 = 6;
   if (has_isgml2()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(6, this->isgml2(), target);
+  }
+
+  // optional bool isInverse = 7;
+  if (has_isinverse()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(7, this->isinverse(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -6909,6 +6937,11 @@ int logicleTrans::ByteSize() const {
 
     // optional bool isGml2 = 6;
     if (has_isgml2()) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool isInverse = 7;
+    if (has_isinverse()) {
       total_size += 1 + 1;
     }
 
@@ -6957,6 +6990,9 @@ void logicleTrans::MergeFrom(const logicleTrans& from) {
     if (from.has_isgml2()) {
       set_isgml2(from.isgml2());
     }
+    if (from.has_isinverse()) {
+      set_isinverse(from.isinverse());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -6986,6 +7022,7 @@ void logicleTrans::Swap(logicleTrans* other) {
     std::swap(a_, other->a_);
     std::swap(bins_, other->bins_);
     std::swap(isgml2_, other->isgml2_);
+    std::swap(isinverse_, other->isinverse_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);

@@ -2017,6 +2017,13 @@ class logicleTrans : public ::google::protobuf::Message {
   inline bool isgml2() const;
   inline void set_isgml2(bool value);
 
+  // optional bool isInverse = 7;
+  inline bool has_isinverse() const;
+  inline void clear_isinverse();
+  static const int kIsInverseFieldNumber = 7;
+  inline bool isinverse() const;
+  inline void set_isinverse(bool value);
+
   // @@protoc_insertion_point(class_scope:pb.logicleTrans)
  private:
   inline void set_has_t();
@@ -2031,6 +2038,8 @@ class logicleTrans : public ::google::protobuf::Message {
   inline void clear_has_bins();
   inline void set_has_isgml2();
   inline void clear_has_isgml2();
+  inline void set_has_isinverse();
+  inline void clear_has_isinverse();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -2042,6 +2051,7 @@ class logicleTrans : public ::google::protobuf::Message {
   float a_;
   float bins_;
   bool isgml2_;
+  bool isinverse_;
   friend void  protobuf_AddDesc_GatingSet_2eproto();
   friend void protobuf_AssignDesc_GatingSet_2eproto();
   friend void protobuf_ShutdownFile_GatingSet_2eproto();
@@ -5627,6 +5637,30 @@ inline void logicleTrans::set_isgml2(bool value) {
   set_has_isgml2();
   isgml2_ = value;
   // @@protoc_insertion_point(field_set:pb.logicleTrans.isGml2)
+}
+
+// optional bool isInverse = 7;
+inline bool logicleTrans::has_isinverse() const {
+  return (_has_bits_[0] & 0x00000040u) != 0;
+}
+inline void logicleTrans::set_has_isinverse() {
+  _has_bits_[0] |= 0x00000040u;
+}
+inline void logicleTrans::clear_has_isinverse() {
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline void logicleTrans::clear_isinverse() {
+  isinverse_ = false;
+  clear_has_isinverse();
+}
+inline bool logicleTrans::isinverse() const {
+  // @@protoc_insertion_point(field_get:pb.logicleTrans.isInverse)
+  return isinverse_;
+}
+inline void logicleTrans::set_isinverse(bool value) {
+  set_has_isinverse();
+  isinverse_ = value;
+  // @@protoc_insertion_point(field_set:pb.logicleTrans.isInverse)
 }
 
 // -------------------------------------------------------------------
