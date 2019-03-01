@@ -4,15 +4,19 @@ USER_INCLUDE = ${R_PACKAGE_DIR}/include
 USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
 
 #expose compiled object of GatingSet pb API for cytolib to link to
-GS_LIB = GatingSet_pb_lib/GatingSet.pb.o
+GS_LIB=libGatingSet.pb${SHLIB_EXT}
+GS_LIB_DIR = GatingSet_pb_lib
 
 all: copying  
-	
+
+$(GS_LIB):
+	${SHLIB_CXXLD} ${SHLIB_CXXLDFLAGS} ${CXXPICFLAGS} ${PKG_CPPFLAGS} -o ${GS_LIB_DIR}/${GS_LIB} ${GS_LIB_DIR}/GatingSet.pb.cc
+	 	
 #copy hdf5 library headers to package include
 copying: $(GS_LIB)
 	mkdir -p "${USER_INCLUDE}"
 	cp -r @PBBUILD@/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
 	cp @PBBUILD@/lib/* ${USER_LIB_DIR}
-	cp $(GS_LIB) ${USER_LIB_DIR}/GatingSet.pb.o
+	cp ${GS_LIB_DIR}/$(GS_LIB) ${USER_LIB_DIR}/${GS_LIB}
 

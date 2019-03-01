@@ -7,12 +7,20 @@ dllInfo <- NULL
    pb <- pbLibPath()
    if (!is.null(pb)) {
       if (!file.exists(pb)) {
-         warning(paste("pb library", pb, "not found."))
+         warning(paste("libprotobuf library", pb, "not found."))
       } else {
          dllInfo <<- dyn.load(pb, local = FALSE, now = TRUE)
       }
    }
-    
+   gs <- gsLibPath()
+   if (!is.null(gs)) {
+     if (!file.exists(gs)) {
+       warning(paste("libGatingSet.pb library", gs, "not found."))
+     } else {
+       dllInfo <<- c(dllInfo, dyn.load(gs, local = FALSE, now = TRUE))
+     }
+   }
+   
    # load the package library
    # library.dynam("RProtoBufLib", pkgname, libname)
    
@@ -23,7 +31,8 @@ dllInfo <- NULL
    # unload the package library
    # library.dynam.unload("RProtoBufLib", libpath)
    
-   # unload pb if we loaded it
-   if (!is.null(dllInfo))
-      dyn.unload(dllInfo[["path"]])
+   # unload dll if we loaded it
+  for(dll in dllInfo)
+   if (!is.null(dll))
+      dyn.unload(dll[["path"]])
 }
