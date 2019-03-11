@@ -4,7 +4,7 @@ USER_INCLUDE = ${R_PACKAGE_DIR}/include
 USER_LIB_DIR = ${R_PACKAGE_DIR}/lib${R_ARCH}/
 
 #expose compiled object of GatingSet pb API for cytolib to link to
-GS_LIB=libGatingSet.pb${SHLIB_EXT}
+GS_LIB=libGatingSet.pb${DYLIB_EXT}
 GS_LIB_DIR = GatingSet_pb_lib
 
 all: copying  
