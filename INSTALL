@@ -1,7 +1,7 @@
 Windows users
 =============
 
-Instruction for cross-compiling protobuf 2.6.0 for windows (external protobuf library is not required for linux-like OS becuase it is now bundled in the package)
+Instruction for cross-compiling protobuf 3.7.0 for windows (external protobuf library is not required for linux-like OS becuase it is now bundled in the package)
 
 1. install cross-compiling tool chain on linux
 2. download the source
