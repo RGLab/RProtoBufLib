@@ -17,6 +17,6 @@ copying: $(GS_LIB)
 	mkdir -p "${USER_INCLUDE}"
 	cp -r @PBBUILD@/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
-	cp @PBBUILD@/lib/* ${USER_LIB_DIR}
+	cp @PBBUILD@/lib/libprotobuf* ${USER_LIB_DIR}
 	cp ${GS_LIB_DIR}/$(GS_LIB) ${USER_LIB_DIR}/${GS_LIB}
 
