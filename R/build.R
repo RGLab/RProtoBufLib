@@ -56,7 +56,7 @@ pbLibPath <- function(suffix = "") {
    sysname <- Sys.info()['sysname']
    pbSupported <- list(
       "Darwin" = paste("libprotobuf", suffix, ".dylib", sep = ""), 
-      "Linux" = paste("libprotobuf", suffix, ".so.9", sep = ""), 
+      "Linux" = paste("libprotobuf", suffix, ".so", sep = ""), 
       "Windows" = paste("libprotobuf", suffix, ".dll", sep = ""),
       "SunOS" = paste("libprotobuf", suffix, ".so", sep = "")
    )
