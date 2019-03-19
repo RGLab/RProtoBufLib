@@ -26,12 +26,11 @@
 #include <google/protobuf/generated_message_table_driven.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/inlined_string_field.h>
-#include <google/protobuf/metadata.h>
-#include <google/protobuf/message.h>
+#include <google/protobuf/metadata_lite.h>
+#include <google/protobuf/message_lite.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
-#include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/generated_enum_util.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto
@@ -48,7 +47,6 @@ struct TableStruct_GatingSet_2eproto {
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
 };
-void AddDescriptors_GatingSet_2eproto();
 namespace pb {
 class BOOL_GATE_OP;
 class BOOL_GATE_OPDefaultTypeInternal;
@@ -196,16 +194,6 @@ const GATE_TYPE GATE_TYPE_MIN = POLYGON_GATE;
 const GATE_TYPE GATE_TYPE_MAX = CLUSTER_GATE;
 const int GATE_TYPE_ARRAYSIZE = GATE_TYPE_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* GATE_TYPE_descriptor();
-inline const ::std::string& GATE_TYPE_Name(GATE_TYPE value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    GATE_TYPE_descriptor(), value);
-}
-inline bool GATE_TYPE_Parse(
-    const ::std::string& name, GATE_TYPE* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<GATE_TYPE>(
-    GATE_TYPE_descriptor(), name, value);
-}
 enum ind_type {
   BOOL = 0,
   INT = 1,
@@ -216,16 +204,6 @@ const ind_type ind_type_MIN = BOOL;
 const ind_type ind_type_MAX = ROOT;
 const int ind_type_ARRAYSIZE = ind_type_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* ind_type_descriptor();
-inline const ::std::string& ind_type_Name(ind_type value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    ind_type_descriptor(), value);
-}
-inline bool ind_type_Parse(
-    const ::std::string& name, ind_type* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ind_type>(
-    ind_type_descriptor(), name, value);
-}
 enum TRANS_TYPE {
   PB_CALTBL = 0,
   PB_LOG = 1,
@@ -240,20 +218,10 @@ const TRANS_TYPE TRANS_TYPE_MIN = PB_CALTBL;
 const TRANS_TYPE TRANS_TYPE_MAX = PB_LOGICLE;
 const int TRANS_TYPE_ARRAYSIZE = TRANS_TYPE_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* TRANS_TYPE_descriptor();
-inline const ::std::string& TRANS_TYPE_Name(TRANS_TYPE value) {
-  return ::google::protobuf::internal::NameOfEnum(
-    TRANS_TYPE_descriptor(), value);
-}
-inline bool TRANS_TYPE_Parse(
-    const ::std::string& name, TRANS_TYPE* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<TRANS_TYPE>(
-    TRANS_TYPE_descriptor(), name, value);
-}
 // ===================================================================
 
 class paramRange final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.paramRange) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.paramRange) */ {
  public:
   paramRange();
   virtual ~paramRange();
@@ -279,16 +247,13 @@ class paramRange final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const paramRange& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -313,8 +278,8 @@ class paramRange final :
   paramRange* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<paramRange>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const paramRange& from);
   void MergeFrom(const paramRange& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -330,14 +295,13 @@ class paramRange final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(paramRange* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -348,7 +312,7 @@ class paramRange final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -390,7 +354,7 @@ class paramRange final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr name_;
@@ -401,7 +365,7 @@ class paramRange final :
 // -------------------------------------------------------------------
 
 class rangeGate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.rangeGate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.rangeGate) */ {
  public:
   rangeGate();
   virtual ~rangeGate();
@@ -427,16 +391,13 @@ class rangeGate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const rangeGate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -461,8 +422,8 @@ class rangeGate final :
   rangeGate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<rangeGate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const rangeGate& from);
   void MergeFrom(const rangeGate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -478,14 +439,13 @@ class rangeGate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(rangeGate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -496,7 +456,7 @@ class rangeGate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -515,7 +475,7 @@ class rangeGate final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::pb::paramRange* param_;
@@ -524,7 +484,7 @@ class rangeGate final :
 // -------------------------------------------------------------------
 
 class paramPoly final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.paramPoly) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.paramPoly) */ {
  public:
   paramPoly();
   virtual ~paramPoly();
@@ -550,16 +510,13 @@ class paramPoly final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const paramPoly& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -584,8 +541,8 @@ class paramPoly final :
   paramPoly* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<paramPoly>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const paramPoly& from);
   void MergeFrom(const paramPoly& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -601,14 +558,13 @@ class paramPoly final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(paramPoly* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -619,7 +575,7 @@ class paramPoly final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -663,7 +619,7 @@ class paramPoly final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField<::std::string> params_;
@@ -673,7 +629,7 @@ class paramPoly final :
 // -------------------------------------------------------------------
 
 class polygonGate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.polygonGate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.polygonGate) */ {
  public:
   polygonGate();
   virtual ~polygonGate();
@@ -699,16 +655,13 @@ class polygonGate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const polygonGate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -733,8 +686,8 @@ class polygonGate final :
   polygonGate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<polygonGate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const polygonGate& from);
   void MergeFrom(const polygonGate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -750,14 +703,13 @@ class polygonGate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(polygonGate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -768,7 +720,7 @@ class polygonGate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -787,7 +739,7 @@ class polygonGate final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::pb::paramPoly* param_;
@@ -796,7 +748,7 @@ class polygonGate final :
 // -------------------------------------------------------------------
 
 class coordinate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.coordinate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.coordinate) */ {
  public:
   coordinate();
   virtual ~coordinate();
@@ -822,16 +774,13 @@ class coordinate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const coordinate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -856,8 +805,8 @@ class coordinate final :
   coordinate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<coordinate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const coordinate& from);
   void MergeFrom(const coordinate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -873,14 +822,13 @@ class coordinate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(coordinate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -891,7 +839,7 @@ class coordinate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -918,7 +866,7 @@ class coordinate final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   float x_;
@@ -928,7 +876,7 @@ class coordinate final :
 // -------------------------------------------------------------------
 
 class ellipseGate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.ellipseGate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.ellipseGate) */ {
  public:
   ellipseGate();
   virtual ~ellipseGate();
@@ -954,16 +902,13 @@ class ellipseGate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const ellipseGate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -988,8 +933,8 @@ class ellipseGate final :
   ellipseGate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<ellipseGate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const ellipseGate& from);
   void MergeFrom(const ellipseGate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1005,14 +950,13 @@ class ellipseGate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(ellipseGate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1023,7 +967,7 @@ class ellipseGate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1073,7 +1017,7 @@ class ellipseGate final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::pb::coordinate > cov_;
@@ -1085,7 +1029,7 @@ class ellipseGate final :
 // -------------------------------------------------------------------
 
 class BOOL_GATE_OP final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.BOOL_GATE_OP) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.BOOL_GATE_OP) */ {
  public:
   BOOL_GATE_OP();
   virtual ~BOOL_GATE_OP();
@@ -1111,16 +1055,13 @@ class BOOL_GATE_OP final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const BOOL_GATE_OP& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1145,8 +1086,8 @@ class BOOL_GATE_OP final :
   BOOL_GATE_OP* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<BOOL_GATE_OP>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const BOOL_GATE_OP& from);
   void MergeFrom(const BOOL_GATE_OP& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1162,14 +1103,13 @@ class BOOL_GATE_OP final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(BOOL_GATE_OP* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1180,7 +1120,7 @@ class BOOL_GATE_OP final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1229,7 +1169,7 @@ class BOOL_GATE_OP final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField<::std::string> path_;
@@ -1240,7 +1180,7 @@ class BOOL_GATE_OP final :
 // -------------------------------------------------------------------
 
 class boolGate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.boolGate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.boolGate) */ {
  public:
   boolGate();
   virtual ~boolGate();
@@ -1266,16 +1206,13 @@ class boolGate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const boolGate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1300,8 +1237,8 @@ class boolGate final :
   boolGate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<boolGate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const boolGate& from);
   void MergeFrom(const boolGate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1317,14 +1254,13 @@ class boolGate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(boolGate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1335,7 +1271,7 @@ class boolGate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1357,7 +1293,7 @@ class boolGate final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::pb::BOOL_GATE_OP > boolopspec_;
@@ -1366,7 +1302,7 @@ class boolGate final :
 // -------------------------------------------------------------------
 
 class clusterGate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.clusterGate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.clusterGate) */ {
  public:
   clusterGate();
   virtual ~clusterGate();
@@ -1392,16 +1328,13 @@ class clusterGate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const clusterGate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1426,8 +1359,8 @@ class clusterGate final :
   clusterGate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<clusterGate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const clusterGate& from);
   void MergeFrom(const clusterGate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1443,14 +1376,13 @@ class clusterGate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(clusterGate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1461,7 +1393,7 @@ class clusterGate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1486,7 +1418,7 @@ class clusterGate final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr cluster_method_;
@@ -1495,7 +1427,7 @@ class clusterGate final :
 // -------------------------------------------------------------------
 
 class gate final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.gate) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.gate) */ {
  public:
   gate();
   virtual ~gate();
@@ -1521,16 +1453,13 @@ class gate final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const gate& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1555,8 +1484,8 @@ class gate final :
   gate* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<gate>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const gate& from);
   void MergeFrom(const gate& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1572,14 +1501,13 @@ class gate final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(gate* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1590,7 +1518,7 @@ class gate final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1676,7 +1604,7 @@ class gate final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::pb::rangeGate* rg_;
@@ -1693,7 +1621,7 @@ class gate final :
 // -------------------------------------------------------------------
 
 class POPSTATS final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.POPSTATS) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.POPSTATS) */ {
  public:
   POPSTATS();
   virtual ~POPSTATS();
@@ -1719,16 +1647,13 @@ class POPSTATS final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const POPSTATS& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1753,8 +1678,8 @@ class POPSTATS final :
   POPSTATS* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<POPSTATS>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const POPSTATS& from);
   void MergeFrom(const POPSTATS& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1770,14 +1695,13 @@ class POPSTATS final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(POPSTATS* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1788,7 +1712,7 @@ class POPSTATS final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -1823,7 +1747,7 @@ class POPSTATS final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr stattype_;
@@ -1833,7 +1757,7 @@ class POPSTATS final :
 // -------------------------------------------------------------------
 
 class calibrationTable final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.calibrationTable) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.calibrationTable) */ {
  public:
   calibrationTable();
   virtual ~calibrationTable();
@@ -1859,16 +1783,13 @@ class calibrationTable final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const calibrationTable& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -1893,8 +1814,8 @@ class calibrationTable final :
   calibrationTable* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<calibrationTable>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const calibrationTable& from);
   void MergeFrom(const calibrationTable& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -1910,14 +1831,13 @@ class calibrationTable final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(calibrationTable* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -1928,7 +1848,7 @@ class calibrationTable final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2027,7 +1947,7 @@ class calibrationTable final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedField< float > x_;
@@ -2048,7 +1968,7 @@ class calibrationTable final :
 // -------------------------------------------------------------------
 
 class biexpTrans final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.biexpTrans) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.biexpTrans) */ {
  public:
   biexpTrans();
   virtual ~biexpTrans();
@@ -2074,16 +1994,13 @@ class biexpTrans final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const biexpTrans& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2108,8 +2025,8 @@ class biexpTrans final :
   biexpTrans* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<biexpTrans>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const biexpTrans& from);
   void MergeFrom(const biexpTrans& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2125,14 +2042,13 @@ class biexpTrans final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(biexpTrans* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -2143,7 +2059,7 @@ class biexpTrans final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2188,7 +2104,7 @@ class biexpTrans final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::uint32 channelrange_;
@@ -2201,7 +2117,7 @@ class biexpTrans final :
 // -------------------------------------------------------------------
 
 class fasinhTrans final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.fasinhTrans) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.fasinhTrans) */ {
  public:
   fasinhTrans();
   virtual ~fasinhTrans();
@@ -2227,16 +2143,13 @@ class fasinhTrans final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const fasinhTrans& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2261,8 +2174,8 @@ class fasinhTrans final :
   fasinhTrans* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<fasinhTrans>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const fasinhTrans& from);
   void MergeFrom(const fasinhTrans& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2278,14 +2191,13 @@ class fasinhTrans final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(fasinhTrans* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -2296,7 +2208,7 @@ class fasinhTrans final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2341,7 +2253,7 @@ class fasinhTrans final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   float length_;
@@ -2354,7 +2266,7 @@ class fasinhTrans final :
 // -------------------------------------------------------------------
 
 class scaleTrans final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.scaleTrans) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.scaleTrans) */ {
  public:
   scaleTrans();
   virtual ~scaleTrans();
@@ -2380,16 +2292,13 @@ class scaleTrans final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const scaleTrans& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2414,8 +2323,8 @@ class scaleTrans final :
   scaleTrans* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<scaleTrans>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const scaleTrans& from);
   void MergeFrom(const scaleTrans& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2431,14 +2340,13 @@ class scaleTrans final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(scaleTrans* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -2449,7 +2357,7 @@ class scaleTrans final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2466,7 +2374,7 @@ class scaleTrans final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   float scale_factor_;
@@ -2475,7 +2383,7 @@ class scaleTrans final :
 // -------------------------------------------------------------------
 
 class flinTrans final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.flinTrans) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.flinTrans) */ {
  public:
   flinTrans();
   virtual ~flinTrans();
@@ -2501,16 +2409,13 @@ class flinTrans final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const flinTrans& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2535,8 +2440,8 @@ class flinTrans final :
   flinTrans* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<flinTrans>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const flinTrans& from);
   void MergeFrom(const flinTrans& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2552,14 +2457,13 @@ class flinTrans final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(flinTrans* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -2570,7 +2474,7 @@ class flinTrans final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2594,7 +2498,7 @@ class flinTrans final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   float min_;
@@ -2604,7 +2508,7 @@ class flinTrans final :
 // -------------------------------------------------------------------
 
 class logTrans final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.logTrans) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.logTrans) */ {
  public:
   logTrans();
   virtual ~logTrans();
@@ -2630,16 +2534,13 @@ class logTrans final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const logTrans& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2664,8 +2565,8 @@ class logTrans final :
   logTrans* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<logTrans>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const logTrans& from);
   void MergeFrom(const logTrans& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2681,14 +2582,13 @@ class logTrans final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(logTrans* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -2699,7 +2599,7 @@ class logTrans final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2730,7 +2630,7 @@ class logTrans final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   float offset_;
@@ -2741,7 +2641,7 @@ class logTrans final :
 // -------------------------------------------------------------------
 
 class logicleTrans final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.logicleTrans) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.logicleTrans) */ {
  public:
   logicleTrans();
   virtual ~logicleTrans();
@@ -2767,16 +2667,13 @@ class logicleTrans final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const logicleTrans& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2801,8 +2698,8 @@ class logicleTrans final :
   logicleTrans* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<logicleTrans>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const logicleTrans& from);
   void MergeFrom(const logicleTrans& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2818,14 +2715,13 @@ class logicleTrans final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(logicleTrans* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -2836,7 +2732,7 @@ class logicleTrans final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -2895,7 +2791,7 @@ class logicleTrans final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   float t_;
@@ -2910,7 +2806,7 @@ class logicleTrans final :
 // -------------------------------------------------------------------
 
 class transformation final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.transformation) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.transformation) */ {
  public:
   transformation();
   virtual ~transformation();
@@ -2936,16 +2832,13 @@ class transformation final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const transformation& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -2970,8 +2863,8 @@ class transformation final :
   transformation* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<transformation>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const transformation& from);
   void MergeFrom(const transformation& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -2987,14 +2880,13 @@ class transformation final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(transformation* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -3005,7 +2897,7 @@ class transformation final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -3136,7 +3028,7 @@ class transformation final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr name_;
@@ -3157,7 +3049,7 @@ class transformation final :
 // -------------------------------------------------------------------
 
 class trans_pair final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.trans_pair) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.trans_pair) */ {
  public:
   trans_pair();
   virtual ~trans_pair();
@@ -3183,16 +3075,13 @@ class trans_pair final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const trans_pair& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -3217,8 +3106,8 @@ class trans_pair final :
   trans_pair* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<trans_pair>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const trans_pair& from);
   void MergeFrom(const trans_pair& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -3234,14 +3123,13 @@ class trans_pair final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(trans_pair* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -3252,7 +3140,7 @@ class trans_pair final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -3293,7 +3181,7 @@ class trans_pair final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr name_;
@@ -3304,7 +3192,7 @@ class trans_pair final :
 // -------------------------------------------------------------------
 
 class trans_local final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.trans_local) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.trans_local) */ {
  public:
   trans_local();
   virtual ~trans_local();
@@ -3330,16 +3218,13 @@ class trans_local final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const trans_local& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -3364,8 +3249,8 @@ class trans_local final :
   trans_local* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<trans_local>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const trans_local& from);
   void MergeFrom(const trans_local& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -3381,14 +3266,13 @@ class trans_local final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(trans_local* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -3399,7 +3283,7 @@ class trans_local final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -3448,7 +3332,7 @@ class trans_local final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::pb::trans_pair > tp_;
@@ -3460,7 +3344,7 @@ class trans_local final :
 // -------------------------------------------------------------------
 
 class POPINDICES final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.POPINDICES) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.POPINDICES) */ {
  public:
   POPINDICES();
   virtual ~POPINDICES();
@@ -3486,16 +3370,13 @@ class POPINDICES final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const POPINDICES& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -3520,8 +3401,8 @@ class POPINDICES final :
   POPINDICES* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<POPINDICES>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const POPINDICES& from);
   void MergeFrom(const POPINDICES& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -3537,14 +3418,13 @@ class POPINDICES final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(POPINDICES* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -3555,7 +3435,7 @@ class POPINDICES final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -3609,7 +3489,7 @@ class POPINDICES final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > iind_;
@@ -3622,7 +3502,7 @@ class POPINDICES final :
 // -------------------------------------------------------------------
 
 class nodeProperties final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.nodeProperties) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.nodeProperties) */ {
  public:
   nodeProperties();
   virtual ~nodeProperties();
@@ -3648,16 +3528,13 @@ class nodeProperties final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const nodeProperties& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -3682,8 +3559,8 @@ class nodeProperties final :
   nodeProperties* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<nodeProperties>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const nodeProperties& from);
   void MergeFrom(const nodeProperties& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -3699,14 +3576,13 @@ class nodeProperties final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(nodeProperties* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -3717,7 +3593,7 @@ class nodeProperties final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -3794,7 +3670,7 @@ class nodeProperties final :
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::pb::POPSTATS > fjstats_;
@@ -3808,7 +3684,7 @@ class nodeProperties final :
 // -------------------------------------------------------------------
 
 class treeNodes final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.treeNodes) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.treeNodes) */ {
  public:
   treeNodes();
   virtual ~treeNodes();
@@ -3834,16 +3710,13 @@ class treeNodes final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const treeNodes& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -3868,8 +3741,8 @@ class treeNodes final :
   treeNodes* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<treeNodes>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const treeNodes& from);
   void MergeFrom(const treeNodes& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -3885,14 +3758,13 @@ class treeNodes final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(treeNodes* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -3903,7 +3775,7 @@ class treeNodes final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -3929,7 +3801,7 @@ class treeNodes final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::pb::nodeProperties* node_;
@@ -3939,7 +3811,7 @@ class treeNodes final :
 // -------------------------------------------------------------------
 
 class populationTree final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.populationTree) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.populationTree) */ {
  public:
   populationTree();
   virtual ~populationTree();
@@ -3965,16 +3837,13 @@ class populationTree final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const populationTree& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -3999,8 +3868,8 @@ class populationTree final :
   populationTree* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<populationTree>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const populationTree& from);
   void MergeFrom(const populationTree& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4016,14 +3885,13 @@ class populationTree final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(populationTree* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4034,7 +3902,7 @@ class populationTree final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -4056,7 +3924,7 @@ class populationTree final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::pb::treeNodes > node_;
@@ -4065,7 +3933,7 @@ class populationTree final :
 // -------------------------------------------------------------------
 
 class COMP final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.COMP) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.COMP) */ {
  public:
   COMP();
   virtual ~COMP();
@@ -4091,16 +3959,13 @@ class COMP final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const COMP& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -4125,8 +3990,8 @@ class COMP final :
   COMP* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<COMP>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const COMP& from);
   void MergeFrom(const COMP& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4142,14 +4007,13 @@ class COMP final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(COMP* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4160,7 +4024,7 @@ class COMP final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -4279,7 +4143,7 @@ class COMP final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField<::std::string> marker_;
@@ -4294,7 +4158,7 @@ class COMP final :
 // -------------------------------------------------------------------
 
 class PARAM final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.PARAM) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.PARAM) */ {
  public:
   PARAM();
   virtual ~PARAM();
@@ -4320,16 +4184,13 @@ class PARAM final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const PARAM& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -4354,8 +4215,8 @@ class PARAM final :
   PARAM* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<PARAM>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const PARAM& from);
   void MergeFrom(const PARAM& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4371,14 +4232,13 @@ class PARAM final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(PARAM* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4389,7 +4249,7 @@ class PARAM final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -4442,7 +4302,7 @@ class PARAM final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::internal::ArenaStringPtr param_;
@@ -4455,7 +4315,7 @@ class PARAM final :
 // -------------------------------------------------------------------
 
 class GatingHierarchy final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.GatingHierarchy) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.GatingHierarchy) */ {
  public:
   GatingHierarchy();
   virtual ~GatingHierarchy();
@@ -4481,16 +4341,13 @@ class GatingHierarchy final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const GatingHierarchy& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -4515,8 +4372,8 @@ class GatingHierarchy final :
   GatingHierarchy* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<GatingHierarchy>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const GatingHierarchy& from);
   void MergeFrom(const GatingHierarchy& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4532,14 +4389,13 @@ class GatingHierarchy final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(GatingHierarchy* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4550,7 +4406,7 @@ class GatingHierarchy final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -4615,7 +4471,7 @@ class GatingHierarchy final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::pb::PARAM > transflag_;
@@ -4629,7 +4485,7 @@ class GatingHierarchy final :
 // -------------------------------------------------------------------
 
 class CytoFrame final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.CytoFrame) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.CytoFrame) */ {
  public:
   CytoFrame();
   virtual ~CytoFrame();
@@ -4655,16 +4511,13 @@ class CytoFrame final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const CytoFrame& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -4689,8 +4542,8 @@ class CytoFrame final :
   CytoFrame* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<CytoFrame>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const CytoFrame& from);
   void MergeFrom(const CytoFrame& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4706,14 +4559,13 @@ class CytoFrame final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(CytoFrame* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4724,7 +4576,7 @@ class CytoFrame final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -4741,7 +4593,7 @@ class CytoFrame final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   bool is_h5_;
@@ -4750,7 +4602,7 @@ class CytoFrame final :
 // -------------------------------------------------------------------
 
 class TRANS_TBL final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.TRANS_TBL) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.TRANS_TBL) */ {
  public:
   TRANS_TBL();
   virtual ~TRANS_TBL();
@@ -4776,16 +4628,13 @@ class TRANS_TBL final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const TRANS_TBL& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -4810,8 +4659,8 @@ class TRANS_TBL final :
   TRANS_TBL* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<TRANS_TBL>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const TRANS_TBL& from);
   void MergeFrom(const TRANS_TBL& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4827,14 +4676,13 @@ class TRANS_TBL final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(TRANS_TBL* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4845,7 +4693,7 @@ class TRANS_TBL final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -4871,7 +4719,7 @@ class TRANS_TBL final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::pb::transformation* trans_;
@@ -4881,7 +4729,7 @@ class TRANS_TBL final :
 // -------------------------------------------------------------------
 
 class GatingSet final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.GatingSet) */ {
+    public ::google::protobuf::MessageLite /* @@protoc_insertion_point(class_definition:pb.GatingSet) */ {
  public:
   GatingSet();
   virtual ~GatingSet();
@@ -4907,16 +4755,13 @@ class GatingSet final :
     return *this;
   }
   #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+  inline const ::std::string& unknown_fields() const {
     return _internal_metadata_.unknown_fields();
   }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+  inline ::std::string* mutable_unknown_fields() {
     return _internal_metadata_.mutable_unknown_fields();
   }
 
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return default_instance().GetDescriptor();
-  }
   static const GatingSet& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
@@ -4941,8 +4786,8 @@ class GatingSet final :
   GatingSet* New(::google::protobuf::Arena* arena) const final {
     return CreateMaybeMessage<GatingSet>(arena);
   }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CheckTypeAndMergeFrom(const ::google::protobuf::MessageLite& from)
+    final;
   void CopyFrom(const GatingSet& from);
   void MergeFrom(const GatingSet& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
@@ -4958,14 +4803,13 @@ class GatingSet final :
   #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
   void SerializeWithCachedSizes(
       ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      ::google::protobuf::uint8* target) const final;
+  void DiscardUnknownFields();
   int GetCachedSize() const final { return _cached_size_.Get(); }
 
   private:
   void SharedCtor();
   void SharedDtor();
-  void SetCachedSize(int size) const final;
+  void SetCachedSize(int size) const;
   void InternalSwap(GatingSet* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
@@ -4976,7 +4820,7 @@ class GatingSet final :
   }
   public:
 
-  ::google::protobuf::Metadata GetMetadata() const final;
+  ::std::string GetTypeName() const final;
 
   // nested types ----------------------------------------------------
 
@@ -5061,7 +4905,7 @@ class GatingSet final :
  private:
   class HasBitSetters;
 
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::InternalMetadataWithArenaLite _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField<::std::string> samplename_;
@@ -9310,20 +9154,8 @@ namespace google {
 namespace protobuf {
 
 template <> struct is_proto_enum< ::pb::GATE_TYPE> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::GATE_TYPE>() {
-  return ::pb::GATE_TYPE_descriptor();
-}
 template <> struct is_proto_enum< ::pb::ind_type> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::ind_type>() {
-  return ::pb::ind_type_descriptor();
-}
 template <> struct is_proto_enum< ::pb::TRANS_TYPE> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::pb::TRANS_TYPE>() {
-  return ::pb::TRANS_TYPE_descriptor();
-}
 
 }  // namespace protobuf
 }  // namespace google
