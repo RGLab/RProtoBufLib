@@ -36,13 +36,16 @@ pbCxxFlags <- function() {
 }
 
 # Return the linker flags requried for pb on this platform
-pbLdFlags <- function(all = TRUE) {
+pbLdFlags <- function() {
+	lite = TRUE
 # gslibs <- system.file(file.path("lib", "GatingSet.pb.o"), package = "RProtoBufLib")
    # on Windows and Solaris we need to explicitly link against pb.dll
    if ((Sys.info()['sysname'] %in% c("Windows", "SunOS")) && !isSparc()) {
-      pb <- pbLibPath()
+	  suffix <- ifelse(lite, "-lite", "")
+	  pb <- pbLibPath(suffix)
       gs <- gsLibPath()
-      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -lprotobuf -lGatingSet.pb", sep = "")
+	  pblib <- ifelse(lite, "protobuf-lite", "protobuf")
+      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -l", pblib, " -lGatingSet.pb", sep = "")
    } else {
      res <- ""
    }
