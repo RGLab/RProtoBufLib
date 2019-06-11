@@ -2626,6 +2626,13 @@ class logTrans final :
   float t() const;
   void set_t(float value);
 
+  // optional float scale = 4;
+  bool has_scale() const;
+  void clear_scale();
+  static const int kScaleFieldNumber = 4;
+  float scale() const;
+  void set_scale(float value);
+
   // @@protoc_insertion_point(class_scope:pb.logTrans)
  private:
   class HasBitSetters;
@@ -2636,6 +2643,7 @@ class logTrans final :
   float offset_;
   float decade_;
   float t_;
+  float scale_;
   friend struct ::TableStruct_GatingSet_2eproto;
 };
 // -------------------------------------------------------------------
@@ -6570,6 +6578,24 @@ inline void logTrans::set_t(float value) {
   _has_bits_[0] |= 0x00000004u;
   t_ = value;
   // @@protoc_insertion_point(field_set:pb.logTrans.T)
+}
+
+// optional float scale = 4;
+inline bool logTrans::has_scale() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void logTrans::clear_scale() {
+  scale_ = 0;
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline float logTrans::scale() const {
+  // @@protoc_insertion_point(field_get:pb.logTrans.scale)
+  return scale_;
+}
+inline void logTrans::set_scale(float value) {
+  _has_bits_[0] |= 0x00000008u;
+  scale_ = value;
+  // @@protoc_insertion_point(field_set:pb.logTrans.scale)
 }
 
 // -------------------------------------------------------------------

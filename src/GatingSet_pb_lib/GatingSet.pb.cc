@@ -6483,12 +6483,16 @@ class logTrans::HasBitSetters {
   static void set_has_t(logTrans* msg) {
     msg->_has_bits_[0] |= 0x00000004u;
   }
+  static void set_has_scale(logTrans* msg) {
+    msg->_has_bits_[0] |= 0x00000008u;
+  }
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int logTrans::kOffsetFieldNumber;
 const int logTrans::kDecadeFieldNumber;
 const int logTrans::kTFieldNumber;
+const int logTrans::kScaleFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 logTrans::logTrans()
@@ -6502,15 +6506,15 @@ logTrans::logTrans(const logTrans& from)
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&offset_, &from.offset_,
-    static_cast<size_t>(reinterpret_cast<char*>(&t_) -
-    reinterpret_cast<char*>(&offset_)) + sizeof(t_));
+    static_cast<size_t>(reinterpret_cast<char*>(&scale_) -
+    reinterpret_cast<char*>(&offset_)) + sizeof(scale_));
   // @@protoc_insertion_point(copy_constructor:pb.logTrans)
 }
 
 void logTrans::SharedCtor() {
   ::memset(&offset_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&t_) -
-      reinterpret_cast<char*>(&offset_)) + sizeof(t_));
+      reinterpret_cast<char*>(&scale_) -
+      reinterpret_cast<char*>(&offset_)) + sizeof(scale_));
 }
 
 logTrans::~logTrans() {
@@ -6537,10 +6541,10 @@ void logTrans::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     ::memset(&offset_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&t_) -
-        reinterpret_cast<char*>(&offset_)) + sizeof(t_));
+        reinterpret_cast<char*>(&scale_) -
+        reinterpret_cast<char*>(&offset_)) + sizeof(scale_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
@@ -6577,6 +6581,13 @@ const char* logTrans::_InternalParse(const char* begin, const char* end, void* o
       case 3: {
         if (static_cast<::google::protobuf::uint8>(tag) != 29) goto handle_unusual;
         msg->set_t(::google::protobuf::io::UnalignedLoad<float>(ptr));
+        ptr += sizeof(float);
+        break;
+      }
+      // optional float scale = 4;
+      case 4: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 37) goto handle_unusual;
+        msg->set_scale(::google::protobuf::io::UnalignedLoad<float>(ptr));
         ptr += sizeof(float);
         break;
       }
@@ -6652,6 +6663,19 @@ bool logTrans::MergePartialFromCodedStream(
         break;
       }
 
+      // optional float scale = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (37 & 0xFF)) {
+          HasBitSetters::set_has_scale(this);
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &scale_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6695,6 +6719,11 @@ void logTrans::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->t(), output);
   }
 
+  // optional float scale = 4;
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->scale(), output);
+  }
+
   output->WriteRaw(_internal_metadata_.unknown_fields().data(),
                    static_cast<int>(_internal_metadata_.unknown_fields().size()));
   // @@protoc_insertion_point(serialize_end:pb.logTrans)
@@ -6711,7 +6740,7 @@ size_t logTrans::ByteSizeLong() const {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     // optional float offset = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 + 4;
@@ -6724,6 +6753,11 @@ size_t logTrans::ByteSizeLong() const {
 
     // optional float T = 3;
     if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 4;
+    }
+
+    // optional float scale = 4;
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 + 4;
     }
 
@@ -6746,7 +6780,7 @@ void logTrans::MergeFrom(const logTrans& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
       offset_ = from.offset_;
     }
@@ -6755,6 +6789,9 @@ void logTrans::MergeFrom(const logTrans& from) {
     }
     if (cached_has_bits & 0x00000004u) {
       t_ = from.t_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      scale_ = from.scale_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -6782,6 +6819,7 @@ void logTrans::InternalSwap(logTrans* other) {
   swap(offset_, other->offset_);
   swap(decade_, other->decade_);
   swap(t_, other->t_);
+  swap(scale_, other->scale_);
 }
 
 ::std::string logTrans::GetTypeName() const {

@@ -120,7 +120,8 @@ message logTrans{
 	optional float offset = 1;
 	optional float decade = 2;
 	optional float T = 3;
-}
+	optional float scale = 4;
+	}
 message logicleTrans{
 	optional float T = 1;
 	optional float W= 2;
