@@ -45,7 +45,7 @@ pbLdFlags <- function() {
 	  pb <- pbLibPath(suffix)
       gs <- gsLibPath()
 	  pblib <- ifelse(lite, "protobuf-lite", "protobuf")
-      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -l", pblib, " -lGatingSet.pb", sep = "")
+      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -l", pblib, sep = "")
    } else {
      res <- ""
    }
@@ -74,25 +74,7 @@ pbLibPath <- function(suffix = "") {
       NULL
    }
 }
-gsLibPath <- function(suffix = "") {
-  sysname <- Sys.info()['sysname']
-  pbSupported <- list(
-    "Darwin" = paste("libGatingSet.pb", suffix, ".dylib", sep = ""), 
-    "Linux" = paste("libGatingSet.pb", suffix, ".so", sep = ""), 
-    "Windows" = paste("libGatingSet.pb", suffix, ".dll", sep = ""),
-    "SunOS" = paste("libGatingSet.pb", suffix, ".so", sep = "")
-  )
-  # browser()
-  if ((sysname %in% names(pbSupported)) && !isSparc()) {
-    libDir <- "lib/"
-    if (sysname == "Windows")
-      libDir <- paste(libDir, .Platform$r_arch, "/", sep="")
-    system.file(paste(libDir, pbSupported[[sysname]], sep = ""), 
-                package = "RProtoBufLib")
-  } else {
-    NULL
-  }
-}
+
 
 isSparc <- function() {
    Sys.info()['sysname'] == "SunOS" && Sys.info()[["machine"]] != "i86pc"

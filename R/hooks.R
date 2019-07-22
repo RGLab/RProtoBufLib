@@ -12,14 +12,6 @@ dllInfo <- NULL
          dllInfo <<- dyn.load(pb, local = FALSE, now = TRUE)
       }
    }
-   gs <- gsLibPath()
-   if (!is.null(gs)) {
-     if (!file.exists(gs)) {
-       warning(paste("libGatingSet.pb library", gs, "not found."))
-     } else {
-       dllInfo <<- c(dllInfo, dyn.load(gs, local = FALSE, now = TRUE))
-     }
-   }
    
    # load the package library
    # library.dynam("RProtoBufLib", pkgname, libname)
