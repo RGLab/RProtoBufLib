@@ -25,14 +25,14 @@ AC_PROG_CC
 AC_PROG_CXX
 
 #untar the lib
-BASEPBNAME="protobuf-2.6.0"
-PBTGZNAME=${BASEPBNAME}.tgz
+BASEPBNAME="protobuf-3.7.0"
+PBTGZNAME=${BASEPBNAME}.tar.xz
 cd src
 if test -d ./${BASEPBNAME}; then 
 	echo 'found ' $BASEPBNAME ' header sources and tar archive;using what is there.'
 else
 	echo "untarring protobuf ...";
-	gunzip -dc ${PBTGZNAME} | tar xf -;
+	tar xf ${PBTGZNAME}
 fi;
 
 #run this bootstrap script to update all the gnu auto build files (e.g.  automake symlinked fils (e.g. ./compile), alocal.m4,etc... )		
@@ -51,7 +51,7 @@ else
 fi;
 
 cd ${BASEPBNAME};
-./configure --enable-static=yes --with-pic=yes --enable-shared=no --prefix="${PBBUILD}" --libdir="${PBBUILD}/lib" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}" CFLAGS="${CFLAGS}"
+./configure --enable-static=no --with-pic=yes --enable-shared=yes --prefix="${PBBUILD}" --libdir="${PBBUILD}/lib" CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}" CFLAGS="${CFLAGS}"
 $MAKE install 
 
 cd ../../
