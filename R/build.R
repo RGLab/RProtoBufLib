@@ -43,8 +43,7 @@ pbLdFlags <- function() {
    if ((Sys.info()['sysname'] %in% c("Windows", "SunOS")) && !isSparc()) {
 	  suffix <- ifelse(lite, "-lite", "")
 	  pb <- pbLibPath(suffix)
-	  pblib <- ifelse(lite, "protobuf-lite", "protobuf")
-      res <- paste("-L", asBuildPath(dirname(pb)), " -l", pblib, sep = "")
+      res <- asBuildPath(dirname(pb))
    } else {
      res <- ""
    }
