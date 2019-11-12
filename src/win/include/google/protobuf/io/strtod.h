@@ -1,6 +1,6 @@
 // Protocol Buffers - Google's data interchange format
 // Copyright 2008 Google Inc.  All rights reserved.
-// http://code.google.com/p/protobuf/
+// https://developers.google.com/protocol-buffers/
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -43,8 +43,13 @@ namespace io {
 // uses a dot as the decimal separator.
 double NoLocaleStrtod(const char* str, char** endptr);
 
+// Casts a double value to a float value. If the value is outside of the
+// representable range of float, it will be converted to positive or negative
+// infinity.
+float SafeDoubleToFloat(double value);
+
 }  // namespace io
 }  // namespace protobuf
-
 }  // namespace google
+
 #endif  // GOOGLE_PROTOBUF_IO_STRTOD_H__

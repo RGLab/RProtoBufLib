@@ -59,7 +59,7 @@ pbLibPath <- function(suffix = "") {
    pbSupported <- list(
       "Darwin" = paste("libprotobuf", suffix, ".dylib", sep = ""), 
       "Linux" = paste("libprotobuf", suffix, ".so", sep = ""), 
-      "Windows" = paste("libprotobuf", suffix, ".dll", sep = ""),
+      "Windows" = paste("libprotobuf", suffix, ".a", sep = ""),
       "SunOS" = paste("libprotobuf", suffix, ".so", sep = "")
    )
    # browser()
