@@ -43,9 +43,7 @@ pbLdFlags <- function() {
    if ((Sys.info()['sysname'] %in% c("Windows", "SunOS")) && !isSparc()) {
 	  suffix <- ifelse(lite, "-lite", "")
 	  pb <- pbLibPath(suffix)
-      gs <- gsLibPath()
-	  pblib <- ifelse(lite, "protobuf-lite", "protobuf")
-      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -l", pblib, sep = "")
+      res <- asBuildPath(pb)
    } else {
      res <- ""
    }
@@ -60,7 +58,7 @@ pbLibPath <- function(suffix = "") {
    pbSupported <- list(
       "Darwin" = paste("libprotobuf", suffix, ".dylib", sep = ""), 
       "Linux" = paste("libprotobuf", suffix, ".so", sep = ""), 
-      "Windows" = paste("libprotobuf", suffix, ".dll", sep = ""),
+      "Windows" = paste("libprotobuf", suffix, ".a", sep = ""),
       "SunOS" = paste("libprotobuf", suffix, ".so", sep = "")
    )
    # browser()

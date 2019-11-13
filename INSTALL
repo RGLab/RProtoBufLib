@@ -7,12 +7,9 @@ Instruction for cross-compiling protobuf 3.7.0 for windows (external protobuf li
 2. download the source
 2. first install protobuf on local linux (so that 'protoc' command is available for cross compiling later on
 3. the run configure script for win64:
-configure --host=x86_64-w64-mingw32 --prefix=/your_path/protobuf/x64 --enable-shared=no --with-protoc=protoc LDFLAGS='-static-libgcc'
+configure --host=x86_64-w64-mingw32 --prefix=/your_path/protobuf/x64 --enable-shared=no --with-protoc=protoc LDFLAGS='-static-libgcc' CXXFLAGS=-DHAVE_PTHREAD=1
 4. then run make and make install
-5. for win32:
-configure --host=i686-w64-mingw32 --prefix=/your_path/protobuf/i386 --enable-shared=no --with-protoc=protoc LDFLAGS='-static-libgcc' 
+5. for win32: (need manually cp the .a file due to the error of target libprotoc
+configure --host=i686-w64-mingw32 --prefix=/your_path/protobuf/i386 --enable-shared=no --with-protoc=protoc LDFLAGS='-static-libgcc' CXXFLAGS=-DHAVE_PTHREAD=1 
 
-Alternatively, pre-built pb binary can be downloaded from http://rglab.github.io/binaries/
-Once built, set up the environment variable LIB_PROTOBUF similarly.
 
-You can download Rtools at http://www.murdoch-sutherland.com/Rtools/ which provides the resources for building R and R packages. You should add to the Path variable the paths to the various components of Rtools. Please read the "Windows Toolset" appendix at http://cran.r-project.org/doc/manuals/R-admin.html#The-Windows-toolset for more details.
