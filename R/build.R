@@ -11,14 +11,12 @@ CxxFlags <- function() {
 }
 
 
-# Output the LD flags for building against pb. These flags are propagated
-# to sourceCpp via the inlineCxxPlugin (defined below) and to packages 
-# via a line in Makevars[.win] like this:
-#
-#   PKG_LIBS += $(shell "${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" -e "RProtoBufLib::LdFlags()")
-#
-LdFlags <- function(...) {
-   cat(pbLdFlags(...))
+#' Output the LD flags for linking against pb. 
+#' It is only needed to be called for windows.
+#' For nix-OS, the other package simply import this for the side effect of loading RProtoBuflib.
+#' @export 
+LdFlags <- function() {
+   cat(pbLdFlags())
 }
 
 # alias for backward compatibility

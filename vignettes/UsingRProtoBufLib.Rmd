@@ -28,6 +28,7 @@ All packages wishing to use the libraries in `RProtoBufLib` only need to:
 - add `RProtoBufLib` to **LinkingTo** field in **DESCRIPTION** file so that the compiler knows where to find the headers when user package is complied
 e.g.
 ```
+Imports: RProtoBufLib
 LinkingTo: Rcpp, RProtoBufLib
 ```
 
