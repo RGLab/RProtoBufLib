@@ -4,6 +4,8 @@ Windows users
 Instruction for cross-compiling protobuf 3.7.0 for windows (external protobuf library is not required for linux-like OS becuase it is now bundled in the package)
 
 1. install cross-compiling tool chain on linux
+(and With mingw there are two different threading models: posix and win32. need to use posix
+ e.g. update-alternatives --config x86_64-w64-mingw32-g++)
 2. download the source
 2. first install protobuf on local linux (so that 'protoc' command is available for cross compiling later on
 3. the run configure script for win64:
