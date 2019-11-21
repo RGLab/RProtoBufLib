@@ -25,8 +25,8 @@ AC_PROG_CC
 AC_PROG_CXX
 
 #untar the lib
-BASEPBNAME="protobuf-3.7.0"
-PBTGZNAME=${BASEPBNAME}.tar.xz
+BASEPBNAME="protobuf-3.10.0"
+PBTGZNAME=${BASEPBNAME}.tar.gz
 cd src
 if test -d ./${BASEPBNAME}; then 
 	echo 'found ' $BASEPBNAME ' header sources and tar archive;using what is there.'
