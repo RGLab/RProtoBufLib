@@ -1,7 +1,16 @@
 Windows users
 =============
 
-## build it with MYSYS + mingw
+## Download protobuf Windows binary from http://rglab.github.io/binaries/
+
+## Extract all the files to C:\protobuf.
+
+## Set environment variables LIB_PROTOBUF to C:/protobuf
+
+
+## Build protobuf from source (Only for RProtoBufLib package mainainers)
+
+#### build it with MYSYS + mingw
 1. Rtools (3.x)
 2. install MSYS-1.0.11
 3. point it to the mingw_32(by mounting mingw_32 to /mingw in fstab file) installed by Rtools
