@@ -1,7 +1,19 @@
 Windows users
 =============
 
-Instruction for cross-compiling protobuf 3.7.0 for windows (external protobuf library is not required for linux-like OS becuase it is now bundled in the package)
+## build it with MYSYS + mingw
+1. Rtools (3.x)
+2. install MSYS-1.0.11
+3. point it to the mingw_32(by mounting mingw_32 to /mingw in fstab file) installed by Rtools
+4. open MYSYS terminal (so that all the nix tools are available for building script)
+5. mkdir 32 && cd 32 && ../protobuf_src_folder/configure --prefix=./32/install && make install
+6. mounting mingw_64 to /mingw in fstab file
+7. build 64 bit lib similar to 5)
+
+## cross-compiling protobuf 
+
+It is now not working due to the incompatible exception model used by mingw on linux (sjlj) 
+vs Rtools (dwarf). Unless manually build mingw from src with --disable-sjlj and --enable-dwarf
 
 1. install cross-compiling tool chain on linux
 (and With mingw there are two different threading models: posix and win32. need to use posix
