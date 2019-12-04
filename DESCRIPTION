@@ -12,3 +12,4 @@ LazyLoad: true
 SystemRequirements: GNU make
 biocViews: Infrastructure
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr
