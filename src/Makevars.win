@@ -8,7 +8,7 @@ all: copying
 	
 #copy pb library headers to package include
 copying: 
-	mkdir -p "${USER_INCLUDE}"
+	mkdir -p ${USER_INCLUDE}
 	cp -r $(LIB_PROTOBUF)/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
 	cp  $(LIB_PROTOBUF)/lib$(R_ARCH)/libprotobuf-lite.a "${USER_LIB_DIR}/libprotobuf-lite.a"
