@@ -32,7 +32,7 @@ if test -d ./${BASEPBNAME}; then
 	echo 'found ' $BASEPBNAME ' header sources and tar archive;using what is there.'
 else
 	echo "untarring protobuf ...";
-	tar xf ${PBTGZNAME}
+	gzip -dc ${PBTGZNAME} | tar -xf -
 fi;
 
 #run this bootstrap script to update all the gnu auto build files (e.g.  automake symlinked fils (e.g. ./compile), alocal.m4,etc... )		
