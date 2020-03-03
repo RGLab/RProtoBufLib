@@ -4,7 +4,7 @@ This package provides the C++ headers and static library of Protocol buffers 2.6
 
 ### Install the package
 ```r
-devtools::install_github("RGLab/RProtoBufLib",ref="trunk")
+devtools::install_github("RGLab/RProtoBufLib")
 ```
 ### Modified **DESCRIPTION** file
 - add `RProtoBufLib` to `LinkingTo` field so that the user package knows where to find the headers
