@@ -8,9 +8,17 @@ Windows users
 ## Set environment variables LIB_PROTOBUF to C:/protobuf
 
 
-## Build protobuf from source (Only for RProtoBufLib package mainainers)
+## Build protobuf from source (Only for RProtoBufLib package maintainers)
 
-#### build it with MYSYS + mingw
+
+#### build it with MSYS2 shipped with rtools4.0
+1. Rtools (4.0)
+2. open MSYS2 MINGW32 shell launcher(i.e. c:\rtools40\mingw32.exe) so that all the nix tools are available for building script
+3. mkdir 32 && cd 32 && ../protobuf_src_folder/configure --prefix=./32/install && make install
+4. open MSYS2 MINGW64 shell launcher(i.e. c:\rtools40\mingw64.exe)
+5. build 64 bit lib similar to 3)
+
+#### build it with MYSYS1.0 + mingw
 1. Rtools (3.x)
 2. install MSYS-1.0.11
 3. point it to the mingw_32(by mounting mingw_32 to /mingw in fstab file) installed by Rtools
