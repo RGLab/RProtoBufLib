@@ -11,4 +11,4 @@ copying:
 	mkdir -p ${USER_INCLUDE}
 	cp -r $(LIB_PROTOBUF)/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
-	cp  $(LIB_PROTOBUF)/lib$(R_ARCH)/libprotobuf-lite.a "${USER_LIB_DIR}/libprotobuf-lite.a"
+	cp  $(LIB_PROTOBUF)/lib$(R_ARCH)/libprotobuf.a "${USER_LIB_DIR}/libprotobuf.a"

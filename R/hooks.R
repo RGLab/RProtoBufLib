@@ -4,7 +4,7 @@ dllInfo <- NULL
 .onLoad <- function(libname, pkgname) {
    
    # load pb and pbmalloc on supported platforms   
-   pb <- pbLibPath("-lite")
+   pb <- pbLibPath()
    if (!is.null(pb)&&Sys.info()['sysname']!="Windows") {
       if (!file.exists(pb)) {
          warning(paste("libprotobuf library", pb, "not found."))
