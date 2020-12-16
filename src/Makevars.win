@@ -1,4 +1,4 @@
-VERSION=1.30.0
+VERSION=3.13.0
 RWINLIB=../windows/protobuf-$(VERSION)
 # locations in the installed package where we're going to copy 
 # the libraries and headers
@@ -16,5 +16,5 @@ copying: winlibs
 
 #download prebuilt lib
 winlibs:
-"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/winlibs.R" $(VERSION)
+	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/downloadlibs.R" $(VERSION)
 	
