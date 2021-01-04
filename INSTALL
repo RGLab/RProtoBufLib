@@ -1,13 +1,6 @@
 Windows users
 =============
 
-## Download protobuf Windows binary from http://rglab.github.io/binaries/
-
-## Extract all the files to C:\protobuf.
-
-## Set environment variables LIB_PROTOBUF to C:/protobuf
-
-
 ## Build protobuf from source (Only for RProtoBufLib package maintainers)
 
 

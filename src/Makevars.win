@@ -1,4 +1,5 @@
-
+VERSION=3.13.0
+RWINLIB=../windows/protobuf-$(VERSION)
 # locations in the installed package where we're going to copy 
 # the libraries and headers
 USER_INCLUDE="${R_PACKAGE_DIR}/include"
@@ -7,8 +8,13 @@ USER_LIB_DIR=${R_PACKAGE_DIR}/lib$(R_ARCH)
 all: copying  
 	
 #copy pb library headers to package include
-copying: 
+copying: winlibs
 	mkdir -p ${USER_INCLUDE}
-	cp -r $(LIB_PROTOBUF)/include/google ${USER_INCLUDE}
+	cp -r $(RWINLIB)/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"
-	cp  $(LIB_PROTOBUF)/lib$(R_ARCH)/libprotobuf-lite.a "${USER_LIB_DIR}/libprotobuf-lite.a"
+	cp  $(RWINLIB)/lib$(R_ARCH)/libprotobuf.a "${USER_LIB_DIR}/libprotobuf.a"
+
+#download prebuilt lib
+winlibs:
+	"${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" "../tools/downloadlibs.R" $(VERSION)
+	

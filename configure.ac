@@ -25,7 +25,7 @@ AC_PROG_CC
 AC_PROG_CXX
 
 #untar the lib
-BASEPBNAME="protobuf-3.10.0"
+BASEPBNAME="protobuf-3.13.0"
 PBTGZNAME=${BASEPBNAME}.tar.gz
 cd src
 if test -d ./${BASEPBNAME}; then 

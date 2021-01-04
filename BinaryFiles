@@ -1,3 +1,1 @@
-src/win/lib/i386/libprotobuf-lite.a
-src/win/lib/x64/libprotobuf-lite.a
-src/protobuf-3.10.0.tar.gz
+src/protobuf-3.13.0.tar.gz
