@@ -5,10 +5,19 @@ RWINLIB=../windows/protobuf-$(VERSION)
 USER_INCLUDE="${R_PACKAGE_DIR}/include"
 USER_LIB_DIR=${R_PACKAGE_DIR}/lib$(R_ARCH)
 
+#expose compiled object of GatingSet pb API for cytolib to link to
+GS_LIB=libGatingSet.pb${DYLIB_EXT}
+GS_LIB_DIR = GatingSet_pb_lib
+
 all: copying  
+
+$(GS_LIB): winlibs
+	${SHLIB_CXXLD} ${SHLIB_CXXLDFLAGS} ${CXXPICFLAGS} ${PKG_CPPFLAGS} -o ${GS_LIB_DIR}/${GS_LIB} ${GS_LIB_DIR}/GatingSet.pb.cc
+	 	
+	
 	
 #copy pb library headers to package include
-copying: winlibs
+copying: $(GS_LIB)
 	mkdir -p ${USER_INCLUDE}
 	cp -r $(RWINLIB)/include/google ${USER_INCLUDE}
 	mkdir -p "${USER_LIB_DIR}"

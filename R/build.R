@@ -36,12 +36,13 @@ pbCxxFlags <- function() {
 # Return the linker flags requried for pb on this platform
 pbLdFlags <- function() {
 	lite = FALSE
-# gslibs <- system.file(file.path("lib", "GatingSet.pb.o"), package = "RProtoBufLib")
    # on Windows and Solaris we need to explicitly link against pb.dll
    if ((Sys.info()['sysname'] %in% c("Windows", "SunOS")) && !isSparc()) {
 	  suffix <- ifelse(lite, "-lite", "")
 	  pb <- pbLibPath(suffix)
-      res <- asBuildPath(pb)
+      gs <- gsLibPath()
+#      res <- asBuildPath(pb)
+      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -lprotobuf -lGatingSet.pb", sep = "")
    } else {
      res <- ""
    }
@@ -71,6 +72,25 @@ pbLibPath <- function(suffix = "") {
    }
 }
 
+gsLibPath <- function(suffix = "") {
+  sysname <- Sys.info()['sysname']
+  pbSupported <- list(
+    "Darwin" = paste("libGatingSet.pb", suffix, ".dylib", sep = ""), 
+    "Linux" = paste("libGatingSet.pb", suffix, ".so", sep = ""), 
+    "Windows" = paste("libGatingSet.pb", suffix, ".dll", sep = ""),
+    "SunOS" = paste("libGatingSet.pb", suffix, ".so", sep = "")
+  )
+  # browser()
+  if ((sysname %in% names(pbSupported)) && !isSparc()) {
+    libDir <- "lib/"
+    if (sysname == "Windows")
+      libDir <- paste(libDir, .Platform$r_arch, "/", sep="")
+    system.file(paste(libDir, pbSupported[[sysname]], sep = ""), 
+                package = "RProtoBufLib")
+  } else {
+    NULL
+  }
+}
 
 isSparc <- function() {
    Sys.info()['sysname'] == "SunOS" && Sys.info()[["machine"]] != "i86pc"

@@ -2,7 +2,8 @@
 
 rm -f config.*
 rm -rf src/pb_build
-rm -rf src/protobuf-3.10.0
+rm -rf src/protobuf-3.13.0
+rm -f src/GatingSet_pb_lib/*.o
 rm -f src/Makevars
 rm -f src/*.o
 rm -f src/*.so

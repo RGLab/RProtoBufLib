@@ -1,0 +1,10 @@
+2.1.4
+-------------------------
+1. build shared protobuf library instead of static
+2. load libprotobuf globally on .onLoad
+
+First release
+-------------------------
+
+bundle the protobuf c++ library and expose its headers and static libraries
+
