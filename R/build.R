@@ -42,7 +42,7 @@ pbLdFlags <- function() {
 	  pb <- pbLibPath(suffix)
       gs <- gsLibPath()
 #      res <- asBuildPath(pb)
-      res <- paste("-L", asBuildPath(dirname(pb)), asBuildPath(dirname(gs)), " -lprotobuf -lGatingSet.pb", sep = "")
+      res <- paste("-L", asBuildPath(dirname(pb)), " -lprotobuf -lGatingSet.pb", sep = "")
    } else {
      res <- ""
    }
