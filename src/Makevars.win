@@ -5,7 +5,7 @@ RWINLIB=../windows/protobuf-$(VERSION)
 # the libraries and headers
 USER_INCLUDE="${R_PACKAGE_DIR}/include"
 USER_LIB_DIR=${R_PACKAGE_DIR}/lib$(R_ARCH)
-
+CXX_STD = CXX11
 PKG_CPPFLAGS =-I../inst/include/ -I$(RWINLIB)/include
 
 #expose compiled object of GatingSet pb API for cytolib to link to
