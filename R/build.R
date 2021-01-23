@@ -42,7 +42,7 @@ pbLdFlags <- function() {
 	  pb <- pbLibPath(suffix)
       gs <- gsLibPath()
 #      res <- asBuildPath(pb)
-      res <- paste("-L", asBuildPath(dirname(pb)), " -lprotobuf -lGatingSet.pb", sep = "")
+      res <- paste(asBuildPath(gs), " -L", asBuildPath(dirname(pb)), " -lprotobuf ", sep = "")
    } else {
      res <- ""
    }
@@ -85,7 +85,7 @@ gsLibPath <- function(suffix = "") {
     libDir <- "lib/"
     if (sysname == "Windows")
       libDir <- paste(libDir, .Platform$r_arch, "/", sep="")
-    system.file(paste(libDir, pbSupported[[sysname]], sep = ""), 
+    system.file(paste(libDir, "GatingSet.pb.o", sep = ""), 
                 package = "RProtoBufLib")
   } else {
     NULL

@@ -14,7 +14,7 @@ dllInfo <- NULL
    }
    
      gs <- gsLibPath()
-   if (!is.null(gs)) {
+   if (!is.null(gs)&&Sys.info()['sysname']!="Windows") {
      if (!file.exists(gs)) {
        warning(paste("libGatingSet.pb library", gs, "not found."))
      } else {
