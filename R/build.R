@@ -77,7 +77,7 @@ gsLibPath <- function(suffix = "") {
   pbSupported <- list(
     "Darwin" = paste("libGatingSet.pb", suffix, ".dylib", sep = ""), 
     "Linux" = paste("libGatingSet.pb", suffix, ".so", sep = ""), 
-    "Windows" = paste("libGatingSet.pb", suffix, ".dll", sep = ""),
+    "Windows" = paste("GatingSet.pb", suffix, ".o", sep = ""),
     "SunOS" = paste("libGatingSet.pb", suffix, ".so", sep = "")
   )
   # browser()
@@ -85,7 +85,7 @@ gsLibPath <- function(suffix = "") {
     libDir <- "lib/"
     if (sysname == "Windows")
       libDir <- paste(libDir, .Platform$r_arch, "/", sep="")
-    system.file(paste(libDir, "GatingSet.pb.o", sep = ""), 
+    system.file(paste(libDir, pbSupported[[sysname]], sep = ""), 
                 package = "RProtoBufLib")
   } else {
     NULL
