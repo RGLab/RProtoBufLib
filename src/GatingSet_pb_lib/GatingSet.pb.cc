@@ -1025,11 +1025,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_GatingSet_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::pb::COMP, comment_),
   PROTOBUF_FIELD_OFFSET(::pb::COMP, marker_),
   PROTOBUF_FIELD_OFFSET(::pb::COMP, spillover_),
+  PROTOBUF_FIELD_OFFSET(::pb::COMP, detector_),
   0,
   1,
   2,
   3,
   4,
+  ~0u,
   ~0u,
   ~0u,
   PROTOBUF_FIELD_OFFSET(::pb::PARAM, _has_bits_),
@@ -1132,12 +1134,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 301, 312, sizeof(::pb::nodeProperties)},
   { 318, 325, sizeof(::pb::treeNodes)},
   { 327, -1, sizeof(::pb::populationTree)},
-  { 333, 345, sizeof(::pb::COMP)},
-  { 352, 362, sizeof(::pb::PARAM)},
-  { 367, 378, sizeof(::pb::GatingHierarchy)},
-  { 384, 390, sizeof(::pb::CytoFrame)},
-  { 391, 398, sizeof(::pb::TRANS_TBL)},
-  { 400, 414, sizeof(::pb::GatingSet)},
+  { 333, 346, sizeof(::pb::COMP)},
+  { 354, 364, sizeof(::pb::PARAM)},
+  { 369, 380, sizeof(::pb::GatingHierarchy)},
+  { 386, 392, sizeof(::pb::CytoFrame)},
+  { 393, 400, sizeof(::pb::TRANS_TBL)},
+  { 402, 416, sizeof(::pb::GatingSet)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1239,35 +1241,35 @@ const char descriptor_table_protodef_GatingSet_2eproto[] PROTOBUF_SECTION_VARIAB
   "hisGate\030\006 \001(\0132\010.pb.gate\"=\n\ttreeNodes\022 \n\004"
   "node\030\001 \002(\0132\022.pb.nodeProperties\022\016\n\006parent"
   "\030\002 \001(\r\"-\n\016populationTree\022\033\n\004node\030\001 \003(\0132\r"
-  ".pb.treeNodes\"u\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006pr"
-  "efix\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001(\t"
-  "\022\017\n\007comment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tspi"
-  "llOver\030\007 \003(\002\"_\n\005PARAM\022\r\n\005param\030\001 \001(\t\022\013\n\003"
-  "log\030\002 \001(\010\022\r\n\005range\030\003 \001(\r\022\021\n\thighValue\030\004 "
-  "\001(\r\022\030\n\020calibrationIndex\030\005 \001(\r\"\271\001\n\017Gating"
-  "Hierarchy\022 \n\004tree\030\002 \002(\0132\022.pb.populationT"
-  "ree\022\026\n\004comp\030\001 \001(\0132\010.pb.COMP\022\020\n\010isLoaded\030"
-  "\003 \001(\010\022\034\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005t"
-  "rans\030\005 \001(\0132\017.pb.trans_local\022\034\n\005frame\030\006 \001"
-  "(\0132\r.pb.CytoFrame\"\032\n\tCytoFrame\022\r\n\005is_h5\030"
-  "\001 \002(\010\"E\n\tTRANS_TBL\022\025\n\rtrans_address\030\001 \001("
-  "\004\022!\n\005trans\030\002 \001(\0132\022.pb.transformation\"\340\001\n"
-  "\tGatingSet\022 \n\ttrans_tbl\030\002 \003(\0132\r.pb.TRANS"
-  "_TBL\022\022\n\nsampleName\030\001 \003(\t\022\030\n\020globalBiExpT"
-  "rans\030\003 \001(\004\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n\006gT"
-  "rans\030\005 \003(\0132\017.pb.trans_local\022\014\n\004guid\030\006 \001("
-  "\t\022\026\n\016cytolib_verion\030\007 \001(\t\022\021\n\tpb_verion\030\010"
-  " \001(\t\022\021\n\th5_verion\030\t \001(\t**\n\010QUADRANT\022\006\n\002Q"
-  "1\020\001\022\006\n\002Q2\020\002\022\006\n\002Q3\020\003\022\006\n\002Q4\020\004*\244\001\n\tGATE_TYP"
-  "E\022\020\n\014POLYGON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022\r\n\tB"
-  "OOL_GATE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT_GAT"
-  "E\020\005\022\020\n\014LOGICAL_GATE\020\006\022\022\n\016ELLIPSOID_GATE\020"
-  "\007\022\020\n\014CLUSTER_GATE\020\010\022\r\n\tQUAD_GATE\020\t*\'\n\010in"
-  "d_type\022\010\n\004BOOL\020\000\022\007\n\003INT\020\001\022\010\n\004ROOT\020\002*\214\001\n\n"
-  "TRANS_TYPE\022\r\n\tPB_CALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n"
-  "\006PB_LIN\020\002\022\013\n\007PB_FLIN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014"
-  "\n\010PB_BIEXP\020\005\022\016\n\nPB_LOGICLE\020\006\022\016\n\nPB_LOGGM"
-  "L2\020\007\022\014\n\010PB_SCALE\020\010"
+  ".pb.treeNodes\"\207\001\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006p"
+  "refix\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001("
+  "\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tsp"
+  "illOver\030\007 \003(\002\022\020\n\010detector\030\010 \003(\t\"_\n\005PARAM"
+  "\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001(\010\022\r\n\005range\030\003 "
+  "\001(\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020calibrationInd"
+  "ex\030\005 \001(\r\"\271\001\n\017GatingHierarchy\022 \n\004tree\030\002 \002"
+  "(\0132\022.pb.populationTree\022\026\n\004comp\030\001 \001(\0132\010.p"
+  "b.COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034\n\ttransFlag\030\004 "
+  "\003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.trans"
+  "_local\022\034\n\005frame\030\006 \001(\0132\r.pb.CytoFrame\"\032\n\t"
+  "CytoFrame\022\r\n\005is_h5\030\001 \002(\010\"E\n\tTRANS_TBL\022\025\n"
+  "\rtrans_address\030\001 \001(\004\022!\n\005trans\030\002 \001(\0132\022.pb"
+  ".transformation\"\340\001\n\tGatingSet\022 \n\ttrans_t"
+  "bl\030\002 \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 "
+  "\003(\t\022\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalL"
+  "inTrans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\0132\017.pb.trans"
+  "_local\022\014\n\004guid\030\006 \001(\t\022\026\n\016cytolib_verion\030\007"
+  " \001(\t\022\021\n\tpb_verion\030\010 \001(\t\022\021\n\th5_verion\030\t \001"
+  "(\t**\n\010QUADRANT\022\006\n\002Q1\020\001\022\006\n\002Q2\020\002\022\006\n\002Q3\020\003\022\006"
+  "\n\002Q4\020\004*\244\001\n\tGATE_TYPE\022\020\n\014POLYGON_GATE\020\001\022\016"
+  "\n\nRANGE_GATE\020\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPSE"
+  "_GATE\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LOGICAL_GATE\020\006"
+  "\022\022\n\016ELLIPSOID_GATE\020\007\022\020\n\014CLUSTER_GATE\020\010\022\r"
+  "\n\tQUAD_GATE\020\t*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007\n\003I"
+  "NT\020\001\022\010\n\004ROOT\020\002*\214\001\n\nTRANS_TYPE\022\r\n\tPB_CALT"
+  "BL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLIN\020"
+  "\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005\022\016\n\nPB_LO"
+  "GICLE\020\006\022\016\n\nPB_LOGGML2\020\007\022\014\n\010PB_SCALE\020\010"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_GatingSet_2eproto_deps[1] = {
 };
@@ -1308,7 +1310,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Gat
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_GatingSet_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_GatingSet_2eproto = {
-  false, false, descriptor_table_protodef_GatingSet_2eproto, "GatingSet.proto", 3618,
+  false, false, descriptor_table_protodef_GatingSet_2eproto, "GatingSet.proto", 3637,
   &descriptor_table_GatingSet_2eproto_once, descriptor_table_GatingSet_2eproto_sccs, descriptor_table_GatingSet_2eproto_deps, 33, 0,
   schemas, file_default_instances, TableStruct_GatingSet_2eproto::offsets,
   file_level_metadata_GatingSet_2eproto, 33, file_level_enum_descriptors_GatingSet_2eproto, file_level_service_descriptors_GatingSet_2eproto,
@@ -10267,7 +10269,8 @@ class COMP::_Internal {
 COMP::COMP(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
   marker_(arena),
-  spillover_(arena) {
+  spillover_(arena),
+  detector_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:pb.COMP)
@@ -10276,7 +10279,8 @@ COMP::COMP(const COMP& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       _has_bits_(from._has_bits_),
       marker_(from.marker_),
-      spillover_(from.spillover_) {
+      spillover_(from.spillover_),
+      detector_(from.detector_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   cid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from._internal_has_cid()) {
@@ -10353,6 +10357,7 @@ void COMP::Clear() {
 
   marker_.Clear();
   spillover_.Clear();
+  detector_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
@@ -10470,6 +10475,22 @@ const char* COMP::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // repeated string detector = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_detector();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            #ifndef NDEBUG
+            ::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "pb.COMP.detector");
+            #endif  // !NDEBUG
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -10566,6 +10587,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(7, this->_internal_spillover(i), target);
   }
 
+  // repeated string detector = 8;
+  for (int i = 0, n = this->_internal_detector_size(); i < n; i++) {
+    const auto& s = this->_internal_detector(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "pb.COMP.detector");
+    target = stream->WriteString(8, s, target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -10597,6 +10628,14 @@ size_t COMP::ByteSizeLong() const {
     total_size += 1 *
                   ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_spillover_size());
     total_size += data_size;
+  }
+
+  // repeated string detector = 8;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(detector_.size());
+  for (int i = 0, n = detector_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      detector_.Get(i));
   }
 
   cached_has_bits = _has_bits_[0];
@@ -10670,6 +10709,7 @@ void COMP::MergeFrom(const COMP& from) {
 
   marker_.MergeFrom(from.marker_);
   spillover_.MergeFrom(from.spillover_);
+  detector_.MergeFrom(from.detector_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
@@ -10714,6 +10754,7 @@ void COMP::InternalSwap(COMP* other) {
   swap(_has_bits_[0], other->_has_bits_[0]);
   marker_.InternalSwap(&other->marker_);
   spillover_.InternalSwap(&other->spillover_);
+  detector_.InternalSwap(&other->detector_);
   cid_.Swap(&other->cid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   prefix_.Swap(&other->prefix_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   suffix_.Swap(&other->suffix_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
