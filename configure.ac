@@ -2,7 +2,7 @@
 # author: Mike Smith (mike.smith@embl.de)
 
 AC_PREREQ([2.65])
-AC_INIT([RProtoBufLib], [0.99.0], [wjiang2@fredhutch.org])
+AC_INIT([RProtoBufLib], [0.99.0], [mike@ozette.ai])
 AC_CONFIG_SRCDIR([src])
 
 # Check the compiler configured with R
