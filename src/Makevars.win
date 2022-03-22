@@ -1,4 +1,4 @@
-VERSION=3.13.0
+VERSION=3.8.0
 RWINLIB=../windows/protobuf-$(VERSION)
 
 # locations in the installed package where we're going to copy 
