@@ -1,0 +1,9 @@
+1. download the protocol buffer source package, e.g. protobuf-3.8.0.tar.gz 
+2. trim the package by removing unnecessary modules(e.g java,python) to meet the size limit of bioconductor
+	remove these modules from their subfolders 
+	and references from 
+	./Makefile.am 
+	src/Makefile.am 
+	src/google/protobuf/compiler/main.cc
+3. run autogen.sh to generate configure files (require libtool to be installed)
+4. tar -czvf protobuf-3.8.0.tar.gz protobuf-3.8.0/
