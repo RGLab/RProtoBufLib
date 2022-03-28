@@ -6,4 +6,5 @@
 	src/Makefile.am 
 	src/google/protobuf/compiler/main.cc
 3. run autogen.sh to generate configure files (require libtool to be installed)
+4. Make sure to rm .github folder from source folder
 4. tar -czvf protobuf-3.8.0.tar.gz protobuf-3.8.0/
