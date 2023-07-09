@@ -1,5 +1,5 @@
 #generate pb code
-protoc --cpp_out=cytolib/ GatingSet.proto
+../../src/pb_build/bin/protoc --cpp_out=cytolib/ GatingSet.proto
 #move the source to src
 mv cytolib/GatingSet.pb.cc ../../src/GatingSet_pb_lib/
 #update the include path to header
