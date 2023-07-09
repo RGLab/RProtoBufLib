@@ -21,6 +21,7 @@ extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::inter
 extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_PARAM_GatingSet_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_POPINDICES_GatingSet_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_POPSTATS_GatingSet_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Range_GatingSet_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_TRANS_TBL_GatingSet_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_biexpTrans_GatingSet_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_GatingSet_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_boolGate_GatingSet_2eproto;
@@ -51,10 +52,18 @@ class paramRangeDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<paramRange> _instance;
 } _paramRange_default_instance_;
+class RangeDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Range> _instance;
+} _Range_default_instance_;
 class rangeGateDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<rangeGate> _instance;
 } _rangeGate_default_instance_;
+class MultiRangeGateDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<MultiRangeGate> _instance;
+} _MultiRangeGate_default_instance_;
 class paramPolyDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<paramPoly> _instance;
@@ -257,6 +266,21 @@ static void InitDefaultsscc_info_GatingSet_GatingSet_2eproto() {
       &scc_info_TRANS_TBL_GatingSet_2eproto.base,
       &scc_info_trans_local_GatingSet_2eproto.base,}};
 
+static void InitDefaultsscc_info_MultiRangeGate_GatingSet_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::_MultiRangeGate_default_instance_;
+    new (ptr) ::pb::MultiRangeGate();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::MultiRangeGate::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_MultiRangeGate_GatingSet_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_MultiRangeGate_GatingSet_2eproto}, {
+      &scc_info_Range_GatingSet_2eproto.base,}};
+
 static void InitDefaultsscc_info_PARAM_GatingSet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -298,6 +322,20 @@ static void InitDefaultsscc_info_POPSTATS_GatingSet_2eproto() {
 
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_POPSTATS_GatingSet_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_POPSTATS_GatingSet_2eproto}, {}};
+
+static void InitDefaultsscc_info_Range_GatingSet_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::pb::_Range_default_instance_;
+    new (ptr) ::pb::Range();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::pb::Range::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Range_GatingSet_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Range_GatingSet_2eproto}, {}};
 
 static void InitDefaultsscc_info_TRANS_TBL_GatingSet_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -676,7 +714,7 @@ static void InitDefaultsscc_info_treeNodes_GatingSet_2eproto() {
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_treeNodes_GatingSet_2eproto}, {
       &scc_info_nodeProperties_GatingSet_2eproto.base,}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_GatingSet_2eproto[33];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_GatingSet_2eproto[35];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_GatingSet_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_GatingSet_2eproto = nullptr;
 
@@ -690,11 +728,25 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_GatingSet_2eproto::offsets[] P
   PROTOBUF_FIELD_OFFSET(::pb::paramRange, min_),
   PROTOBUF_FIELD_OFFSET(::pb::paramRange, max_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pb::Range, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pb::Range, min_),
+  PROTOBUF_FIELD_OFFSET(::pb::Range, max_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::rangeGate, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::pb::rangeGate, param_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::pb::MultiRangeGate, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::pb::MultiRangeGate, name_),
+  PROTOBUF_FIELD_OFFSET(::pb::MultiRangeGate, ranges_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::pb::paramPoly, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -981,43 +1033,47 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_GatingSet_2eproto::offsets[] P
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pb::paramRange)},
-  { 8, -1, sizeof(::pb::rangeGate)},
-  { 14, -1, sizeof(::pb::paramPoly)},
-  { 21, -1, sizeof(::pb::polygonGate)},
-  { 28, -1, sizeof(::pb::coordinate)},
-  { 35, -1, sizeof(::pb::ellipseGate)},
-  { 44, -1, sizeof(::pb::BOOL_GATE_OP)},
-  { 52, -1, sizeof(::pb::boolGate)},
-  { 58, -1, sizeof(::pb::clusterGate)},
-  { 64, -1, sizeof(::pb::quadGate)},
-  { 71, -1, sizeof(::pb::gate)},
-  { 85, -1, sizeof(::pb::POPSTATS)},
-  { 92, -1, sizeof(::pb::calibrationTable)},
-  { 105, -1, sizeof(::pb::biexpTrans)},
-  { 115, -1, sizeof(::pb::fasinhTrans)},
-  { 125, -1, sizeof(::pb::scaleTrans)},
-  { 133, -1, sizeof(::pb::flinTrans)},
-  { 140, -1, sizeof(::pb::logTrans)},
-  { 149, -1, sizeof(::pb::logGML2Trans)},
-  { 156, -1, sizeof(::pb::logicleTrans)},
-  { 168, -1, sizeof(::pb::transformation)},
-  { 187, -1, sizeof(::pb::trans_pair)},
-  { 195, -1, sizeof(::pb::trans_local)},
-  { 203, -1, sizeof(::pb::POPINDICES)},
-  { 212, -1, sizeof(::pb::nodeProperties)},
-  { 223, -1, sizeof(::pb::treeNodes)},
-  { 230, -1, sizeof(::pb::populationTree)},
-  { 236, -1, sizeof(::pb::COMP)},
-  { 249, -1, sizeof(::pb::PARAM)},
-  { 259, -1, sizeof(::pb::GatingHierarchy)},
-  { 270, -1, sizeof(::pb::CytoFrame)},
-  { 276, -1, sizeof(::pb::TRANS_TBL)},
-  { 283, -1, sizeof(::pb::GatingSet)},
+  { 8, -1, sizeof(::pb::Range)},
+  { 15, -1, sizeof(::pb::rangeGate)},
+  { 21, -1, sizeof(::pb::MultiRangeGate)},
+  { 28, -1, sizeof(::pb::paramPoly)},
+  { 35, -1, sizeof(::pb::polygonGate)},
+  { 42, -1, sizeof(::pb::coordinate)},
+  { 49, -1, sizeof(::pb::ellipseGate)},
+  { 58, -1, sizeof(::pb::BOOL_GATE_OP)},
+  { 66, -1, sizeof(::pb::boolGate)},
+  { 72, -1, sizeof(::pb::clusterGate)},
+  { 78, -1, sizeof(::pb::quadGate)},
+  { 85, -1, sizeof(::pb::gate)},
+  { 99, -1, sizeof(::pb::POPSTATS)},
+  { 106, -1, sizeof(::pb::calibrationTable)},
+  { 119, -1, sizeof(::pb::biexpTrans)},
+  { 129, -1, sizeof(::pb::fasinhTrans)},
+  { 139, -1, sizeof(::pb::scaleTrans)},
+  { 147, -1, sizeof(::pb::flinTrans)},
+  { 154, -1, sizeof(::pb::logTrans)},
+  { 163, -1, sizeof(::pb::logGML2Trans)},
+  { 170, -1, sizeof(::pb::logicleTrans)},
+  { 182, -1, sizeof(::pb::transformation)},
+  { 201, -1, sizeof(::pb::trans_pair)},
+  { 209, -1, sizeof(::pb::trans_local)},
+  { 217, -1, sizeof(::pb::POPINDICES)},
+  { 226, -1, sizeof(::pb::nodeProperties)},
+  { 237, -1, sizeof(::pb::treeNodes)},
+  { 244, -1, sizeof(::pb::populationTree)},
+  { 250, -1, sizeof(::pb::COMP)},
+  { 263, -1, sizeof(::pb::PARAM)},
+  { 273, -1, sizeof(::pb::GatingHierarchy)},
+  { 284, -1, sizeof(::pb::CytoFrame)},
+  { 290, -1, sizeof(::pb::TRANS_TBL)},
+  { 297, -1, sizeof(::pb::GatingSet)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_paramRange_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_Range_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_rangeGate_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_MultiRangeGate_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_paramPoly_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_polygonGate_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::pb::_coordinate_default_instance_),
@@ -1053,110 +1109,114 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_GatingSet_2eproto[] =
   "\n\017GatingSet.proto\022\002pb\"4\n\nparamRange\022\014\n\004n"
-  "ame\030\001 \001(\t\022\013\n\003min\030\002 \001(\002\022\013\n\003max\030\003 \001(\002\"*\n\tr"
-  "angeGate\022\035\n\005param\030\001 \001(\0132\016.pb.paramRange\""
-  "=\n\tparamPoly\022\016\n\006params\030\001 \003(\t\022 \n\010vertices"
-  "\030\002 \003(\0132\016.pb.coordinate\"E\n\013polygonGate\022\034\n"
-  "\005param\030\001 \001(\0132\r.pb.paramPoly\022\030\n\002qg\030\002 \001(\0132"
-  "\014.pb.quadGate\"\"\n\ncoordinate\022\t\n\001x\030\001 \001(\002\022\t"
-  "\n\001y\030\002 \001(\002\"\200\001\n\013ellipseGate\022\032\n\002mu\030\001 \001(\0132\016."
-  "pb.coordinate\022\033\n\003cov\030\002 \003(\0132\016.pb.coordina"
-  "te\022*\n\022antipodal_vertices\030\003 \003(\0132\016.pb.coor"
-  "dinate\022\014\n\004dist\030\004 \001(\002\"7\n\014BOOL_GATE_OP\022\014\n\004"
-  "path\030\001 \003(\t\022\n\n\002op\030\002 \001(\r\022\r\n\005isNot\030\003 \001(\010\"0\n"
-  "\010boolGate\022$\n\nboolOpSpec\030\001 \003(\0132\020.pb.BOOL_"
-  "GATE_OP\"%\n\013clusterGate\022\026\n\016cluster_method"
-  "\030\001 \001(\t\"7\n\010quadGate\022\013\n\003uid\030\001 \001(\t\022\036\n\010quadr"
-  "ant\030\003 \001(\0162\014.pb.QUADRANT\"\345\001\n\004gate\022\013\n\003neg\030"
-  "\001 \001(\010\022\025\n\risTransformed\030\002 \001(\010\022\020\n\010isGained"
-  "\030\003 \001(\010\022\033\n\004type\030\004 \001(\0162\r.pb.GATE_TYPE\022\031\n\002r"
-  "g\030\005 \001(\0132\r.pb.rangeGate\022\033\n\002pg\030\006 \001(\0132\017.pb."
-  "polygonGate\022\033\n\002eg\030\007 \001(\0132\017.pb.ellipseGate"
-  "\022\030\n\002bg\030\010 \001(\0132\014.pb.boolGate\022\033\n\002cg\030\t \001(\0132\017"
-  ".pb.clusterGate\"-\n\010POPSTATS\022\020\n\010statType\030"
-  "\001 \001(\t\022\017\n\007statVal\030\002 \001(\002\"\223\001\n\020calibrationTa"
-  "ble\022\r\n\001x\030\001 \003(\002B\002\020\001\022\r\n\001y\030\002 \003(\002B\002\020\001\022\r\n\001b\030\003"
-  " \003(\002B\002\020\001\022\r\n\001c\030\004 \003(\002B\002\020\001\022\r\n\001d\030\005 \003(\002B\002\020\001\022\025"
-  "\n\rspline_method\030\006 \001(\r\022\017\n\007caltype\030\007 \001(\t\022\014"
-  "\n\004flag\030\010 \001(\010\"b\n\nbiexpTrans\022\024\n\014channelRan"
-  "ge\030\001 \001(\r\022\013\n\003pos\030\002 \001(\002\022\013\n\003neg\030\003 \001(\002\022\022\n\nwi"
-  "dthBasis\030\004 \001(\002\022\020\n\010maxValue\030\005 \001(\002\"P\n\013fasi"
-  "nhTrans\022\016\n\006length\030\001 \001(\002\022\020\n\010maxRange\030\002 \001("
-  "\002\022\t\n\001T\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\t\n\001M\030\005 \001(\002\"D\n\nsc"
-  "aleTrans\022\024\n\014scale_factor\030\001 \001(\002\022\017\n\007t_scal"
-  "e\030\002 \001(\002\022\017\n\007r_scale\030\003 \001(\002\"%\n\tflinTrans\022\013\n"
-  "\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"D\n\010logTrans\022\016\n\006o"
-  "ffset\030\001 \001(\002\022\016\n\006decade\030\002 \001(\002\022\t\n\001T\030\003 \001(\002\022\r"
-  "\n\005scale\030\004 \001(\002\"$\n\014logGML2Trans\022\t\n\001T\030\001 \001(\002"
-  "\022\t\n\001M\030\002 \001(\002\"k\n\014logicleTrans\022\t\n\001T\030\001 \001(\002\022\t"
-  "\n\001W\030\002 \001(\002\022\t\n\001M\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\014\n\004bins\030"
-  "\005 \001(\002\022\016\n\006isGml2\030\006 \001(\010\022\021\n\tisInverse\030\007 \001(\010"
-  "\"\373\002\n\016transformation\022$\n\006calTbl\030\001 \001(\0132\024.pb"
-  ".calibrationTable\022\022\n\nisGateOnly\030\002 \001(\010\022\014\n"
-  "\004name\030\004 \001(\t\022\017\n\007channel\030\005 \001(\t\022\022\n\nisComput"
-  "ed\030\006 \001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\ntrans_type\030\003 \001"
-  "(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007 \001(\0132\016.pb.biex"
-  "pTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.logTrans\022\032\n\003flt\030"
-  "\t \001(\0132\r.pb.flinTrans\022\032\n\002st\030\n \001(\0132\016.pb.sc"
-  "aleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb.fasinhTrans\022\035\n"
-  "\003lgt\030\r \001(\0132\020.pb.logicleTrans\022 \n\006lgml2t\030\016"
-  " \001(\0132\020.pb.logGML2Trans\"T\n\ntrans_pair\022\014\n\004"
-  "name\030\001 \001(\t\022\025\n\rtrans_address\030\002 \001(\004\022!\n\005tra"
-  "ns\030\003 \001(\0132\022.pb.transformation\"S\n\013trans_lo"
-  "cal\022\032\n\002tp\030\001 \003(\0132\016.pb.trans_pair\022\021\n\tgroup"
-  "Name\030\002 \001(\t\022\025\n\tsampleIDs\030\003 \003(\rB\002\020\001\"\\\n\nPOP"
-  "INDICES\022\017\n\007nEvents\030\001 \001(\r\022\035\n\007indtype\030\002 \001("
-  "\0162\014.pb.ind_type\022\020\n\004iInd\030\003 \003(\rB\002\020\001\022\014\n\004bIn"
-  "d\030\004 \001(\014\"\255\001\n\016nodeProperties\022\020\n\010thisName\030\001"
-  " \001(\t\022\035\n\007fjStats\030\002 \003(\0132\014.pb.POPSTATS\022\035\n\007f"
-  "cStats\030\003 \003(\0132\014.pb.POPSTATS\022\016\n\006hidden\030\004 \001"
-  "(\010\022\037\n\007indices\030\005 \001(\0132\016.pb.POPINDICES\022\032\n\010t"
-  "hisGate\030\006 \001(\0132\010.pb.gate\"=\n\ttreeNodes\022 \n\004"
-  "node\030\001 \001(\0132\022.pb.nodeProperties\022\016\n\006parent"
-  "\030\002 \001(\r\"-\n\016populationTree\022\033\n\004node\030\001 \003(\0132\r"
-  ".pb.treeNodes\"\207\001\n\004COMP\022\013\n\003cid\030\001 \001(\t\022\016\n\006p"
-  "refix\030\002 \001(\t\022\016\n\006suffix\030\003 \001(\t\022\014\n\004name\030\004 \001("
-  "\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006marker\030\006 \003(\t\022\021\n\tsp"
-  "illOver\030\007 \003(\002\022\020\n\010detector\030\010 \003(\t\"_\n\005PARAM"
-  "\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001(\010\022\r\n\005range\030\003 "
-  "\001(\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020calibrationInd"
-  "ex\030\005 \001(\r\"\271\001\n\017GatingHierarchy\022 \n\004tree\030\002 \001"
-  "(\0132\022.pb.populationTree\022\026\n\004comp\030\001 \001(\0132\010.p"
-  "b.COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034\n\ttransFlag\030\004 "
-  "\003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 \001(\0132\017.pb.trans"
-  "_local\022\034\n\005frame\030\006 \001(\0132\r.pb.CytoFrame\"\032\n\t"
-  "CytoFrame\022\r\n\005is_h5\030\001 \001(\010\"E\n\tTRANS_TBL\022\025\n"
-  "\rtrans_address\030\001 \001(\004\022!\n\005trans\030\002 \001(\0132\022.pb"
-  ".transformation\"\340\001\n\tGatingSet\022 \n\ttrans_t"
-  "bl\030\002 \003(\0132\r.pb.TRANS_TBL\022\022\n\nsampleName\030\001 "
-  "\003(\t\022\030\n\020globalBiExpTrans\030\003 \001(\004\022\026\n\016globalL"
-  "inTrans\030\004 \001(\004\022\037\n\006gTrans\030\005 \003(\0132\017.pb.trans"
-  "_local\022\014\n\004guid\030\006 \001(\t\022\026\n\016cytolib_verion\030\007"
-  " \001(\t\022\021\n\tpb_verion\030\010 \001(\t\022\021\n\th5_verion\030\t \001"
-  "(\t*=\n\010QUADRANT\022\021\n\rQ_UNSPECIFIED\020\000\022\006\n\002Q1\020"
-  "\001\022\006\n\002Q2\020\002\022\006\n\002Q3\020\003\022\006\n\002Q4\020\004*\272\001\n\tGATE_TYPE\022"
-  "\024\n\020GATE_UNSPECIFIED\020\000\022\020\n\014POLYGON_GATE\020\001\022"
-  "\016\n\nRANGE_GATE\020\002\022\r\n\tBOOL_GATE\020\003\022\020\n\014ELLIPS"
-  "E_GATE\020\004\022\r\n\tRECT_GATE\020\005\022\020\n\014LOGICAL_GATE\020"
-  "\006\022\022\n\016ELLIPSOID_GATE\020\007\022\020\n\014CLUSTER_GATE\020\010\022"
-  "\r\n\tQUAD_GATE\020\t*\'\n\010ind_type\022\010\n\004BOOL\020\000\022\007\n\003"
-  "INT\020\001\022\010\n\004ROOT\020\002*\214\001\n\nTRANS_TYPE\022\r\n\tPB_CAL"
-  "TBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LIN\020\002\022\013\n\007PB_FLIN"
-  "\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_BIEXP\020\005\022\016\n\nPB_L"
-  "OGICLE\020\006\022\016\n\nPB_LOGGML2\020\007\022\014\n\010PB_SCALE\020\010b\006"
-  "proto3"
+  "ame\030\001 \001(\t\022\013\n\003min\030\002 \001(\002\022\013\n\003max\030\003 \001(\002\"!\n\005R"
+  "ange\022\013\n\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"*\n\trangeG"
+  "ate\022\035\n\005param\030\001 \001(\0132\016.pb.paramRange\"9\n\016Mu"
+  "ltiRangeGate\022\014\n\004name\030\001 \001(\t\022\031\n\006ranges\030\002 \003"
+  "(\0132\t.pb.Range\"=\n\tparamPoly\022\016\n\006params\030\001 \003"
+  "(\t\022 \n\010vertices\030\002 \003(\0132\016.pb.coordinate\"E\n\013"
+  "polygonGate\022\034\n\005param\030\001 \001(\0132\r.pb.paramPol"
+  "y\022\030\n\002qg\030\002 \001(\0132\014.pb.quadGate\"\"\n\ncoordinat"
+  "e\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002\"\200\001\n\013ellipseGate\022"
+  "\032\n\002mu\030\001 \001(\0132\016.pb.coordinate\022\033\n\003cov\030\002 \003(\013"
+  "2\016.pb.coordinate\022*\n\022antipodal_vertices\030\003"
+  " \003(\0132\016.pb.coordinate\022\014\n\004dist\030\004 \001(\002\"7\n\014BO"
+  "OL_GATE_OP\022\014\n\004path\030\001 \003(\t\022\n\n\002op\030\002 \001(\r\022\r\n\005"
+  "isNot\030\003 \001(\010\"0\n\010boolGate\022$\n\nboolOpSpec\030\001 "
+  "\003(\0132\020.pb.BOOL_GATE_OP\"%\n\013clusterGate\022\026\n\016"
+  "cluster_method\030\001 \001(\t\"7\n\010quadGate\022\013\n\003uid\030"
+  "\001 \001(\t\022\036\n\010quadrant\030\003 \001(\0162\014.pb.QUADRANT\"\345\001"
+  "\n\004gate\022\013\n\003neg\030\001 \001(\010\022\025\n\risTransformed\030\002 \001"
+  "(\010\022\020\n\010isGained\030\003 \001(\010\022\033\n\004type\030\004 \001(\0162\r.pb."
+  "GATE_TYPE\022\031\n\002rg\030\005 \001(\0132\r.pb.rangeGate\022\033\n\002"
+  "pg\030\006 \001(\0132\017.pb.polygonGate\022\033\n\002eg\030\007 \001(\0132\017."
+  "pb.ellipseGate\022\030\n\002bg\030\010 \001(\0132\014.pb.boolGate"
+  "\022\033\n\002cg\030\t \001(\0132\017.pb.clusterGate\"-\n\010POPSTAT"
+  "S\022\020\n\010statType\030\001 \001(\t\022\017\n\007statVal\030\002 \001(\002\"\223\001\n"
+  "\020calibrationTable\022\r\n\001x\030\001 \003(\002B\002\020\001\022\r\n\001y\030\002 "
+  "\003(\002B\002\020\001\022\r\n\001b\030\003 \003(\002B\002\020\001\022\r\n\001c\030\004 \003(\002B\002\020\001\022\r\n"
+  "\001d\030\005 \003(\002B\002\020\001\022\025\n\rspline_method\030\006 \001(\r\022\017\n\007c"
+  "altype\030\007 \001(\t\022\014\n\004flag\030\010 \001(\010\"b\n\nbiexpTrans"
+  "\022\024\n\014channelRange\030\001 \001(\r\022\013\n\003pos\030\002 \001(\002\022\013\n\003n"
+  "eg\030\003 \001(\002\022\022\n\nwidthBasis\030\004 \001(\002\022\020\n\010maxValue"
+  "\030\005 \001(\002\"P\n\013fasinhTrans\022\016\n\006length\030\001 \001(\002\022\020\n"
+  "\010maxRange\030\002 \001(\002\022\t\n\001T\030\003 \001(\002\022\t\n\001A\030\004 \001(\002\022\t\n"
+  "\001M\030\005 \001(\002\"D\n\nscaleTrans\022\024\n\014scale_factor\030\001"
+  " \001(\002\022\017\n\007t_scale\030\002 \001(\002\022\017\n\007r_scale\030\003 \001(\002\"%"
+  "\n\tflinTrans\022\013\n\003min\030\001 \001(\002\022\013\n\003max\030\002 \001(\002\"D\n"
+  "\010logTrans\022\016\n\006offset\030\001 \001(\002\022\016\n\006decade\030\002 \001("
+  "\002\022\t\n\001T\030\003 \001(\002\022\r\n\005scale\030\004 \001(\002\"$\n\014logGML2Tr"
+  "ans\022\t\n\001T\030\001 \001(\002\022\t\n\001M\030\002 \001(\002\"k\n\014logicleTran"
+  "s\022\t\n\001T\030\001 \001(\002\022\t\n\001W\030\002 \001(\002\022\t\n\001M\030\003 \001(\002\022\t\n\001A\030"
+  "\004 \001(\002\022\014\n\004bins\030\005 \001(\002\022\016\n\006isGml2\030\006 \001(\010\022\021\n\ti"
+  "sInverse\030\007 \001(\010\"\373\002\n\016transformation\022$\n\006cal"
+  "Tbl\030\001 \001(\0132\024.pb.calibrationTable\022\022\n\nisGat"
+  "eOnly\030\002 \001(\010\022\014\n\004name\030\004 \001(\t\022\017\n\007channel\030\005 \001"
+  "(\t\022\022\n\nisComputed\030\006 \001(\010\022\014\n\004type\030\014 \001(\r\022\"\n\n"
+  "trans_type\030\003 \001(\0162\016.pb.TRANS_TYPE\022\032\n\002bt\030\007"
+  " \001(\0132\016.pb.biexpTrans\022\030\n\002lt\030\010 \001(\0132\014.pb.lo"
+  "gTrans\022\032\n\003flt\030\t \001(\0132\r.pb.flinTrans\022\032\n\002st"
+  "\030\n \001(\0132\016.pb.scaleTrans\022\033\n\002ft\030\013 \001(\0132\017.pb."
+  "fasinhTrans\022\035\n\003lgt\030\r \001(\0132\020.pb.logicleTra"
+  "ns\022 \n\006lgml2t\030\016 \001(\0132\020.pb.logGML2Trans\"T\n\n"
+  "trans_pair\022\014\n\004name\030\001 \001(\t\022\025\n\rtrans_addres"
+  "s\030\002 \001(\004\022!\n\005trans\030\003 \001(\0132\022.pb.transformati"
+  "on\"S\n\013trans_local\022\032\n\002tp\030\001 \003(\0132\016.pb.trans"
+  "_pair\022\021\n\tgroupName\030\002 \001(\t\022\025\n\tsampleIDs\030\003 "
+  "\003(\rB\002\020\001\"\\\n\nPOPINDICES\022\017\n\007nEvents\030\001 \001(\r\022\035"
+  "\n\007indtype\030\002 \001(\0162\014.pb.ind_type\022\020\n\004iInd\030\003 "
+  "\003(\rB\002\020\001\022\014\n\004bInd\030\004 \001(\014\"\255\001\n\016nodeProperties"
+  "\022\020\n\010thisName\030\001 \001(\t\022\035\n\007fjStats\030\002 \003(\0132\014.pb"
+  ".POPSTATS\022\035\n\007fcStats\030\003 \003(\0132\014.pb.POPSTATS"
+  "\022\016\n\006hidden\030\004 \001(\010\022\037\n\007indices\030\005 \001(\0132\016.pb.P"
+  "OPINDICES\022\032\n\010thisGate\030\006 \001(\0132\010.pb.gate\"=\n"
+  "\ttreeNodes\022 \n\004node\030\001 \001(\0132\022.pb.nodeProper"
+  "ties\022\016\n\006parent\030\002 \001(\r\"-\n\016populationTree\022\033"
+  "\n\004node\030\001 \003(\0132\r.pb.treeNodes\"\207\001\n\004COMP\022\013\n\003"
+  "cid\030\001 \001(\t\022\016\n\006prefix\030\002 \001(\t\022\016\n\006suffix\030\003 \001("
+  "\t\022\014\n\004name\030\004 \001(\t\022\017\n\007comment\030\005 \001(\t\022\016\n\006mark"
+  "er\030\006 \003(\t\022\021\n\tspillOver\030\007 \003(\002\022\020\n\010detector\030"
+  "\010 \003(\t\"_\n\005PARAM\022\r\n\005param\030\001 \001(\t\022\013\n\003log\030\002 \001"
+  "(\010\022\r\n\005range\030\003 \001(\r\022\021\n\thighValue\030\004 \001(\r\022\030\n\020"
+  "calibrationIndex\030\005 \001(\r\"\271\001\n\017GatingHierarc"
+  "hy\022 \n\004tree\030\002 \001(\0132\022.pb.populationTree\022\026\n\004"
+  "comp\030\001 \001(\0132\010.pb.COMP\022\020\n\010isLoaded\030\003 \001(\010\022\034"
+  "\n\ttransFlag\030\004 \003(\0132\t.pb.PARAM\022\036\n\005trans\030\005 "
+  "\001(\0132\017.pb.trans_local\022\034\n\005frame\030\006 \001(\0132\r.pb"
+  ".CytoFrame\"\032\n\tCytoFrame\022\r\n\005is_h5\030\001 \001(\010\"E"
+  "\n\tTRANS_TBL\022\025\n\rtrans_address\030\001 \001(\004\022!\n\005tr"
+  "ans\030\002 \001(\0132\022.pb.transformation\"\340\001\n\tGating"
+  "Set\022 \n\ttrans_tbl\030\002 \003(\0132\r.pb.TRANS_TBL\022\022\n"
+  "\nsampleName\030\001 \003(\t\022\030\n\020globalBiExpTrans\030\003 "
+  "\001(\004\022\026\n\016globalLinTrans\030\004 \001(\004\022\037\n\006gTrans\030\005 "
+  "\003(\0132\017.pb.trans_local\022\014\n\004guid\030\006 \001(\t\022\026\n\016cy"
+  "tolib_verion\030\007 \001(\t\022\021\n\tpb_verion\030\010 \001(\t\022\021\n"
+  "\th5_verion\030\t \001(\t*=\n\010QUADRANT\022\021\n\rQ_UNSPEC"
+  "IFIED\020\000\022\006\n\002Q1\020\001\022\006\n\002Q2\020\002\022\006\n\002Q3\020\003\022\006\n\002Q4\020\004*"
+  "\272\001\n\tGATE_TYPE\022\024\n\020GATE_UNSPECIFIED\020\000\022\020\n\014P"
+  "OLYGON_GATE\020\001\022\016\n\nRANGE_GATE\020\002\022\r\n\tBOOL_GA"
+  "TE\020\003\022\020\n\014ELLIPSE_GATE\020\004\022\r\n\tRECT_GATE\020\005\022\020\n"
+  "\014LOGICAL_GATE\020\006\022\022\n\016ELLIPSOID_GATE\020\007\022\020\n\014C"
+  "LUSTER_GATE\020\010\022\r\n\tQUAD_GATE\020\t*\'\n\010ind_type"
+  "\022\010\n\004BOOL\020\000\022\007\n\003INT\020\001\022\010\n\004ROOT\020\002*\214\001\n\nTRANS_"
+  "TYPE\022\r\n\tPB_CALTBL\020\000\022\n\n\006PB_LOG\020\001\022\n\n\006PB_LI"
+  "N\020\002\022\013\n\007PB_FLIN\020\003\022\016\n\nPB_FASIGNH\020\004\022\014\n\010PB_B"
+  "IEXP\020\005\022\016\n\nPB_LOGICLE\020\006\022\016\n\nPB_LOGGML2\020\007\022\014"
+  "\n\010PB_SCALE\020\010b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_GatingSet_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_GatingSet_2eproto_sccs[33] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_GatingSet_2eproto_sccs[35] = {
   &scc_info_BOOL_GATE_OP_GatingSet_2eproto.base,
   &scc_info_COMP_GatingSet_2eproto.base,
   &scc_info_CytoFrame_GatingSet_2eproto.base,
   &scc_info_GatingHierarchy_GatingSet_2eproto.base,
   &scc_info_GatingSet_GatingSet_2eproto.base,
+  &scc_info_MultiRangeGate_GatingSet_2eproto.base,
   &scc_info_PARAM_GatingSet_2eproto.base,
   &scc_info_POPINDICES_GatingSet_2eproto.base,
   &scc_info_POPSTATS_GatingSet_2eproto.base,
+  &scc_info_Range_GatingSet_2eproto.base,
   &scc_info_TRANS_TBL_GatingSet_2eproto.base,
   &scc_info_biexpTrans_GatingSet_2eproto.base,
   &scc_info_boolGate_GatingSet_2eproto.base,
@@ -1186,10 +1246,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Gat
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_GatingSet_2eproto_once;
 static bool descriptor_table_GatingSet_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_GatingSet_2eproto = {
-  &descriptor_table_GatingSet_2eproto_initialized, descriptor_table_protodef_GatingSet_2eproto, "GatingSet.proto", 3686,
-  &descriptor_table_GatingSet_2eproto_once, descriptor_table_GatingSet_2eproto_sccs, descriptor_table_GatingSet_2eproto_deps, 33, 0,
+  &descriptor_table_GatingSet_2eproto_initialized, descriptor_table_protodef_GatingSet_2eproto, "GatingSet.proto", 3780,
+  &descriptor_table_GatingSet_2eproto_once, descriptor_table_GatingSet_2eproto_sccs, descriptor_table_GatingSet_2eproto_deps, 35, 0,
   schemas, file_default_instances, TableStruct_GatingSet_2eproto::offsets,
-  file_level_metadata_GatingSet_2eproto, 33, file_level_enum_descriptors_GatingSet_2eproto, file_level_service_descriptors_GatingSet_2eproto,
+  file_level_metadata_GatingSet_2eproto, 35, file_level_enum_descriptors_GatingSet_2eproto, file_level_service_descriptors_GatingSet_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -1639,6 +1699,307 @@ void paramRange::InternalSwap(paramRange* other) {
 
 // ===================================================================
 
+void Range::InitAsDefaultInstance() {
+}
+class Range::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int Range::kMinFieldNumber;
+const int Range::kMaxFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+Range::Range()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.Range)
+}
+Range::Range(const Range& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&min_, &from.min_,
+    static_cast<size_t>(reinterpret_cast<char*>(&max_) -
+    reinterpret_cast<char*>(&min_)) + sizeof(max_));
+  // @@protoc_insertion_point(copy_constructor:pb.Range)
+}
+
+void Range::SharedCtor() {
+  ::memset(&min_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&max_) -
+      reinterpret_cast<char*>(&min_)) + sizeof(max_));
+}
+
+Range::~Range() {
+  // @@protoc_insertion_point(destructor:pb.Range)
+  SharedDtor();
+}
+
+void Range::SharedDtor() {
+}
+
+void Range::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Range& Range::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Range_GatingSet_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Range::Clear() {
+// @@protoc_insertion_point(message_clear_start:pb.Range)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&min_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&max_) -
+      reinterpret_cast<char*>(&min_)) + sizeof(max_));
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Range::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // float min = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 13)) {
+          min_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      // float max = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21)) {
+          max_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool Range::MergePartialFromCodedStream(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.Range)
+  for (;;) {
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // float min = 1;
+      case 1: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (13 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &min_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // float max = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (21 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &max_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.Range)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.Range)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void Range::SerializeWithCachedSizes(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.Range)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float min = 1;
+  if (!(this->min() <= 0 && this->min() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(1, this->min(), output);
+  }
+
+  // float max = 2;
+  if (!(this->max() <= 0 && this->max() >= 0)) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloat(2, this->max(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.Range)
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Range::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.Range)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // float min = 1;
+  if (!(this->min() <= 0 && this->min() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(1, this->min(), target);
+  }
+
+  // float max = 2;
+  if (!(this->max() <= 0 && this->max() >= 0)) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(2, this->max(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.Range)
+  return target;
+}
+
+size_t Range::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pb.Range)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // float min = 1;
+  if (!(this->min() <= 0 && this->min() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  // float max = 2;
+  if (!(this->max() <= 0 && this->max() >= 0)) {
+    total_size += 1 + 4;
+  }
+
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Range::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.Range)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Range* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Range>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Range)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.Range)
+    MergeFrom(*source);
+  }
+}
+
+void Range::MergeFrom(const Range& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pb.Range)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!(from.min() <= 0 && from.min() >= 0)) {
+    set_min(from.min());
+  }
+  if (!(from.max() <= 0 && from.max() >= 0)) {
+    set_max(from.max());
+  }
+}
+
+void Range::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.Range)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Range::CopyFrom(const Range& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pb.Range)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Range::IsInitialized() const {
+  return true;
+}
+
+void Range::Swap(Range* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void Range::InternalSwap(Range* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(min_, other->min_);
+  swap(max_, other->max_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Range::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void rangeGate::InitAsDefaultInstance() {
   ::pb::_rangeGate_default_instance_._instance.get_mutable()->param_ = const_cast< ::pb::paramRange*>(
       ::pb::paramRange::internal_default_instance());
@@ -1907,6 +2268,339 @@ void rangeGate::InternalSwap(rangeGate* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata rangeGate::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void MultiRangeGate::InitAsDefaultInstance() {
+}
+class MultiRangeGate::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int MultiRangeGate::kNameFieldNumber;
+const int MultiRangeGate::kRangesFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+MultiRangeGate::MultiRangeGate()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:pb.MultiRangeGate)
+}
+MultiRangeGate::MultiRangeGate(const MultiRangeGate& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      ranges_(from.ranges_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  // @@protoc_insertion_point(copy_constructor:pb.MultiRangeGate)
+}
+
+void MultiRangeGate::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_MultiRangeGate_GatingSet_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+MultiRangeGate::~MultiRangeGate() {
+  // @@protoc_insertion_point(destructor:pb.MultiRangeGate)
+  SharedDtor();
+}
+
+void MultiRangeGate::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void MultiRangeGate::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const MultiRangeGate& MultiRangeGate::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_MultiRangeGate_GatingSet_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void MultiRangeGate::Clear() {
+// @@protoc_insertion_point(message_clear_start:pb.MultiRangeGate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ranges_.Clear();
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* MultiRangeGate::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "pb.MultiRangeGate.name");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .pb.Range ranges = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(add_ranges(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 18);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool MultiRangeGate::MergePartialFromCodedStream(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+  // @@protoc_insertion_point(parse_start:pb.MultiRangeGate)
+  for (;;) {
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string name = 1;
+      case 1: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "pb.MultiRangeGate.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .pb.Range ranges = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+                input, add_ranges()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:pb.MultiRangeGate)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:pb.MultiRangeGate)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void MultiRangeGate::SerializeWithCachedSizes(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:pb.MultiRangeGate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pb.MultiRangeGate.name");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->name(), output);
+  }
+
+  // repeated .pb.Range ranges = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->ranges_size()); i < n; i++) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2,
+      this->ranges(static_cast<int>(i)),
+      output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:pb.MultiRangeGate)
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* MultiRangeGate::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:pb.MultiRangeGate)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "pb.MultiRangeGate.name");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        1, this->name(), target);
+  }
+
+  // repeated .pb.Range ranges = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->ranges_size()); i < n; i++) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->ranges(static_cast<int>(i)), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:pb.MultiRangeGate)
+  return target;
+}
+
+size_t MultiRangeGate::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:pb.MultiRangeGate)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .pb.Range ranges = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->ranges_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          this->ranges(static_cast<int>(i)));
+    }
+  }
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->name());
+  }
+
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void MultiRangeGate::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:pb.MultiRangeGate)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MultiRangeGate* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<MultiRangeGate>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.MultiRangeGate)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:pb.MultiRangeGate)
+    MergeFrom(*source);
+  }
+}
+
+void MultiRangeGate::MergeFrom(const MultiRangeGate& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:pb.MultiRangeGate)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  ranges_.MergeFrom(from.ranges_);
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+}
+
+void MultiRangeGate::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:pb.MultiRangeGate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MultiRangeGate::CopyFrom(const MultiRangeGate& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:pb.MultiRangeGate)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MultiRangeGate::IsInitialized() const {
+  return true;
+}
+
+void MultiRangeGate::Swap(MultiRangeGate* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void MultiRangeGate::InternalSwap(MultiRangeGate* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&ranges_)->InternalSwap(CastToBase(&other->ranges_));
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MultiRangeGate::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -15331,8 +16025,14 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::pb::paramRange* Arena::CreateMaybeMessage< ::pb::paramRange >(Arena* arena) {
   return Arena::CreateInternal< ::pb::paramRange >(arena);
 }
+template<> PROTOBUF_NOINLINE ::pb::Range* Arena::CreateMaybeMessage< ::pb::Range >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::Range >(arena);
+}
 template<> PROTOBUF_NOINLINE ::pb::rangeGate* Arena::CreateMaybeMessage< ::pb::rangeGate >(Arena* arena) {
   return Arena::CreateInternal< ::pb::rangeGate >(arena);
+}
+template<> PROTOBUF_NOINLINE ::pb::MultiRangeGate* Arena::CreateMaybeMessage< ::pb::MultiRangeGate >(Arena* arena) {
+  return Arena::CreateInternal< ::pb::MultiRangeGate >(arena);
 }
 template<> PROTOBUF_NOINLINE ::pb::paramPoly* Arena::CreateMaybeMessage< ::pb::paramPoly >(Arena* arena) {
   return Arena::CreateInternal< ::pb::paramPoly >(arena);
