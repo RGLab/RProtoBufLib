@@ -5,9 +5,21 @@ message paramRange{
 	float min = 2;
 	float max = 3;
 }
+// An arbitrary float value range for use in other messages.
+message Range {
+  float min = 1;
+  float max = 2;
+}
+
 message rangeGate{
 	paramRange param = 1;
 }
+
+message MultiRangeGate {
+    string name = 1;
+    repeated Range ranges = 2;
+}
+
 message paramPoly{
 	repeated string params = 1;//params.at(0) is x, params.at(1) is y axis
 	repeated coordinate vertices = 2;
@@ -64,6 +76,7 @@ enum GATE_TYPE{
 	 ELLIPSOID_GATE = 7;
 	 CLUSTER_GATE = 8;
 	 QUAD_GATE = 9;
+   MULTI_RANGE_GATE = 11;
 	}
 message gate{
 	bool neg =1;
@@ -76,6 +89,7 @@ message gate{
 	ellipseGate eg = 7;
 	boolGate bg = 8;
     clusterGate cg = 9;
+  MultiRangeGate mrg = 10;
 
 }
 

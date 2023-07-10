@@ -48,7 +48,7 @@ struct TableStruct_GatingSet_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[33]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[35]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -71,6 +71,9 @@ extern GatingHierarchyDefaultTypeInternal _GatingHierarchy_default_instance_;
 class GatingSet;
 class GatingSetDefaultTypeInternal;
 extern GatingSetDefaultTypeInternal _GatingSet_default_instance_;
+class MultiRangeGate;
+class MultiRangeGateDefaultTypeInternal;
+extern MultiRangeGateDefaultTypeInternal _MultiRangeGate_default_instance_;
 class PARAM;
 class PARAMDefaultTypeInternal;
 extern PARAMDefaultTypeInternal _PARAM_default_instance_;
@@ -80,6 +83,9 @@ extern POPINDICESDefaultTypeInternal _POPINDICES_default_instance_;
 class POPSTATS;
 class POPSTATSDefaultTypeInternal;
 extern POPSTATSDefaultTypeInternal _POPSTATS_default_instance_;
+class Range;
+class RangeDefaultTypeInternal;
+extern RangeDefaultTypeInternal _Range_default_instance_;
 class TRANS_TBL;
 class TRANS_TBLDefaultTypeInternal;
 extern TRANS_TBLDefaultTypeInternal _TRANS_TBL_default_instance_;
@@ -162,9 +168,11 @@ template<> ::pb::COMP* Arena::CreateMaybeMessage<::pb::COMP>(Arena*);
 template<> ::pb::CytoFrame* Arena::CreateMaybeMessage<::pb::CytoFrame>(Arena*);
 template<> ::pb::GatingHierarchy* Arena::CreateMaybeMessage<::pb::GatingHierarchy>(Arena*);
 template<> ::pb::GatingSet* Arena::CreateMaybeMessage<::pb::GatingSet>(Arena*);
+template<> ::pb::MultiRangeGate* Arena::CreateMaybeMessage<::pb::MultiRangeGate>(Arena*);
 template<> ::pb::PARAM* Arena::CreateMaybeMessage<::pb::PARAM>(Arena*);
 template<> ::pb::POPINDICES* Arena::CreateMaybeMessage<::pb::POPINDICES>(Arena*);
 template<> ::pb::POPSTATS* Arena::CreateMaybeMessage<::pb::POPSTATS>(Arena*);
+template<> ::pb::Range* Arena::CreateMaybeMessage<::pb::Range>(Arena*);
 template<> ::pb::TRANS_TBL* Arena::CreateMaybeMessage<::pb::TRANS_TBL>(Arena*);
 template<> ::pb::biexpTrans* Arena::CreateMaybeMessage<::pb::biexpTrans>(Arena*);
 template<> ::pb::boolGate* Arena::CreateMaybeMessage<::pb::boolGate>(Arena*);
@@ -232,12 +240,13 @@ enum GATE_TYPE : int {
   ELLIPSOID_GATE = 7,
   CLUSTER_GATE = 8,
   QUAD_GATE = 9,
+  MULTI_RANGE_GATE = 11,
   GATE_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   GATE_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool GATE_TYPE_IsValid(int value);
 constexpr GATE_TYPE GATE_TYPE_MIN = GATE_UNSPECIFIED;
-constexpr GATE_TYPE GATE_TYPE_MAX = QUAD_GATE;
+constexpr GATE_TYPE GATE_TYPE_MAX = MULTI_RANGE_GATE;
 constexpr int GATE_TYPE_ARRAYSIZE = GATE_TYPE_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GATE_TYPE_descriptor();
@@ -460,6 +469,139 @@ class paramRange :
 };
 // -------------------------------------------------------------------
 
+class Range :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.Range) */ {
+ public:
+  Range();
+  virtual ~Range();
+
+  Range(const Range& from);
+  Range(Range&& from) noexcept
+    : Range() {
+    *this = ::std::move(from);
+  }
+
+  inline Range& operator=(const Range& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Range& operator=(Range&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const Range& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Range* internal_default_instance() {
+    return reinterpret_cast<const Range*>(
+               &_Range_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(Range* other);
+  friend void swap(Range& a, Range& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Range* New() const final {
+    return CreateMaybeMessage<Range>(nullptr);
+  }
+
+  Range* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<Range>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const Range& from);
+  void MergeFrom(const Range& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Range* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.Range";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_GatingSet_2eproto);
+    return ::descriptor_table_GatingSet_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // float min = 1;
+  void clear_min();
+  static const int kMinFieldNumber = 1;
+  float min() const;
+  void set_min(float value);
+
+  // float max = 2;
+  void clear_max();
+  static const int kMaxFieldNumber = 2;
+  float max() const;
+  void set_max(float value);
+
+  // @@protoc_insertion_point(class_scope:pb.Range)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  float min_;
+  float max_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_GatingSet_2eproto;
+};
+// -------------------------------------------------------------------
+
 class rangeGate :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.rangeGate) */ {
  public:
@@ -502,7 +644,7 @@ class rangeGate :
                &_rangeGate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(rangeGate* other);
   friend void swap(rangeGate& a, rangeGate& b) {
@@ -589,6 +731,151 @@ class rangeGate :
 };
 // -------------------------------------------------------------------
 
+class MultiRangeGate :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.MultiRangeGate) */ {
+ public:
+  MultiRangeGate();
+  virtual ~MultiRangeGate();
+
+  MultiRangeGate(const MultiRangeGate& from);
+  MultiRangeGate(MultiRangeGate&& from) noexcept
+    : MultiRangeGate() {
+    *this = ::std::move(from);
+  }
+
+  inline MultiRangeGate& operator=(const MultiRangeGate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline MultiRangeGate& operator=(MultiRangeGate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const MultiRangeGate& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MultiRangeGate* internal_default_instance() {
+    return reinterpret_cast<const MultiRangeGate*>(
+               &_MultiRangeGate_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(MultiRangeGate* other);
+  friend void swap(MultiRangeGate& a, MultiRangeGate& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MultiRangeGate* New() const final {
+    return CreateMaybeMessage<MultiRangeGate>(nullptr);
+  }
+
+  MultiRangeGate* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<MultiRangeGate>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const MultiRangeGate& from);
+  void MergeFrom(const MultiRangeGate& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MultiRangeGate* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "pb.MultiRangeGate";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_GatingSet_2eproto);
+    return ::descriptor_table_GatingSet_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .pb.Range ranges = 2;
+  int ranges_size() const;
+  void clear_ranges();
+  static const int kRangesFieldNumber = 2;
+  ::pb::Range* mutable_ranges(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Range >*
+      mutable_ranges();
+  const ::pb::Range& ranges(int index) const;
+  ::pb::Range* add_ranges();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Range >&
+      ranges() const;
+
+  // string name = 1;
+  void clear_name();
+  static const int kNameFieldNumber = 1;
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+
+  // @@protoc_insertion_point(class_scope:pb.MultiRangeGate)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Range > ranges_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_GatingSet_2eproto;
+};
+// -------------------------------------------------------------------
+
 class paramPoly :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:pb.paramPoly) */ {
  public:
@@ -631,7 +918,7 @@ class paramPoly :
                &_paramPoly_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(paramPoly* other);
   friend void swap(paramPoly& a, paramPoly& b) {
@@ -782,7 +1069,7 @@ class polygonGate :
                &_polygonGate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(polygonGate* other);
   friend void swap(polygonGate& a, polygonGate& b) {
@@ -921,7 +1208,7 @@ class coordinate :
                &_coordinate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(coordinate* other);
   friend void swap(coordinate& a, coordinate& b) {
@@ -1054,7 +1341,7 @@ class ellipseGate :
                &_ellipseGate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(ellipseGate* other);
   friend void swap(ellipseGate& a, ellipseGate& b) {
@@ -1216,7 +1503,7 @@ class BOOL_GATE_OP :
                &_BOOL_GATE_OP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(BOOL_GATE_OP* other);
   friend void swap(BOOL_GATE_OP& a, BOOL_GATE_OP& b) {
@@ -1368,7 +1655,7 @@ class boolGate :
                &_boolGate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(boolGate* other);
   friend void swap(boolGate& a, boolGate& b) {
@@ -1500,7 +1787,7 @@ class clusterGate :
                &_clusterGate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(clusterGate* other);
   friend void swap(clusterGate& a, clusterGate& b) {
@@ -1632,7 +1919,7 @@ class quadGate :
                &_quadGate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(quadGate* other);
   friend void swap(quadGate& a, quadGate& b) {
@@ -1771,7 +2058,7 @@ class gate :
                &_gate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(gate* other);
   friend void swap(gate& a, gate& b) {
@@ -1883,6 +2170,15 @@ class gate :
   ::pb::clusterGate* mutable_cg();
   void set_allocated_cg(::pb::clusterGate* cg);
 
+  // .pb.MultiRangeGate mrg = 10;
+  bool has_mrg() const;
+  void clear_mrg();
+  static const int kMrgFieldNumber = 10;
+  const ::pb::MultiRangeGate& mrg() const;
+  ::pb::MultiRangeGate* release_mrg();
+  ::pb::MultiRangeGate* mutable_mrg();
+  void set_allocated_mrg(::pb::MultiRangeGate* mrg);
+
   // bool neg = 1;
   void clear_neg();
   static const int kNegFieldNumber = 1;
@@ -1917,6 +2213,7 @@ class gate :
   ::pb::ellipseGate* eg_;
   ::pb::boolGate* bg_;
   ::pb::clusterGate* cg_;
+  ::pb::MultiRangeGate* mrg_;
   bool neg_;
   bool istransformed_;
   bool isgained_;
@@ -1968,7 +2265,7 @@ class POPSTATS :
                &_POPSTATS_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(POPSTATS* other);
   friend void swap(POPSTATS& a, POPSTATS& b) {
@@ -2107,7 +2404,7 @@ class calibrationTable :
                &_calibrationTable_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(calibrationTable* other);
   friend void swap(calibrationTable& a, calibrationTable& b) {
@@ -2323,7 +2620,7 @@ class biexpTrans :
                &_biexpTrans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(biexpTrans* other);
   friend void swap(biexpTrans& a, biexpTrans& b) {
@@ -2477,7 +2774,7 @@ class fasinhTrans :
                &_fasinhTrans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(fasinhTrans* other);
   friend void swap(fasinhTrans& a, fasinhTrans& b) {
@@ -2631,7 +2928,7 @@ class scaleTrans :
                &_scaleTrans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(scaleTrans* other);
   friend void swap(scaleTrans& a, scaleTrans& b) {
@@ -2771,7 +3068,7 @@ class flinTrans :
                &_flinTrans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(flinTrans* other);
   friend void swap(flinTrans& a, flinTrans& b) {
@@ -2904,7 +3201,7 @@ class logTrans :
                &_logTrans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(logTrans* other);
   friend void swap(logTrans& a, logTrans& b) {
@@ -3051,7 +3348,7 @@ class logGML2Trans :
                &_logGML2Trans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   void Swap(logGML2Trans* other);
   friend void swap(logGML2Trans& a, logGML2Trans& b) {
@@ -3184,7 +3481,7 @@ class logicleTrans :
                &_logicleTrans_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   void Swap(logicleTrans* other);
   friend void swap(logicleTrans& a, logicleTrans& b) {
@@ -3352,7 +3649,7 @@ class transformation :
                &_transformation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   void Swap(transformation* other);
   friend void swap(transformation& a, transformation& b) {
@@ -3605,7 +3902,7 @@ class trans_pair :
                &_trans_pair_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   void Swap(trans_pair* other);
   friend void swap(trans_pair& a, trans_pair& b) {
@@ -3754,7 +4051,7 @@ class trans_local :
                &_trans_local_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   void Swap(trans_local* other);
   friend void swap(trans_local& a, trans_local& b) {
@@ -3913,7 +4210,7 @@ class POPINDICES :
                &_POPINDICES_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   void Swap(POPINDICES* other);
   friend void swap(POPINDICES& a, POPINDICES& b) {
@@ -4073,7 +4370,7 @@ class nodeProperties :
                &_nodeProperties_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   void Swap(nodeProperties* other);
   friend void swap(nodeProperties& a, nodeProperties& b) {
@@ -4258,7 +4555,7 @@ class treeNodes :
                &_treeNodes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   void Swap(treeNodes* other);
   friend void swap(treeNodes& a, treeNodes& b) {
@@ -4394,7 +4691,7 @@ class populationTree :
                &_populationTree_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   void Swap(populationTree* other);
   friend void swap(populationTree& a, populationTree& b) {
@@ -4526,7 +4823,7 @@ class COMP :
                &_COMP_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   void Swap(COMP* other);
   friend void swap(COMP& a, COMP& b) {
@@ -4762,7 +5059,7 @@ class PARAM :
                &_PARAM_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   void Swap(PARAM* other);
   friend void swap(PARAM& a, PARAM& b) {
@@ -4922,7 +5219,7 @@ class GatingHierarchy :
                &_GatingHierarchy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   void Swap(GatingHierarchy* other);
   friend void swap(GatingHierarchy& a, GatingHierarchy& b) {
@@ -5101,7 +5398,7 @@ class CytoFrame :
                &_CytoFrame_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   void Swap(CytoFrame* other);
   friend void swap(CytoFrame& a, CytoFrame& b) {
@@ -5227,7 +5524,7 @@ class TRANS_TBL :
                &_TRANS_TBL_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   void Swap(TRANS_TBL* other);
   friend void swap(TRANS_TBL& a, TRANS_TBL& b) {
@@ -5363,7 +5660,7 @@ class GatingSet :
                &_GatingSet_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   void Swap(GatingSet* other);
   friend void swap(GatingSet& a, GatingSet& b) {
@@ -5641,6 +5938,38 @@ inline void paramRange::set_max(float value) {
 
 // -------------------------------------------------------------------
 
+// Range
+
+// float min = 1;
+inline void Range::clear_min() {
+  min_ = 0;
+}
+inline float Range::min() const {
+  // @@protoc_insertion_point(field_get:pb.Range.min)
+  return min_;
+}
+inline void Range::set_min(float value) {
+  
+  min_ = value;
+  // @@protoc_insertion_point(field_set:pb.Range.min)
+}
+
+// float max = 2;
+inline void Range::clear_max() {
+  max_ = 0;
+}
+inline float Range::max() const {
+  // @@protoc_insertion_point(field_get:pb.Range.max)
+  return max_;
+}
+inline void Range::set_max(float value) {
+  
+  max_ = value;
+  // @@protoc_insertion_point(field_set:pb.Range.max)
+}
+
+// -------------------------------------------------------------------
+
 // rangeGate
 
 // .pb.paramRange param = 1;
@@ -5692,6 +6021,91 @@ inline void rangeGate::set_allocated_param(::pb::paramRange* param) {
   }
   param_ = param;
   // @@protoc_insertion_point(field_set_allocated:pb.rangeGate.param)
+}
+
+// -------------------------------------------------------------------
+
+// MultiRangeGate
+
+// string name = 1;
+inline void MultiRangeGate::clear_name() {
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& MultiRangeGate::name() const {
+  // @@protoc_insertion_point(field_get:pb.MultiRangeGate.name)
+  return name_.GetNoArena();
+}
+inline void MultiRangeGate::set_name(const std::string& value) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:pb.MultiRangeGate.name)
+}
+inline void MultiRangeGate::set_name(std::string&& value) {
+  
+  name_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:pb.MultiRangeGate.name)
+}
+inline void MultiRangeGate::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:pb.MultiRangeGate.name)
+}
+inline void MultiRangeGate::set_name(const char* value, size_t size) {
+  
+  name_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:pb.MultiRangeGate.name)
+}
+inline std::string* MultiRangeGate::mutable_name() {
+  
+  // @@protoc_insertion_point(field_mutable:pb.MultiRangeGate.name)
+  return name_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* MultiRangeGate::release_name() {
+  // @@protoc_insertion_point(field_release:pb.MultiRangeGate.name)
+  
+  return name_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void MultiRangeGate::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name);
+  // @@protoc_insertion_point(field_set_allocated:pb.MultiRangeGate.name)
+}
+
+// repeated .pb.Range ranges = 2;
+inline int MultiRangeGate::ranges_size() const {
+  return ranges_.size();
+}
+inline void MultiRangeGate::clear_ranges() {
+  ranges_.Clear();
+}
+inline ::pb::Range* MultiRangeGate::mutable_ranges(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.MultiRangeGate.ranges)
+  return ranges_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Range >*
+MultiRangeGate::mutable_ranges() {
+  // @@protoc_insertion_point(field_mutable_list:pb.MultiRangeGate.ranges)
+  return &ranges_;
+}
+inline const ::pb::Range& MultiRangeGate::ranges(int index) const {
+  // @@protoc_insertion_point(field_get:pb.MultiRangeGate.ranges)
+  return ranges_.Get(index);
+}
+inline ::pb::Range* MultiRangeGate::add_ranges() {
+  // @@protoc_insertion_point(field_add:pb.MultiRangeGate.ranges)
+  return ranges_.Add();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::pb::Range >&
+MultiRangeGate::ranges() const {
+  // @@protoc_insertion_point(field_list:pb.MultiRangeGate.ranges)
+  return ranges_;
 }
 
 // -------------------------------------------------------------------
@@ -6628,6 +7042,57 @@ inline void gate::set_allocated_cg(::pb::clusterGate* cg) {
   }
   cg_ = cg;
   // @@protoc_insertion_point(field_set_allocated:pb.gate.cg)
+}
+
+// .pb.MultiRangeGate mrg = 10;
+inline bool gate::has_mrg() const {
+  return this != internal_default_instance() && mrg_ != nullptr;
+}
+inline void gate::clear_mrg() {
+  if (GetArenaNoVirtual() == nullptr && mrg_ != nullptr) {
+    delete mrg_;
+  }
+  mrg_ = nullptr;
+}
+inline const ::pb::MultiRangeGate& gate::mrg() const {
+  const ::pb::MultiRangeGate* p = mrg_;
+  // @@protoc_insertion_point(field_get:pb.gate.mrg)
+  return p != nullptr ? *p : *reinterpret_cast<const ::pb::MultiRangeGate*>(
+      &::pb::_MultiRangeGate_default_instance_);
+}
+inline ::pb::MultiRangeGate* gate::release_mrg() {
+  // @@protoc_insertion_point(field_release:pb.gate.mrg)
+  
+  ::pb::MultiRangeGate* temp = mrg_;
+  mrg_ = nullptr;
+  return temp;
+}
+inline ::pb::MultiRangeGate* gate::mutable_mrg() {
+  
+  if (mrg_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::MultiRangeGate>(GetArenaNoVirtual());
+    mrg_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.gate.mrg)
+  return mrg_;
+}
+inline void gate::set_allocated_mrg(::pb::MultiRangeGate* mrg) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete mrg_;
+  }
+  if (mrg) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      mrg = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, mrg, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  mrg_ = mrg;
+  // @@protoc_insertion_point(field_set_allocated:pb.gate.mrg)
 }
 
 // -------------------------------------------------------------------
@@ -9837,6 +10302,10 @@ inline void GatingSet::set_allocated_h5_verion(std::string* h5_verion) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
