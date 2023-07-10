@@ -240,12 +240,13 @@ enum GATE_TYPE : int {
   ELLIPSOID_GATE = 7,
   CLUSTER_GATE = 8,
   QUAD_GATE = 9,
+  MULTI_RANGE_GATE = 11,
   GATE_TYPE_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   GATE_TYPE_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool GATE_TYPE_IsValid(int value);
 constexpr GATE_TYPE GATE_TYPE_MIN = GATE_UNSPECIFIED;
-constexpr GATE_TYPE GATE_TYPE_MAX = QUAD_GATE;
+constexpr GATE_TYPE GATE_TYPE_MAX = MULTI_RANGE_GATE;
 constexpr int GATE_TYPE_ARRAYSIZE = GATE_TYPE_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GATE_TYPE_descriptor();
@@ -2169,6 +2170,15 @@ class gate :
   ::pb::clusterGate* mutable_cg();
   void set_allocated_cg(::pb::clusterGate* cg);
 
+  // .pb.MultiRangeGate mrg = 10;
+  bool has_mrg() const;
+  void clear_mrg();
+  static const int kMrgFieldNumber = 10;
+  const ::pb::MultiRangeGate& mrg() const;
+  ::pb::MultiRangeGate* release_mrg();
+  ::pb::MultiRangeGate* mutable_mrg();
+  void set_allocated_mrg(::pb::MultiRangeGate* mrg);
+
   // bool neg = 1;
   void clear_neg();
   static const int kNegFieldNumber = 1;
@@ -2203,6 +2213,7 @@ class gate :
   ::pb::ellipseGate* eg_;
   ::pb::boolGate* bg_;
   ::pb::clusterGate* cg_;
+  ::pb::MultiRangeGate* mrg_;
   bool neg_;
   bool istransformed_;
   bool isgained_;
@@ -7031,6 +7042,57 @@ inline void gate::set_allocated_cg(::pb::clusterGate* cg) {
   }
   cg_ = cg;
   // @@protoc_insertion_point(field_set_allocated:pb.gate.cg)
+}
+
+// .pb.MultiRangeGate mrg = 10;
+inline bool gate::has_mrg() const {
+  return this != internal_default_instance() && mrg_ != nullptr;
+}
+inline void gate::clear_mrg() {
+  if (GetArenaNoVirtual() == nullptr && mrg_ != nullptr) {
+    delete mrg_;
+  }
+  mrg_ = nullptr;
+}
+inline const ::pb::MultiRangeGate& gate::mrg() const {
+  const ::pb::MultiRangeGate* p = mrg_;
+  // @@protoc_insertion_point(field_get:pb.gate.mrg)
+  return p != nullptr ? *p : *reinterpret_cast<const ::pb::MultiRangeGate*>(
+      &::pb::_MultiRangeGate_default_instance_);
+}
+inline ::pb::MultiRangeGate* gate::release_mrg() {
+  // @@protoc_insertion_point(field_release:pb.gate.mrg)
+  
+  ::pb::MultiRangeGate* temp = mrg_;
+  mrg_ = nullptr;
+  return temp;
+}
+inline ::pb::MultiRangeGate* gate::mutable_mrg() {
+  
+  if (mrg_ == nullptr) {
+    auto* p = CreateMaybeMessage<::pb::MultiRangeGate>(GetArenaNoVirtual());
+    mrg_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.gate.mrg)
+  return mrg_;
+}
+inline void gate::set_allocated_mrg(::pb::MultiRangeGate* mrg) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == nullptr) {
+    delete mrg_;
+  }
+  if (mrg) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      mrg = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, mrg, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  mrg_ = mrg;
+  // @@protoc_insertion_point(field_set_allocated:pb.gate.mrg)
 }
 
 // -------------------------------------------------------------------

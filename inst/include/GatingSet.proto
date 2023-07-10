@@ -76,6 +76,7 @@ enum GATE_TYPE{
 	 ELLIPSOID_GATE = 7;
 	 CLUSTER_GATE = 8;
 	 QUAD_GATE = 9;
+   MULTI_RANGE_GATE = 11;
 	}
 message gate{
 	bool neg =1;
@@ -88,6 +89,7 @@ message gate{
 	ellipseGate eg = 7;
 	boolGate bg = 8;
     clusterGate cg = 9;
+  MultiRangeGate mrg = 10;
 
 }
 
